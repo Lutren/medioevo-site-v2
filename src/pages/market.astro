@@ -1,0 +1,18 @@
+---
+// Redirect estático: /market se unificó con /tienda (evita 2 paginas de compra
+// distintas enlazadas desde el mismo menú, ver hallazgo 2026-07-04).
+// output: 'static' no soporta Astro.redirect() en build -- usar meta-refresh.
+---
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="0; url=/tienda" />
+  <link rel="canonical" href="/tienda" />
+  <title>Redirigiendo a la Tienda — MEDIOEVO</title>
+</head>
+<body>
+  <p>Esta página se movió. <a href="/tienda">Ir a la Tienda</a>.</p>
+  <script>window.location.replace('/tienda');</script>
+</body>
+</html>

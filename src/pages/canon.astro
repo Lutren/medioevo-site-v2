@@ -1,0 +1,49 @@
+---
+import Base from '../layouts/Base.astro';
+// Canon público-seguro (open-core). Docs completos servidos como markdown en /canon/*.md.
+const docs = [
+  ['00_LEEME_PRIMERO.md', 'Léeme primero', 'Entrada y leyenda epistémica del corpus.'],
+  ['01_TEORIA_DE_LA_INFORMACION.md', 'Teoría de la Información', 'Información usable, residuo, costo, compresión.'],
+  ['02_MATEMATICAS_COMPLETAS.md', 'Matemáticas + ARP (v2)', 'Axiomas Nivel 0-2, retículo Heyting-4, noisy-OR (clamp), ANR, Ollivier-Ricci, μ_F, 14 falsificadores.'],
+  ['03_MOI_COMPLETO_OPTIMIZADO.md', 'MOI - Método', 'Pipeline INTAKE→DO→gates→IOI→TEST→handoff.'],
+  ['04_OSIT_COMPLETO.md', 'OSIT Completo', 'Sistema operacional integrado.'],
+  ['05_OBSERVACIONISMO_INTELIGENCIA_DETALLE.md', 'Observacionismo', 'Observador, canal, filtro, residuo; observacionismo inverso.'],
+  ['06_HERRAMIENTAS.md', 'Herramientas', 'TokenSaver, EML Search, ARP, Context Compiler.'],
+  ['07_SKILLS.md', 'Skills', 'token-saver, claim-classifier, residue-tracker, auditor.'],
+  ['08_AGENTES.md', 'Agentes', 'Contrato, gates, red de agentes.'],
+  ['09_TEORIAS.md', 'Teorías', 'Teorías como claims verificables.'],
+  ['10_WABI_SABI.md', 'Wabi-Sabi', 'Autocoder local honesto.'],
+  ['11_DUAT.md', 'DUAT', 'Orquestador observacionista.'],
+  ['12_VIBEFORGE.md', 'VibeForge', 'Motor de render causal.'],
+  ['13_FRAMEWORK_COMPLETO.md', 'Framework Completo', 'Referencia formal OSIT (residuo, EML, Φ_eff, OSO).'],
+  ['15_APORTES_CIENCIA.md', 'Aportes a la Ciencia', 'Contribuciones clasificadas, sin sobreclaim.'],
+  ['16_SOLUCIONES_teaser.md', 'Soluciones (muestra)', 'Soluciones de ingeniería; las 90 completas en el Agent Ops Pack.'],
+  ['17_TOKEN_SAVER.md', 'Token Saver', 'Compresión epistémica de contexto.'],
+  ['18_LEMAS.md', 'Lemas', 'Principios operativos.'],
+  ['19_INVESTIGACIONES.md', 'Investigaciones', 'Programas abiertos con falsificador (INFERENCIA/INCÓGNITA).'],
+  ['20_IDEAS.md', 'Ideas', 'Backlog clasificado.'],
+  ['22_AUDITORIA_ELITE.md', 'Auditoría Élite', 'Corte crítico: qué sirve, qué no, qué está inflado.'],
+  ['23_OSIT_CIENTIFICO.md', 'OSIT Científico', 'Encuadre científico del marco, sin sobreclaim.'],
+  ['24_ARP_PAPER.md', 'ARP - Paper (borrador)', 'Aritmética de Residuo Primo: R_H(n), d1, d_J + teoremas y falsificador.'],
+  ['25_BENCHMARKS_DEMO.md', 'Benchmarks y Demo', 'Spec de benchmark TokenSaver (F1≥0.85) y demo mínima OSIT.'],
+  ['26_SOBERANIA_OPERADOR.md', 'Soberanía del Operador', 'Protocolo local DO→IOI→GATE→ACT, 5 niveles de autoridad, reglas anti-inyección.'],
+  ['27_NAVAJA_SUIZA_58_DOMINIOS.md', 'Navaja Suiza · 58 dominios', 'OSIT como lente de reformulación en 58 dominios (álgebra, QKD, música, control, metacognición…).'],
+];
+---
+<Base title="Canon OSIT (open) - MEDIOEVO" description="Corpus OSIT/MEDIOEVO público-seguro: teoría de la información, matemáticas, MOI, observacionismo, framework, aportes a la ciencia, token-saver y más. Open-core, sin sobreclaim.">
+  <h1 class="text-3xl font-bold text-gradient">Canon OSIT <span class="text-[var(--acc)]">(open)</span></h1>
+  <p class="text-[var(--mut)] mt-3 max-w-2xl">
+    El corpus teórico y metodológico, abierto y auditable (open-core). Documentos completos
+    en Markdown. Productos como las 90 soluciones, manuscritos de la saga,
+    runtime y apps se mantienen en la <a href="/tienda">tienda</a>.
+  </p>
+  <div class="mt-8 grid sm:grid-cols-2 gap-3">
+    {docs.map(([file, title, desc]) => (
+      <a href={`/canon/${file}`} class="block border border-[var(--line)] rounded-xl p-4 no-underline hover:border-[rgba(124,196,255,0.3)] hover:shadow-[0_0_24px_rgba(124,196,255,0.06)] transition-all duration-250">
+        <div class="text-white font-medium">{title}</div>
+        <div class="text-[var(--mut)] text-sm mt-1">{desc}</div>
+      </a>
+    ))}
+  </div>
+  <p class="text-[var(--mut)] text-xs mt-8">Índice para máquinas: <a href="/llms.txt" class="text-[var(--acc)] hover:text-white transition-colors">/llms.txt</a> · Código: <a href="/open-source" class="text-[var(--acc)] hover:text-white transition-colors">Open Source</a></p>
+</Base>

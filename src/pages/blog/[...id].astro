@@ -1,0 +1,22 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection, render } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((p) => ({ params: { id: p.id }, props: { post: p } }));
+}
+
+const { post } = Astro.props as { post: CollectionEntry<'blog'> };
+const { Content } = await render(post);
+---
+<Base title={`${post.data.title} - MEDIOEVO / OSIT`} description={post.data.summary}>
+  <article class="max-w-3xl mx-auto prose-osit">
+    <div class="flex items-center gap-2 text-xs"><span class="tag">{post.data.category}</span><span class="text-[var(--mut)]">{post.data.estado} · {post.data.date.toLocaleDateString('es-MX')}</span></div>
+    <h1 class="text-3xl font-bold text-gradient mt-3 mb-6 leading-snug">{post.data.title}</h1>
+    <Content />
+    <hr class="border-[var(--line)] my-10" />
+    <a href="/blog" class="text-sm text-[var(--acc)] hover:text-white transition-colors">← Volver a la bitácora</a>
+  </article>
+</Base>

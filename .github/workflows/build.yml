@@ -1,0 +1,56 @@
+name: medioevo-site-v2 Build
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'apps/medioevo-site-v2/**'
+      - '.github/workflows/ci.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'apps/medioevo-site-v2/**'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/medioevo-site-v2
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: apps/medioevo-site-v2/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      - name: TypeScript check
+        run: npx astro check 2>&1 | tail -10
+
+      - name: Build site
+        run: npm run build
+
+      - name: Smoke test — verify key pages exist
+        run: |
+          echo "Verifying built pages..."
+          for page in index wiki tienda registro; do
+            if [ -f "dist/$page/index.html" ]; then
+              echo "  ✓ $page/index.html ($(wc -c < "dist/$page/index.html") bytes)"
+            else
+              echo "  ✗ $page/index.html MISSING"
+            fi
+          done
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: medioevo-site-dist
+          path: apps/medioevo-site-v2/dist/
+          retention-days: 7

@@ -1,0 +1,15 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  href: string;
+  badge: string;
+}
+const { title, description, href, badge } = Astro.props;
+---
+<a href={href} class="group block p-6 bg-card border border-border rounded-xl hover:border-primary/50 hover:bg-accent/50 transition-all duration-300 h-full flex flex-col">
+  <span class="text-xs font-medium text-primary/80 bg-primary/10 px-2 py-1 rounded w-fit mb-3">{badge}</span>
+  <h3 class="text-xl font-semibold text-foreground group-hover:text-primary transition-colors mb-3 flex-1">{title}</h3>
+  <p class="text-muted-foreground text-sm mb-4 flex-1">{description}</p>
+  <span class="text-sm font-medium text-primary group-hover:underline">Leer más →</span>
+</a>

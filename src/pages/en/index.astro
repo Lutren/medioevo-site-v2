@@ -1,0 +1,82 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog'))
+  .filter((p) => p.data.lang === 'en')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+<Base title="MEDIOEVO / OSIT - English" description="Local-first AI work tools: TokenSaver, ActionGate, WitnessLog, Source Intake, DUAT, Wabi and public-safe OSIT canon.">
+  <section class="py-10 animate-fade-in">
+    <div class="flex items-center gap-3 text-xs mb-4">
+      <span class="tag">Luis René González · Lutren</span>
+      <span class="epistemic-tag cert">Public-safe · R 0.08</span>
+    </div>
+    <h1 class="text-4xl sm:text-5xl font-bold text-white mt-3 leading-[1.1] tracking-tight">
+      MEDIOEVO Tools:
+      <span class="text-gradient glow-text">local AI work</span>
+      <br class="hidden sm:inline" />with evidence before action.
+    </h1>
+    <p class="text-[var(--ink2)] text-lg mt-4 max-w-3xl leading-relaxed">
+      MEDIOEVO is a local-first toolkit for AI-assisted work: TokenSaver for context,
+      ActionGate for execution decisions, WitnessLog for evidence, Source Intake for curation,
+      and DUAT/Wabi for agents, artifacts and continuity. <strong class="text-white">OSIT</strong>
+      is the public-safe ladder that separates certainty, inference, unknowns and blocked claims.
+    </p>
+    <div class="flex flex-wrap gap-3 mt-6">
+      <a href="/herramientas"
+        class="bg-[var(--gold)] text-[var(--bg)] font-medium px-5 py-2.5 rounded-lg no-underline hover:brightness-120 transition-all">
+        Tools
+      </a>
+      <a href="/open-source"
+        class="border border-[var(--line)] px-5 py-2.5 rounded-lg no-underline hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all text-[var(--mut)]">
+        Open Source
+      </a>
+      <a href="/"
+        class="border border-[var(--line)] px-5 py-2.5 rounded-lg no-underline hover:border-[var(--gold)] hover:text-[var(--gold)] transition-all text-[var(--mut)]">
+        Español
+      </a>
+    </div>
+  </section>
+
+  <section class="mt-12 animate-fade-in animate-fade-in-2">
+    <h2 class="text-lg font-semibold text-white mb-4 flex items-center gap-2">
+      Epistemic ladder
+    </h2>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
+      <div class="border border-[var(--line)] rounded-xl p-4 bg-[var(--surface)]">
+        <div class="flex items-center justify-between mb-2">
+          <span class="epistemic-tag cert">CERTEZA</span>
+          <span class="font-mono text-[0.6rem] tracking-wider text-[var(--mut)]">R &lt; 0.15</span>
+        </div>
+        <p class="text-[var(--ink2)] text-sm leading-relaxed">Sufficient evidence. Direct action.</p>
+      </div>
+      <div class="border border-[var(--line)] rounded-xl p-4 bg-[var(--surface)]">
+        <div class="flex items-center justify-between mb-2">
+          <span class="epistemic-tag inf">INFERENCIA</span>
+          <span class="font-mono text-[0.6rem] tracking-wider text-[var(--mut)]">0.15 ≤ R &lt; 0.35</span>
+        </div>
+        <p class="text-[var(--ink2)] text-sm leading-relaxed">Reasonable assumption. Expand with control.</p>
+      </div>
+      <div class="border border-[var(--line)] rounded-xl p-4 bg-[var(--surface)]">
+        <div class="flex items-center justify-between mb-2">
+          <span class="epistemic-tag incog">INCÓGNITA</span>
+          <span class="font-mono text-[0.6rem] tracking-wider text-[var(--mut)]">0.35 ≤ R &lt; 0.80</span>
+        </div>
+        <p class="text-[var(--ink2)] text-sm leading-relaxed">Missing evidence. Do not act without more data.</p>
+      </div>
+      <div class="border border-[var(--line)] rounded-xl p-4 bg-[var(--surface)]">
+        <div class="flex items-center justify-between mb-2">
+          <span class="epistemic-tag block">BLOQUEADO</span>
+          <span class="font-mono text-[0.6rem] tracking-wider text-[var(--mut)]">R ≥ 0.80</span>
+        </div>
+        <p class="text-[var(--ink2)] text-sm leading-relaxed">Contradiction or risk. Stop.</p>
+      </div>
+    </div>
+  </section>
+
+  <p class="text-[var(--ink2)] mt-12 animate-fade-in animate-fade-in-3">
+    English posts coming soon. Meanwhile, explore the
+    <a href="/open-source" class="text-[var(--cyan)] hover:text-[var(--gold)]">open-source repositories</a>
+    and the <a href="/tienda" class="text-[var(--cyan)] hover:text-[var(--gold)]">store</a>.
+  </p>
+</Base>

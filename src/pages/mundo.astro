@@ -1,0 +1,109 @@
+---
+import Base from '../layouts/Base.astro';
+const eras = [
+  {
+    t: 'La Saga', icon: '◈',
+    d: '35 libros en 22 años de construcción. Una historia de ciencia ficción que es laboratorio de ideas, método y manifiesto.',
+    items: ['Edición Bestseller: 10 libros', 'Edición Extendida: 13 libros', 'Universo Expandido: 22 libros más'],
+  },
+  {
+    t: 'El Laboratorio (OSIT)', icon: '⎔',
+    d: 'De la ficción nació un método. OSIT separa certeza de inferencia, mide residuo y permite trabajar con IA sin inflar claims.',
+    items: ['TokenSaver · ActionGate · WitnessLog', 'Wabi-Sabi · DUAT · VibeForge', 'Escalera: CERTEZA → BLOQUEADO'],
+  },
+  {
+    t: 'La Tienda', icon: '▣',
+    d: 'El puente entre creador y consumidor. Libros, plantillas, agentes y packs que sostienen el proyecto.',
+    items: ['Libros en Gumroad sin DRM', 'Packs de herramientas y agentes', 'Cada compra mantiene el open source'],
+  },
+];
+const conexiones = [
+  ['Narrativa → Método', 'Los conceptos de OSIT (observador, residuo, escalera epistémica) nacieron dentro de la ficción antes de volverse herramientas reales.'],
+  ['Método → Herramientas', 'OSIT se implementó como código: TokenSaver, ActionGate, WitnessLog. Filosofía narrativa convertida en software funcional.'],
+  ['Herramientas → Tienda', 'Las herramientas generan productos (packs, plantillas). El open source atrae usuarios; la tienda los sostiene.'],
+  ['Tienda → Narrativa', 'Los ingresos permiten seguir escribiendo. Cada libro nuevo realimenta el ciclo.'],
+];
+const timeline = [
+  { year: '2004', text: 'L.R. González empieza a escribir MEDIOEVO' },
+  { year: '2022', text: 'La saga alcanza 35 libros. De la narrativa emerge OSIT como marco epistémico' },
+  { year: '2024–2025', text: 'OSIT se vuelve código: TokenSaver, ActionGate, WitnessLog. Nacen Wabi-Sabi y DUAT' },
+  { year: '2026', text: 'medioevo.space unifica las tres caras. El ciclo se cierra' },
+];
+---
+
+<Base title="El Mundo MEDIOEVO — donde todo conecta" description="MEDIOEVO es un ecosistema donde la saga sci-fi de 35 libros, las herramientas de IA local-first y la tienda forman un solo circuito. Por Luis René González (Lutren).">
+  <div class="starfield" aria-hidden="true">
+    {Array.from({ length: 40 }, (_, i) => (
+      <span style={`top:${Math.random()*100}%;left:${Math.random()*100}%;animation-duration:${2+Math.random()*4}s;animation-delay:${Math.random()*3}s;width:${1+Math.random()*2}px;height:${1+Math.random()*2}px`}></span>
+    ))}
+  </div>
+
+  <div class="flex items-center gap-3 text-xs mb-5">
+    <span class="tag">El Mundo MEDIOEVO</span>
+    <span class="epistemic-tag cert">CERTEZA</span>
+  </div>
+
+  <h1 class="hero-title text-4xl sm:text-5xl font-bold text-white mt-2 leading-[1.1] tracking-tight">
+    Donde todo <span class="text-gradient">conecta</span>
+  </h1>
+
+  <p class="text-[var(--ink2)] mt-4 max-w-3xl leading-relaxed text-lg">
+    MEDIOEVO no es un proyecto. Es un ecosistema donde la saga de ciencia ficción,
+    las herramientas de IA y la tienda forman un solo circuito. Cada pieza alimenta
+    a las demás.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-5 mt-10">
+    {eras.map((e, i) => (
+      <div class={`bento-card reveal reveal-delay-${i+1}`}>
+        <div class="text-2xl text-[var(--gold)] mb-3">{e.icon}</div>
+        <h2 class="text-white font-semibold text-lg">{e.t}</h2>
+        <p class="text-[var(--ink2)] text-sm mt-2 leading-relaxed">{e.d}</p>
+        <ul class="mt-4 space-y-1.5">
+          {e.items.map((item) => (
+            <li class="text-[var(--mut)] text-sm flex items-start gap-2">
+              <span class="text-[var(--gold)] mt-1 shrink-0">·</span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </div>
+
+  <section class="mt-14 reveal">
+    <div class="section-label gold mb-6"><span>Cómo conecta</span></div>
+    <div class="grid sm:grid-cols-2 gap-4">
+      {conexiones.map(([t, d]) => (
+        <div class="bento-card">
+          <div class="text-white font-medium">{t}</div>
+          <p class="text-[var(--ink2)] text-sm mt-2 leading-relaxed">{d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-14 reveal reveal-delay-2">
+    <div class="section-label gold mb-6"><span>Línea de tiempo</span></div>
+    <div class="timeline-line pl-6 space-y-6">
+      {timeline.map((t) => (
+        <div class="relative">
+          <div class="absolute -left-6 top-1 w-3 h-3 rounded-full bg-[var(--gold)] border-2 border-[var(--bg)]"></div>
+          <div class="text-[var(--gold)] font-mono text-sm font-semibold">{t.year}</div>
+          <p class="text-[var(--ink2)] text-sm mt-1 leading-relaxed">{t.text}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<script>
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>

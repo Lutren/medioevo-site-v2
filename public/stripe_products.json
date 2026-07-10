@@ -1,0 +1,74 @@
+[
+  {
+    "product_id": "prod_UqQw6qOKObXqul",
+    "price_id": "price_1Tqk4LBzItJPECbi88GQWJwg",
+    "name": "MEDIOEVO I: Despertar",
+    "amount": "4.99",
+    "payment_link": "https://buy.stripe.com/test_fZu4gy3WT0fa8jJd7lfbq00",
+    "payment_link_id": "plink_1Tqk4LBzItJPECbiYrbyWQNg"
+  },
+  {
+    "product_id": "prod_UqQwQJjCGcwQFa",
+    "price_id": "price_1Tqk4MBzItJPECbiQ78YO9mt",
+    "name": "MEDIOEVO III: Umbral del Ciclo",
+    "amount": "4.99",
+    "payment_link": "https://buy.stripe.com/test_00wdR8dxt3rmbvVfftfbq01",
+    "payment_link_id": "plink_1Tqk4NBzItJPECbisNFT8xyQ"
+  },
+  {
+    "product_id": "prod_UqQw4QdQHq0p2A",
+    "price_id": "price_1Tqk4NBzItJPECbiTc8Kvp43",
+    "name": "MEDIOEVO IV: Babel. Las Cinco Torres",
+    "amount": "4.99",
+    "payment_link": "https://buy.stripe.com/test_14A4gyctp2niarR1oDfbq02",
+    "payment_link_id": "plink_1Tqk4OBzItJPECbixXS5deFe"
+  },
+  {
+    "product_id": "prod_UqQwqv8eeFvFSn",
+    "price_id": "price_1Tqk4PBzItJPECbi9XnYlWXa",
+    "name": "MEDIOEVO V: Le Jardin",
+    "amount": "4.99",
+    "payment_link": "https://buy.stripe.com/test_00w9AS50XbXSdE30kzfbq03",
+    "payment_link_id": "plink_1Tqk4PBzItJPECbi9updE5J9"
+  },
+  {
+    "product_id": "prod_UqQwVEEmS7HnTX",
+    "price_id": "price_1Tqk4QBzItJPECbi6xgpOR1J",
+    "name": "MEDIOEVO VI: Nexus. El Dios con Mandil",
+    "amount": "4.99",
+    "payment_link": "https://buy.stripe.com/test_9B6dR88d9e602Zp4APfbq04",
+    "payment_link_id": "plink_1Tqk4QBzItJPECbi5YoP5Mep"
+  },
+  {
+    "product_id": "prod_UqQwItFSRA4Y7a",
+    "price_id": "price_1Tqk4RBzItJPECbiN7W2n13E",
+    "name": "El Observacionista: Notas de un Constructor",
+    "amount": "9.99",
+    "payment_link": "https://buy.stripe.com/test_7sY14mctp9PK57x3wLfbq05",
+    "payment_link_id": "plink_1Tqk4SBzItJPECbi6xHz57OA"
+  },
+  {
+    "product_id": "prod_UqQwxDf6AOxMqJ",
+    "price_id": "price_1Tqk4TBzItJPECbiN6gKYEkl",
+    "name": "Anti-IA Detector",
+    "amount": "3",
+    "payment_link": "https://buy.stripe.com/test_fZueVc50X2ni0Rhd7lfbq06",
+    "payment_link_id": "plink_1Tqk4TBzItJPECbiafrHzJwy"
+  },
+  {
+    "product_id": "prod_UqQwKqbPgQc9lm",
+    "price_id": "price_1Tqk4UBzItJPECbiyqzoe4E4",
+    "name": "Fact-Check OSIT",
+    "amount": "3",
+    "payment_link": "https://buy.stripe.com/test_eVqbJ0bpl3rmarR3wLfbq07",
+    "payment_link_id": "plink_1Tqk4UBzItJPECbikrbuZzYk"
+  },
+  {
+    "product_id": "prod_UqQwlfXurWH6MM",
+    "price_id": "price_1Tqk4VBzItJPECbiLjw8KcwD",
+    "name": "MOI Fact-Check v0.1.0",
+    "amount": "3",
+    "payment_link": "https://buy.stripe.com/test_4gM4gy7950fa6bB3wLfbq08",
+    "payment_link_id": "plink_1Tqk4VBzItJPECbiaLlZJGl9"
+  }
+]

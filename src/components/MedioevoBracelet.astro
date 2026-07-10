@@ -1,0 +1,1061 @@
+---
+// MedioevoBracelet.astro - Pulsera virtual para comunicarse con personajes MEDIOEVO
+// Web Component que conecta con /api/orchestrator/process del server local
+---
+
+<medioevo-bracelet></medioevo-bracelet>
+
+<script>
+  class MedioevoBracelet extends HTMLElement {
+    #persona = 'claudio';
+    #messages = [];
+    #isOpen = false;
+    #serverUrl = 'http://127.0.0.1:8787'; // Wabi local server
+    #streaming = false;
+    #ws = null;
+    #wsUrl = '';
+    #historyKey = '';
+    #pendingRequests = new Map();
+    #mediaRecorder = null;
+    #audioChunks = [];
+    #isRecording = false;
+    #audioElement = null;
+    #autoPlayTTS = false;
+
+    static get observedAttributes() {
+      return ['server-url', 'default-persona'];
+    }
+
+    constructor() {
+      super();
+      this.attachShadow({ mode: 'open' });
+    }
+
+    connectedCallback() {
+      this.#serverUrl = this.getAttribute('server-url') || 'http://127.0.0.1:8787';
+      this.#persona = this.getAttribute('default-persona') || 'claudio';
+      this.#wsUrl = this.#serverUrl.replace('http', 'ws') + '/api/orchestrator/ws';
+      this.#historyKey = `medioevo-bracelet-history-${this.#persona}`;
+      this.#loadHistory();
+      this.#render();
+      this.#attachEvents();
+      this.#initVoice();
+      this.#checkServerHealth();
+      this.#connectWebSocket();
+    }
+
+    attributeChangedCallback(name, oldValue, newValue) {
+      if (name === 'server-url') this.#serverUrl = newValue;
+      if (name === 'default-persona') this.#persona = newValue;
+    }
+
+    #render() {
+      const personas = {
+        claudio: { name: 'Claudio', emoji: '📋', desc: 'Archivero ejecutivo', color: 'var(--gold)' },
+        archivero: { name: 'Archivero', emoji: '🏛️', desc: 'Custodio epistémico', color: '#7cb4ff' },
+        pregonero: { name: 'Pregonero', emoji: '📜', desc: 'Voz narrativa', color: 'var(--gold)' },
+        faith: { name: 'Faith', emoji: '🔍', desc: 'Observadora empírica', color: '#4ade80' },
+        darvi: { name: 'Darvi', emoji: '♟️', desc: 'Estratega sistémico', color: '#f472b6' }
+      };
+
+      const p = personas[this.#persona] || personas.claudio;
+
+      this.shadowRoot.innerHTML = `
+        <style>
+          :host {
+            --bg: var(--bg, #0a0a0f);
+            --ink: var(--ink, #e8e8e8);
+            --ink2: var(--ink2, #9ca3af);
+            --line: var(--line, #1f2937);
+            --surface: var(--surface, #111827);
+            --gold: var(--gold, var(--gold));
+            --cyan: var(--cyan, #7cb4ff);
+            font-family: system-ui, -apple-system, sans-serif;
+            display: block;
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            z-index: 9999;
+          }
+
+          .bracelet-btn {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, ${p.color}22, ${p.color}44);
+            border: 2px solid ${p.color};
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 8px 32px ${p.color}40, 0 0 0 1px ${p.color}33 inset;
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            animation: pulse 3s ease-in-out infinite;
+          }
+
+          .bracelet-btn:hover {
+            transform: scale(1.12);
+            box-shadow: 0 12px 48px ${p.color}60, 0 0 0 2px ${p.color};
+          }
+
+          .bracelet-btn:active {
+            transform: scale(0.95);
+          }
+
+          @keyframes pulse {
+            0%, 100% { box-shadow: 0 8px 32px ${p.color}40, 0 0 0 1px ${p.color}33 inset; }
+            50% { box-shadow: 0 8px 32px ${p.color}60, 0 0 0 3px ${p.color}44 inset; }
+          }
+
+          .chat-panel {
+            position: absolute;
+            bottom: 80px;
+            right: 0;
+            width: 380px;
+            height: 520px;
+            background: var(--surface);
+            border: 1px solid var(--line);
+            border-radius: 16px;
+            box-shadow: 0 24px 64px rgba(0,0,0,0.5), 0 0 0 1px ${p.color}22 inset;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+            transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+          }
+
+          .chat-panel.open {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+          }
+
+          .chat-header {
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(90deg, ${p.color}11, transparent);
+          }
+
+          .chat-header .avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: ${p.color}22;
+            border: 1px solid ${p.color};
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+          }
+
+          .chat-header .info {
+            flex: 1;
+          }
+
+          .chat-header .name {
+            font-weight: 600;
+            color: var(--ink);
+            font-size: 14px;
+          }
+
+          .chat-header .desc {
+            font-size: 11px;
+            color: var(--ink2);
+          }
+
+          .chat-header .status {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #4ade80;
+            box-shadow: 0 0 8px #4ade80;
+          }
+
+          .chat-header .status.offline {
+            background: #ef4444;
+            box-shadow: 0 0 8px #ef4444;
+          }
+
+          .chat-messages {
+            flex: 1;
+            overflow-y: auto;
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+          }
+
+          .message {
+            max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 14px;
+            font-size: 13px;
+            line-height: 1.5;
+            animation: slideIn 0.2s ease-out;
+          }
+
+          @keyframes slideIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+          }
+
+          .message.user {
+            align-self: flex-end;
+            background: ${p.color}33;
+            border: 1px solid ${p.color}55;
+            color: var(--ink);
+            border-bottom-right-radius: 4px;
+          }
+
+          .message.assistant {
+            align-self: flex-start;
+            background: var(--bg);
+            border: 1px solid var(--line);
+            color: var(--ink);
+            border-bottom-left-radius: 4px;
+          }
+
+          .message .meta {
+            display: flex;
+            gap: 8px;
+            margin-top: 6px;
+            font-size: 10px;
+            color: var(--ink2);
+          }
+
+          .message .epistemic-tag {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-transform: uppercase;
+          }
+
+          .epistemic-tag.CERTEZA { background: var(--gold)22; color: var(--gold); }
+          .epistemic-tag.INFERENCIA { background: #7cb4ff22; color: #7cb4ff; }
+          .epistemic-tag.INCÓGNITA { background: #fbbf2422; color: #fbbf24; }
+          .epistemic-tag.BLOQUEADO { background: #ef444422; color: #ef4444; }
+
+          .chat-input-area {
+            padding: 16px;
+            border-top: 1px solid var(--line);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+          }
+
+          .persona-selector {
+            display: flex;
+            gap: 6px;
+            overflow-x: auto;
+            padding-bottom: 4px;
+          }
+
+          .persona-btn {
+            flex: 0 0 auto;
+            padding: 6px 12px;
+            border-radius: 20px;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--ink2);
+            font-size: 11px;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 0.2s;
+          }
+
+          .persona-btn:hover {
+            border-color: ${p.color};
+            color: ${p.color};
+          }
+
+          .persona-btn.active {
+            background: ${p.color}22;
+            border-color: ${p.color};
+            color: ${p.color};
+          }
+
+          .input-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+          }
+
+          .input-row input {
+            flex: 1;
+            padding: 12px 16px;
+            border-radius: 24px;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--ink);
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.2s;
+          }
+
+          .input-row input:focus {
+            border-color: ${p.color};
+          }
+
+          .input-row input::placeholder {
+            color: var(--ink2);
+          }
+
+          .voice-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: var(--bg);
+            color: var(--ink);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--line);
+            transition: all 0.2s;
+            flex-shrink: 0;
+          }
+
+          .voice-btn:hover {
+            background: ${p.color}22;
+            border-color: ${p.color};
+            color: ${p.color};
+          }
+
+          .voice-btn.recording {
+            background: #ef4444;
+            border-color: #ef4444;
+            color: white;
+            animation: pulse-record 1s ease-in-out infinite;
+          }
+
+          .voice-btn.speaking {
+            background: ${p.color};
+            border-color: ${p.color};
+            color: #0a0a0f;
+          }
+
+          @keyframes pulse-record {
+            0%, 100% { box-shadow: 0 0 0 0 #ef444466; }
+            50% { box-shadow: 0 0 0 8px #ef444400; }
+          }
+
+          .input-row button {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: none;
+            background: ${p.color};
+            color: #0a0a0f;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.15s, box-shadow 0.2s;
+          }
+
+          .input-row button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 16px ${p.color}60;
+          }
+
+          .input-row button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+          }
+
+          .disclaimer {
+            font-size: 10px;
+            color: var(--ink2);
+            text-align: center;
+            padding: 0 8px;
+          }
+
+          .typing-indicator {
+            display: flex;
+            gap: 4px;
+            padding: 8px 12px;
+          }
+
+          .typing-indicator span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: ${p.color};
+            animation: typing 1.4s ease-in-out infinite both;
+          }
+
+          .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+          .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
+          @keyframes typing {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+          }
+
+          .empty-state {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: var(--ink2);
+            text-align: center;
+            padding: 24px;
+          }
+
+          .empty-state .emoji { font-size: 48px; }
+          .empty-state p { font-size: 13px; line-height: 1.5; }
+        </style>
+
+        <button class="bracelet-btn" id="toggleBtn" aria-label="Abrir pulsera MEDIOEVO" title="${p.name} - ${p.desc}">
+          ${p.emoji}
+        </button>
+
+        <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Chat con ${p.name}">
+          <div class="chat-header">
+            <div class="avatar">${p.emoji}</div>
+            <div class="info">
+              <div class="name">${p.name}</div>
+              <div class="desc">${p.desc}</div>
+            </div>
+            <div class="status" id="statusDot" title="Servidor desconectado"></div>
+          </div>
+
+          <div class="chat-messages" id="messages">
+            <div class="empty-state" id="emptyState">
+              <div class="emoji">${p.emoji}</div>
+              <p>Hola. Soy <strong>${p.name}</strong>.<br>¿En qué te ayudo?</p>
+            </div>
+          </div>
+
+          <div class="chat-input-area">
+            <div class="persona-selector" id="personaSelector" role="radiogroup" aria-label="Seleccionar personaje">
+              ${Object.entries(personas).map(([key, persona]) => `
+                <button class="persona-btn ${key === this.#persona ? 'active' : ''}" 
+                        data-persona="${key}" role="radio" aria-checked="${key === this.#persona}">
+                  ${persona.emoji} ${persona.name}
+                </button>
+              `).join('')}
+            </div>
+
+            <div class="input-row">
+              <button class="voice-btn" id="sttBtn" aria-label="Dictar mensaje" title="Dictar (micrófono)">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="22"></line>
+                </svg>
+              </button>
+              <input type="text" id="messageInput" placeholder="Pregúntame sobre MEDIOEVO, OSIT, DUAT..." 
+                     autocomplete="off" aria-label="Tu mensaje">
+              <button class="voice-btn" id="ttsBtn" aria-label="Leer última respuesta" title="Leer en voz alta">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                  <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                </svg>
+              </button>
+              <input type="text" id="messageInput" placeholder="Pregúntame sobre MEDIOEVO, OSIT, DUAT..." 
+                     autocomplete="off" aria-label="Tu mensaje">
+              <button id="sendBtn" aria-label="Enviar">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </button>
+            </div>
+
+            <p class="disclaimer">
+              Local-first · Sin telemetría · Residuo R: <span id="residueDisplay">0.00</span> · 
+              <a href="/herramientas" target="_blank" style="color: var(--cyan);">Lab OSIT</a>
+            </p>
+          </div>
+        </div>
+      `;
+    }
+
+    #attachEvents() {
+      const toggleBtn = this.shadowRoot.getElementById('toggleBtn');
+      const chatPanel = this.shadowRoot.getElementById('chatPanel');
+      const sendBtn = this.shadowRoot.getElementById('sendBtn');
+      const messageInput = this.shadowRoot.getElementById('messageInput');
+      const sttBtn = this.shadowRoot.getElementById('sttBtn');
+      const ttsBtn = this.shadowRoot.getElementById('ttsBtn');
+      const personaSelector = this.shadowRoot.getElementById('personaSelector');
+      const messagesContainer = this.shadowRoot.getElementById('messages');
+      const emptyState = this.shadowRoot.getElementById('emptyState');
+
+      toggleBtn.addEventListener('click', () => this.#toggle());
+      sendBtn.addEventListener('click', () => this.#sendMessage());
+      messageInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+          e.preventDefault();
+          this.#sendMessage();
+        }
+      });
+
+      sttBtn.addEventListener('click', () => this.#toggleRecording());
+      ttsBtn.addEventListener('click', () => this.#speakLastMessage());
+
+      personaSelector.addEventListener('click', (e) => {
+        const btn = e.target.closest('.persona-btn');
+        if (btn) this.#switchPersona(btn.dataset.persona);
+      });
+
+      personaSelector.addEventListener('click', (e) => {
+        const btn = e.target.closest('.persona-btn');
+        if (btn) this.#switchPersona(btn.dataset.persona);
+      });
+
+      // Close on outside click
+      document.addEventListener('click', (e) => {
+        if (this.#isOpen && !this.shadowRoot.contains(e.target) && e.target !== toggleBtn) {
+          this.#close();
+        }
+      });
+    }
+
+    #toggle() {
+      this.#isOpen ? this.#close() : this.#open();
+    }
+
+    #open() {
+      this.#isOpen = true;
+      this.shadowRoot.getElementById('chatPanel').classList.add('open');
+      this.shadowRoot.getElementById('messageInput').focus();
+    }
+
+    #close() {
+      this.#saveHistory();
+      this.#isOpen = false;
+      this.shadowRoot.getElementById('chatPanel').classList.remove('open');
+    }
+
+    #switchPersona(persona) {
+      // Save current history before switching
+      this.#saveHistory();
+      this.#persona = persona;
+      this.#historyKey = `medioevo-bracelet-history-${this.#persona}`;
+      this.#loadHistory();
+      this.#render(); // Re-render to update UI
+      this.#attachEvents(); // Re-attach events
+      this.#addSystemMessage(`Conectado con ${persona}.`);
+    }
+
+    #loadHistory() {
+      try {
+        const stored = localStorage.getItem(this.#historyKey);
+        if (stored) {
+          const data = JSON.parse(stored);
+          this.#messages = data.messages || [];
+          // Restore messages to UI
+          const messagesContainer = this.shadowRoot.getElementById('messages');
+          const emptyState = this.shadowRoot.getElementById('emptyState');
+          if (emptyState) emptyState.remove();
+          if (messagesContainer && this.#messages.length > 0) {
+            this.#messages.forEach(msg => {
+              if (msg.role === 'user') {
+                this.#addUserMessage(msg.content, false);
+              } else {
+                this.#addAssistantMessage(msg.content, false);
+              }
+            });
+          }
+        }
+      } catch (e) {
+        console.warn('[Bracelet] Failed to load history:', e);
+      }
+    }
+
+    #saveHistory() {
+      try {
+        // Capture current messages from UI
+        const messagesContainer = this.shadowRoot.getElementById('messages');
+        if (!messagesContainer) return;
+        
+        const msgs = [];
+        messagesContainer.querySelectorAll('.message').forEach(el => {
+          const isUser = el.classList.contains('user');
+          const text = el.textContent.trim();
+          if (text) {
+            msgs.push({ role: isUser ? 'user' : 'assistant', content: text, ts: Date.now() });
+          }
+        });
+        
+        localStorage.setItem(this.#historyKey, JSON.stringify({
+          persona: this.#persona,
+          messages: msgs,
+          updated: Date.now()
+        }));
+      } catch (e) {
+        console.warn('[Bracelet] Failed to save history:', e);
+      }
+    }
+
+    async #checkServerHealth() {
+      const statusDot = this.shadowRoot.getElementById('statusDot');
+      try {
+        const resp = await fetch(`${this.#serverUrl}/health`, { 
+          method: 'GET',
+          signal: AbortSignal.timeout(3000)
+        });
+        if (resp.ok) {
+          statusDot.classList.remove('offline');
+          statusDot.title = 'Servidor conectado';
+        } else {
+          throw new Error('Server unhealthy');
+        }
+      } catch {
+        statusDot.classList.add('offline');
+        statusDot.title = 'Servidor desconectado (inicia wabi server)';
+      }
+    }
+
+    async #sendMessage() {
+      const input = this.shadowRoot.getElementById('messageInput');
+      const text = input.value.trim();
+      if (!text || this.#streaming) return;
+
+      input.value = '';
+      this.#streaming = true;
+      const sendBtn = this.shadowRoot.getElementById('sendBtn');
+      sendBtn.disabled = true;
+
+      this.#addUserMessage(text);
+      this.#showTyping();
+
+      // Try WebSocket first, fallback to HTTP
+      if (this.#ws && this.#ws.readyState === WebSocket.OPEN) {
+        this.#sendViaWebSocket(text);
+      } else {
+        await this.#sendViaHTTP(text);
+      }
+    }
+
+    #sendViaWebSocket(text) {
+      const requestId = 'req_' + Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
+      const sendBtn = this.shadowRoot.getElementById('sendBtn');
+      const input = this.shadowRoot.getElementById('messageInput');
+      
+      const promise = new Promise((resolve, reject) => {
+        this.#pendingRequests.set(requestId, { resolve, reject });
+      });
+
+      this.#ws.send(JSON.stringify({
+        type: 'process',
+        id: requestId,
+        text: text,
+        persona: this.#persona,
+        stream: true
+      }));
+
+      // Handle response asynchronously
+      promise.then(data => {
+        this.#hideTyping();
+        this.#addAssistantMessage(data);
+        this.#updateResidue(data.residue || 0);
+        this.#streaming = false;
+        sendBtn.disabled = false;
+        input.focus();
+      }).catch(err => {
+        this.#hideTyping();
+        this.#addAssistantMessage({
+          text_response: `Error: ${err.message}`,
+          epistemic_state: 'BLOQUEADO',
+          agents_activated: [],
+          residue: 0
+        });
+        this.#streaming = false;
+        sendBtn.disabled = false;
+        input.focus();
+      });
+    }
+
+    async #sendViaHTTP(text) {
+      const sendBtn = this.shadowRoot.getElementById('sendBtn');
+      const input = this.shadowRoot.getElementById('messageInput');
+      
+      try {
+        const resp = await fetch(`${this.#serverUrl}/api/orchestrator/process`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, persona: this.#persona }),
+          signal: AbortSignal.timeout(60000)
+        });
+
+        this.#hideTyping();
+
+        if (!resp.ok) {
+          throw new Error(`HTTP ${resp.status}`);
+        }
+
+        const data = await resp.json();
+        this.#addAssistantMessage(data);
+        this.#updateResidue(data.residue || 0);
+
+      } catch (err) {
+        this.#hideTyping();
+        this.#addAssistantMessage({
+          text_response: `Error: ${err.message}. ¿Servidor corriendo en ${this.#serverUrl}?`,
+          epistemic_state: 'BLOQUEADO',
+          agents_activated: [],
+          residue: 0
+        });
+      } finally {
+        this.#streaming = false;
+        sendBtn.disabled = false;
+        input.focus();
+      }
+    }
+
+    #connectWebSocket() {
+      if (this.#ws) return;
+      
+      try {
+        this.#ws = new WebSocket(this.#wsUrl);
+        this.#ws.binaryType = 'arraybuffer';
+        
+        this.#ws.onopen = () => {
+          console.log('[Bracelet] WebSocket connected');
+          const statusDot = this.shadowRoot.getElementById('statusDot');
+          if (statusDot) statusDot.classList.remove('offline');
+        };
+        
+        this.#ws.onmessage = (event) => {
+          try {
+            const msg = JSON.parse(event.data);
+            this.#handleWSMessage(msg);
+          } catch (e) {
+            console.warn('[Bracelet] Invalid WS message:', e);
+          }
+        };
+        
+        this.#ws.onclose = () => {
+          console.log('[Bracelet] WebSocket disconnected, reconnecting in 3s...');
+          const statusDot = this.shadowRoot.getElementById('statusDot');
+          if (statusDot) statusDot.classList.add('offline');
+          setTimeout(() => {
+            this.#ws = null;
+            this.#connectWebSocket();
+          }, 3000);
+        };
+        
+        this.#ws.onerror = (err) => {
+          console.warn('[Bracelet] WebSocket error:', err);
+        };
+      } catch (e) {
+        console.warn('[Bracelet] WebSocket connection failed:', e);
+      }
+    }
+
+    #handleWSMessage(msg) {
+      const msgType = msg.type;
+      const requestId = msg.id;
+      
+      if (msgType === 'ack') {
+        // Request acknowledged, wait for chunks
+        return;
+      }
+      
+      if (msgType === 'chunk') {
+        // Append chunk to current assistant message
+        this.#appendChunk(msg.text, msg.done);
+        return;
+      }
+      
+      if (msgType === 'result') {
+        // Final result
+        const pending = this.#pendingRequests.get(requestId);
+        if (pending && pending.resolve) {
+          pending.resolve(msg);
+        }
+        this.#pendingRequests.delete(requestId);
+        return;
+      }
+      
+      if (msgType === 'error') {
+        const pending = this.#pendingRequests.get(requestId);
+        if (pending && pending.reject) {
+          pending.reject(new Error(msg.error));
+        }
+        this.#pendingRequests.delete(requestId);
+        return;
+      }
+      
+      if (msgType === 'pong') {
+        // Heartbeat response
+        return;
+      }
+    }
+
+    #appendChunk(text, done) {
+      let msg = this.shadowRoot.querySelector('.message.assistant.streaming');
+      if (!msg) {
+        // Create new streaming message
+        msg = document.createElement('div');
+        msg.className = 'message assistant streaming';
+        msg.innerHTML = `<span class="streaming-text"></span>`;
+        this.shadowRoot.getElementById('messages').appendChild(msg);
+        this.#scrollToBottom();
+      }
+      const textEl = msg.querySelector('.streaming-text');
+      if (textEl) textEl.textContent += text;
+      this.#scrollToBottom();
+      
+      if (done) {
+        msg.classList.remove('streaming');
+        // Final metadata will come in 'result' message
+      }
+    }
+
+    #addUserMessage(text, save = true) {
+      const emptyState = this.shadowRoot.getElementById('emptyState');
+      if (emptyState) emptyState.remove();
+
+      const msg = document.createElement('div');
+      msg.className = 'message user';
+      msg.textContent = text;
+      this.shadowRoot.getElementById('messages').appendChild(msg);
+      this.#scrollToBottom();
+      if (save) this.#saveHistory();
+    }
+
+    #addAssistantMessage(data) {
+      const msg = document.createElement('div');
+      msg.className = 'message assistant';
+      
+      const content = data.text_response || 'Sin respuesta';
+      const epistemic = data.epistemic_state || 'INCÓGNITA';
+      const agents = data.agents_activated?.join(', ') || '—';
+      const duat = data.duat_result?.ok ? ' ✦ DUAT' : '';
+      const vibe = data.vibeforge_result?.world ? ' ✦ VibeForge' : '';
+
+      msg.innerHTML = `
+        ${content}
+        <div class="meta">
+          <span class="epistemic-tag ${epistemic}">${epistemic}</span>
+          <span>${agents}${duat}${vibe}</span>
+        </div>
+      `;
+      this.shadowRoot.getElementById('messages').appendChild(msg);
+      this.#scrollToBottom();
+      this.#saveHistory();
+    }
+
+    #showTyping() {
+      const typing = document.createElement('div');
+      typing.className = 'typing-indicator';
+      typing.id = 'typingIndicator';
+      typing.innerHTML = '<span></span><span></span><span></span>';
+      this.shadowRoot.getElementById('messages').appendChild(typing);
+      this.#scrollToBottom();
+    }
+
+    #hideTyping() {
+      const typing = this.shadowRoot.getElementById('typingIndicator');
+      if (typing) typing.remove();
+    }
+
+    #updateResidue(r) {
+      const el = this.shadowRoot.getElementById('residueDisplay');
+      if (el) el.textContent = r.toFixed(2);
+    }
+
+    #addSystemMessage(text) {
+      const msg = document.createElement('div');
+      msg.className = 'message assistant';
+      msg.style.opacity = '0.7';
+      msg.style.fontSize = '12px';
+      msg.textContent = text;
+      this.shadowRoot.getElementById('messages').appendChild(msg);
+      this.#scrollToBottom();
+    }
+
+    #scrollToBottom() {
+      const container = this.shadowRoot.getElementById('messages');
+      container.scrollTop = container.scrollHeight;
+    }
+
+    #initVoice() {
+      this.#audioElement = new Audio();
+      this.#audioElement.crossOrigin = 'anonymous';
+    }
+
+    async #startRecording() {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        this.#mediaRecorder = new MediaRecorder(stream);
+        this.#audioChunks = [];
+
+        this.#mediaRecorder.ondataavailable = (e) => {
+          if (e.data.size > 0) this.#audioChunks.push(e.data);
+        };
+
+        this.#mediaRecorder.onstop = async () => {
+          const blob = new Blob(this.#audioChunks, { type: 'audio/webm' });
+          await this.#transcribeAudio(blob);
+          stream.getTracks().forEach(t => t.stop());
+        };
+
+        this.#mediaRecorder.start();
+        this.#isRecording = true;
+        const sttBtn = this.shadowRoot.getElementById('sttBtn');
+        if (sttBtn) sttBtn.classList.add('recording');
+        this.#addSystemMessage('🎙️ Grabando... Haz clic para detener.');
+      } catch (e) {
+        console.warn('[Bracelet] No mic access:', e);
+        this.#addSystemMessage('❌ Sin acceso al micrófono.');
+      }
+    }
+
+    async #stopRecording() {
+      if (this.#mediaRecorder && this.#isRecording) {
+        this.#mediaRecorder.stop();
+        this.#isRecording = false;
+        const sttBtn = this.shadowRoot.getElementById('sttBtn');
+        if (sttBtn) sttBtn.classList.remove('recording');
+      }
+    }
+
+    async #toggleRecording() {
+      const sttBtn = this.shadowRoot.getElementById('sttBtn');
+      const messageInput = this.shadowRoot.getElementById('messageInput');
+
+      if (this.#isRecording) {
+        // Stop recording
+        this.#mediaRecorder.stop();
+        this.#isRecording = false;
+        sttBtn.classList.remove('recording');
+        sttBtn.title = 'Dictar (micrófono)';
+      } else {
+        // Start recording
+        try {
+          const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+          this.#mediaRecorder = new MediaRecorder(stream);
+          this.#audioChunks = [];
+
+          this.#mediaRecorder.ondataavailable = (e) => {
+            if (e.data.size > 0) this.#audioChunks.push(e.data);
+          };
+
+          this.#mediaRecorder.onstop = async () => {
+            const blob = new Blob(this.#audioChunks, { type: 'audio/webm' });
+            const formData = new FormData();
+            formData.append('audio', blob, 'recording.webm');
+
+            sttBtn.classList.remove('recording');
+            sttBtn.disabled = true;
+
+            try {
+              const resp = await fetch(`${this.#serverUrl}/api/wabi/voice/stt-upload`, {
+                method: 'POST',
+                body: formData,
+                signal: AbortSignal.timeout(60000)
+              });
+
+              const data = await resp.json();
+              if (data.ok && data.text) {
+                messageInput.value = data.text;
+              } else {
+                this.#addSystemMessage(`❌ Error STT: ${data.error || 'desconocido'}`);
+              }
+            } catch (e) {
+              console.warn('[Bracelet] STT error:', e);
+              this.#addSystemMessage(`❌ Error STT: ${e.message}`);
+            } finally {
+              sttBtn.disabled = false;
+              stream.getTracks().forEach(t => t.stop());
+            }
+          };
+
+          this.#mediaRecorder.start(100); // chunks every 100ms
+          this.#isRecording = true;
+          sttBtn.classList.add('recording');
+          sttBtn.title = 'Detener grabación';
+        } catch (e) {
+          console.warn('[Bracelet] Mic error:', e);
+          this.#addSystemMessage(`❌ Sin acceso al micrófono: ${e.message}`);
+        }
+      }
+    }
+    
+    async #transcribeAudio(blob) {
+      this.#addSystemMessage('🔄 Transcribiendo...');
+      try {
+        const formData = new FormData();
+        formData.append('audio', blob, 'recording.webm');
+
+        const resp = await fetch(`${this.#serverUrl}/api/wabi/voice/stt-upload`, {
+          method: 'POST',
+          body: formData,
+          signal: AbortSignal.timeout(30000)
+        });
+
+        const data = await resp.json();
+        if (data.ok && data.text) {
+          const input = this.shadowRoot.getElementById('messageInput');
+          if (input) {
+            input.value = data.text.trim();
+            this.#sendMessage();
+          }
+        } else {
+          this.#addSystemMessage(`❌ Error STT: ${data.error || 'desconocido'}`);
+        }
+      } catch (e) {
+        console.warn('[Bracelet] STT error:', e);
+        this.#addSystemMessage(`❌ Error STT: ${e.message}`);
+      }
+    }
+    
+    async #speakLastMessage() {
+      const ttsBtn = this.shadowRoot.getElementById('ttsBtn');
+      if (ttsBtn) ttsBtn.classList.add('speaking');
+
+      const messages = this.shadowRoot.querySelectorAll('.message.assistant');
+      const lastMsg = messages[messages.length - 1];
+      const text = lastMsg ? lastMsg.textContent.trim() : '';
+
+      if (!text) {
+        this.#addSystemMessage('No hay mensaje para leer.');
+        if (ttsBtn) ttsBtn.classList.remove('speaking');
+        return;
+      }
+
+      await this.#tts(text);
+
+      if (ttsBtn) ttsBtn.classList.remove('speaking');
+    }
+
+    async #tts(text) {
+      try {
+        const resp = await fetch(`${this.#serverUrl}/api/wabi/voice/tts`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text }),
+          signal: AbortSignal.timeout(30000)
+        });
+
+        const data = await resp.json();
+        if (data.ok && data.audio_base64) {
+          const audioSrc = `data:audio/wav;base64,${data.audio_base64}`;
+          this.#audioElement.src = audioSrc;
+          await this.#audioElement.play();
+        } else {
+          this.#addSystemMessage(`❌ Error TTS: ${data.error || 'desconocido'}`);
+        }
+      } catch (e) {
+        console.warn('[Bracelet] TTS error:', e);
+      }
+    }
+  }
+
+  customElements.define('medioevo-bracelet', MedioevoBracelet);
+</script>

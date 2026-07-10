@@ -1,0 +1,85 @@
+---
+import Base from '../layouts/Base.astro';
+const stripeTest = import.meta.env.PUBLIC_STRIPE_TEST_MODE === '1';
+const lines = [
+  {
+    t: 'Saga MEDIOEVO — Edición Bestseller',
+    icon: '◈',
+    d: '10 libros. La entrada principal a MEDIOEVO. Para quien empieza y quiere el núcleo de la saga sin perderse.',
+    productos: [
+      { t: 'Despertar (Libro 01)', d: 'Entrada a la saga. Edición accesible.', url: 'https://lrgonzalez.gumroad.com/l/dmqgzi', tag: 'Bestseller' },
+      { t: 'Pack Bestseller (10 libros)', d: 'La saga completa en su edición bestseller.', url: 'https://lrgonzalez.gumroad.com/l/saga-completa', tag: 'Bestseller' },
+    ],
+  },
+  {
+    t: 'Saga MEDIOEVO — Edición Extendida',
+    icon: '◈',
+    d: '13 libros. El canon extendido para lectores hardcore (estilo Tolkien). Más profundidad, más capas.',
+    productos: [
+      { t: 'Saga MEDIOEVO completa (13 vols.)', d: 'Edición extendida. El canon completo.', url: 'https://lrgonzalez.gumroad.com/l/saga-completa', tag: 'Extendida' },
+    ],
+  },
+  {
+    t: 'Universo Expandido',
+    icon: '▣',
+    d: 'Los otros 22 libros que construyen el mundo: ensayos, companion docs, derivados del canon y material complementario.',
+    productos: [
+      { t: 'Universo Expandido MEDIOEVO', d: 'El resto del iceberg: material complementario, ensayos y derivados.', tag: 'Expandido' },
+    ],
+  },
+  {
+    t: 'Herramientas y Packs',
+    icon: '⎔',
+    d: 'Plantillas, agentes y packs operativos para trabajar con IA local-first.',
+    productos: [
+      { t: 'DUAT Templates', d: 'Plantillas del orquestador observacionista para agentes.', url: 'https://lrgonzalez.gumroad.com/l/duat-templates', tag: 'Herramientas' },
+      { t: 'MEDIOEVO Agent Ops Pack', d: 'Pack operativo de agentes con gates y contratos.', url: 'https://lrgonzalez.gumroad.com/l/medioevo-agent-ops-pack', tag: 'Herramientas' },
+    ],
+  },
+];
+const hasUrl = (p: any) => p.url && p.url.startsWith('http');
+---
+
+<Base title="Tienda - MEDIOEVO / OSIT" description="Libros, packs y herramientas MEDIOEVO: edición bestseller (10 libros), extendida (13), universo expandido y herramientas local-first.">
+  <h1 class="text-3xl font-bold text-gradient">Tienda</h1>
+  <p class="text-[var(--mut)] mt-2 max-w-2xl">Libros, plantillas y packs. Pago seguro vía Gumroad. (Pronto: checkout directo.)</p>
+
+  {lines.map((line) => (
+    <section class="mt-10">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-xl text-[var(--gold)]">{line.icon}</span>
+        <h2 class="text-xl font-semibold text-white">{line.t}</h2>
+      </div>
+      <p class="text-[var(--ink2)] text-sm mb-4 max-w-2xl">{line.d}</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {line.productos.map((p) => (
+          <div class="border border-[var(--line)] rounded-xl p-5 flex flex-col hover:border-[rgba(212,160,80,0.2)] hover:shadow-[0_0_24px_rgba(212,160,80,0.06)] transition-all duration-250 bg-[var(--surface)]">
+            <span class="tag self-start">{p.tag}</span>
+            <div class="text-white text-base font-medium mt-2 leading-snug">{p.t}</div>
+            <div class="text-[var(--mut)] text-sm mt-1 flex-1">{p.d}</div>
+            {hasUrl(p) ? (
+              <a href={p.url} target="_blank" rel="noopener" class="mt-4 inline-block bg-[var(--gold)] text-[var(--bg)] font-medium px-4 py-2 rounded-lg no-underline hover:brightness-120 transition-all text-center text-sm">
+                Comprar en Gumroad
+              </a>
+            ) : (
+              <span class="mt-4 inline-block border border-[var(--mut)] text-[var(--mut)] px-4 py-2 rounded-lg text-sm text-center">
+                Próximamente
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  {stripeTest && (
+    <div class="mt-8 border border-[var(--cyan)] rounded-xl p-4 text-sm text-[var(--mut)]">
+      <strong class="text-white">Checkout directo (Stripe) - modo prueba.</strong> Estás viendo el
+      entorno de pruebas: ningún cargo es real.
+    </div>
+  )}
+
+  <p class="text-[var(--mut)] text-xs mt-10">
+    ¿Buscas el código abierto? Visita <a href="/open-source" class="text-[var(--cyan)] hover:text-white transition-colors">Open Source</a>.
+  </p>
+</Base>

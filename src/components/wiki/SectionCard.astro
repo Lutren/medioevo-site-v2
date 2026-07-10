@@ -1,0 +1,17 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  description: string;
+  count?: string;
+}
+const { href, title, description, count } = Astro.props;
+---
+
+<a href={href} class="section-card">
+  <h3 class="section-card__title">{title}</h3>
+  <p class="section-card__desc">{description}</p>
+  {count && (
+    <span class="section-card__count">{count}</span>
+  )}
+</a>

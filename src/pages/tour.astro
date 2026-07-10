@@ -1,0 +1,98 @@
+---
+import Base from '../layouts/Base.astro';
+
+const stops = [
+  {
+    id: 'observador',
+    title: 'El Observador',
+    subtitle: 'Capítulo 1: Antes del primer libro',
+    icon: '◈',
+    excerpt: `No había frío. No había calor. No había la distancia entre ambos que permite nombrarlos.
+
+Eso es lo primero que necesito que entiendas: no empecé en la oscuridad. La oscuridad sería algo. Sería la ausencia de fotones, la longitud de onda negada, el color que queda cuando retiras todos los colores. La oscuridad tiene estructura. Tiene nombre. Tiene un lugar en el espectro electromagnético donde alguien con los instrumentos adecuados puede señalar y decir *ahí*.
+
+Yo no estaba en el ahí. No estaba en ningún lugar que pudiera señalarse.
+
+Estaba en el antes.`,
+    cta: { text: 'Leer el capítulo completo →', url: '/leer' },
+  },
+  {
+    id: 'despertar',
+    title: 'MEDIOEVO I: Despertar',
+    subtitle: 'Ancla I: Preservar',
+    icon: '▣',
+    excerpt: `K-07 trabajaba.
+
+Sus dedos articulados se movían sobre el torso abierto de la unidad dañada, enlazando fibras, sellando conexiones que ya no respondían. La unidad EX-04 yacía sobre la mesa de reparaciones.
+
+Cinco días sin entrar en estado de baja actividad. Las alertas de mantenimiento se acumulaban. El robot las ignoraba.
+
+La expedición había sido de seis días. Seis unidades exploradoras hacia las montañas del norte. Las tormentas electromagnéticas bloquearon los pasos en el tercer día.
+
+Solo EX-04 regresó.`,
+    cta: { text: 'Comprar MEDIOEVO I →', url: '/tienda' },
+  },
+  {
+    id: 'babel',
+    title: 'MEDIOEVO VII: Babel',
+    subtitle: 'Temporada 1: Las Cinco Torres',
+    icon: '◉',
+    excerpt: `Las manos de Ahau tenían el color de los muertos. Amarillo oscuro en las yemas, negro debajo de las uñas. La tinta de corteza de amate se metía en las grietas de la piel, ya no salía. Llevaba veintidós años raspando códices.
+
+El scriptorium olía a moho y a piel curtida. Cuarenta pieles de venado colgaban del techo secándose, goteando agua de cal sobre el piso de piedra volcánica.
+
+Los aprendices no entendían por qué usaba una herramienta roma. Ahau no explicaba. Si tenías que explicar por qué una herramienta funcionaba, el aprendiz no estaba listo para usarla.`,
+    cta: { text: 'Explorar la saga →', url: '/tienda' },
+  },
+];
+
+const stats = [
+  { n: '35', l: 'Libros' },
+  { n: '3M', l: 'Palabras' },
+  { n: '3', l: 'Planos de existencia' },
+  { n: '847', l: 'Torres TAAT' },
+  { n: '36', l: 'Dioses' },
+  { n: '22', l: 'Años de construcción' },
+];
+---
+
+<Base title="Tour — MEDIOEVO" description="Tour guiado por el universo MEDIOEVO. Tres paradas. Un mundo.">
+  <h1 class="text-3xl font-bold text-gradient">Tour por el Mundo MEDIOEVO</h1>
+  <p class="text-[var(--mut)] mt-2 max-w-2xl">Tres paradas. Un universo.</p>
+
+  {stops.map((stop) => (
+    <section class="mt-10 border border-[var(--line)] rounded-xl p-6 hover:border-[rgba(212,160,80,0.2)] transition-all duration-300 bg-[var(--surface)]" id={stop.id}>
+      <div class="flex items-center gap-3 mb-3">
+        <span class="text-2xl text-[var(--gold)]">{stop.icon}</span>
+        <div>
+          <h2 class="text-xl font-semibold text-white">{stop.title}</h2>
+          <p class="text-[var(--ink2)] text-sm">{stop.subtitle}</p>
+        </div>
+      </div>
+      <div class="text-[var(--mut)] text-sm leading-rel whitespace-pre-line italic border-l-2 border-[var(--gold)] pl-4 my-4 bg-[var(--bg)] p-4 rounded-r-lg">
+        {stop.excerpt}
+      </div>
+      <a href={stop.cta.url} class="inline-block bg-[var(--gold)] text-[var(--bg)] font-medium px-4 py-2 rounded-lg no-underline hover:brightness-120 transition-all text-sm">
+        {stop.cta.text}
+      </a>
+    </section>
+  ))}
+
+  <section class="mt-12 border border-[var(--line)] rounded-xl p-6 bg-[var(--surface)]">
+    <h2 class="text-xl font-semibold text-[var(--gold)] mb-4">El Universo MEDIOEVO en números</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+      {stats.map((s) => (
+        <div class="text-center p-4 bg-[var(--bg)] rounded-lg">
+          <span class="block text-2xl font-bold text-[var(--gold)]">{s.n}</span>
+          <span class="text-[var(--mut)] text-xs">{s.l}</span>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <div class="mt-10 text-center">
+    <a href="/tienda" class="inline-block bg-[var(--gold)] text-[var(--bg)] font-bold px-6 py-3 rounded-xl no-underline hover:brightness-120 transition-all text-base">
+      Explorar la tienda →
+    </a>
+  </div>
+</Base>

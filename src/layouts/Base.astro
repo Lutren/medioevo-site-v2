@@ -1,0 +1,162 @@
+---
+import '../styles/global.css';
+import Nav from '../components/Nav.astro';
+import GA4 from '../components/GA4.astro';
+const {
+  title = 'MEDIOEVO / OSIT',
+  description = 'Ecosistema MEDIOEVO: saga sci-fi de 35 libros, herramientas local-first para IA (TokenSaver, ActionGate, OSIT), tienda de libros y packs. Por Luis René González (Lutren), México.',
+  image = '/og-default.jpg',
+} = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://medioevo.space').href;
+const ogImage = new URL(image, Astro.site ?? 'https://medioevo.space').href;
+const websiteLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'MEDIOEVO / OSIT',
+  alternateName: ['MEDIOEVO', 'medioevo.space', 'MEDIOEVO Saga', 'Observacionismo OSIT', 'MEDIOEVO Tools'],
+  url: 'https://medioevo.space',
+  inLanguage: 'es-MX',
+  description,
+};
+const ld = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      name: 'MEDIOEVO / OSIT',
+      alternateName: ['MEDIOEVO', 'medioevo.space', 'MEDIOEVO Saga', 'Observacionismo OSIT', 'MEDIOEVO Tools'],
+      url: 'https://medioevo.space',
+      inLanguage: 'es-MX',
+      author: {
+        '@type': 'Person',
+        name: 'Luis René González',
+        alternateName: 'Lutren',
+        url: 'https://github.com/Lutren',
+      },
+      description,
+    },
+    {
+      '@type': 'Person',
+      name: 'Luis René González',
+      alternateName: 'Lutren',
+      url: 'https://github.com/Lutren',
+      sameAs: ['https://github.com/Lutren', 'https://lrgonzalez.gumroad.com'],
+      knowsAbout: ['OSIT', 'epistemic governance', 'information engineering', 'sci-fi'],
+    },
+    {
+      '@type': 'WebApplication',
+      name: 'MEDIOEVO Tools',
+      alternateName: ['TokenSaver', 'ActionGate', 'WitnessLog', 'DUAT Lab', 'Wabi Workbench'],
+      url: 'https://medioevo.space/herramientas',
+      applicationCategory: 'DeveloperApplication',
+      operatingSystem: 'Cross-platform',
+    },
+  ],
+};
+const year = new Date().getFullYear();
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    
+    <!-- DNS Prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.svg" />
+    <meta name="author" content="Luis René González (Lutren)" />
+    <meta name="keywords" content="MEDIOEVO, saga ciencia ficción, OSIT, Observacionismo, TokenSaver, ActionGate, WitnessLog, Source Intake, DUAT, Wabi-Sabi, IA local-first, libros sci-fi, Lutren, Luis René González" />
+    <meta name="theme-color" content="#07080a" />
+    <meta name="color-scheme" content="dark" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="MEDIOEVO / OSIT" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_MX" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(websiteLd)} />
+    <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+    <GA4 />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    <Nav />
+
+    <main id="main-content" class="max-w-5xl mx-auto px-5 py-10">
+      <slot />
+    </main>
+
+    <footer class="border-t border-[var(--line)] mt-16">
+      <div class="max-w-5xl mx-auto px-5 py-8 text-sm flex flex-wrap gap-x-6 gap-y-3 justify-between">
+        <span class="text-[var(--mut)]">
+          © {year} Luis René González (Lutren)
+        </span>
+        <div class="flex flex-wrap items-center gap-x-4 gap-y-2 text-[var(--surface)]">
+          <a href="https://github.com/Lutren" style="color: var(--gold);" class="hover:text-[var(--cyan)] transition-colors underline underline-offset-2 decoration-[var(--cyan)]">GitHub</a>
+          <span aria-hidden="true">·</span>
+          <a href="https://lrgonzalez.gumroad.com" style="color: var(--gold);" class="hover:text-[var(--cyan)] transition-colors underline underline-offset-2 decoration-[var(--cyan)]">Gumroad</a>
+          <span aria-hidden="true">·</span>
+          <a href="/accesibilidad" style="color: var(--gold);" class="hover:text-[var(--cyan)] transition-colors underline underline-offset-2 decoration-[var(--cyan)]">Accesibilidad</a>
+          <span aria-hidden="true">·</span>
+          <a href="/canon" style="color: var(--gold);" class="hover:text-[var(--cyan)] transition-colors underline underline-offset-2 decoration-[var(--cyan)]">Canon abierto</a>
+          <span aria-hidden="true">·</span>
+          <a href="/open-source" style="color: var(--gold);" class="hover:text-[var(--cyan)] transition-colors underline underline-offset-2 decoration-[var(--cyan)]">Open Source</a>
+        </div>
+      </div>
+    </footer>
+    
+    <!-- Web Vitals Monitoring -->
+    <script type="module">
+      import { onCLS, onINP, onFCP, onLCP, onTTFB } from '/src/lib/web-vitals.ts';
+      import '/src/lib/performance.ts';
+      
+      function sendToAnalytics(metric) {
+        const body = JSON.stringify({
+          name: metric.name,
+          value: Math.round(metric.value),
+          delta: Math.round(metric.delta),
+          id: metric.id,
+          page: window.location.pathname,
+          href: window.location.href,
+          timestamp: Date.now(),
+          userAgent: navigator.userAgent,
+          connection: navigator.connection?.effectiveType || 'unknown',
+          deviceMemory: navigator.deviceMemory || 'unknown',
+          hardwareConcurrency: navigator.hardwareConcurrency || 'unknown',
+        });
+
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon('/api/analytics/vitals', body);
+        } else {
+          fetch('/api/analytics/vitals', {
+            method: 'POST',
+            body,
+            keepalive: true,
+            headers: { 'Content-Type': 'application/json' },
+          }).catch(() => {});
+        }
+      }
+
+      onCLS(sendToAnalytics);
+      onINP(sendToAnalytics);
+      onFCP(sendToAnalytics);
+      onLCP(sendToAnalytics);
+      onTTFB(sendToAnalytics);
+    </script>
+  </body>
+</html>

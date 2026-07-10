@@ -1,0 +1,35 @@
+---
+import Base from '../layouts/Base.astro';
+const agents = [
+  ['Wabi-Sabi', 'Autocoder local: TokenSaver → BM25 → router EML → test → reparar/rollback. Funciona offline.'],
+  ['DUAT', 'Orquestador observacionista: ninguna escritura sin ≥3 observaciones ancladas; trabaja hacia atrás desde falsificadores.'],
+  ['VibeForge', 'Motor de render causal: genera artefactos desde observaciones verificadas, sin inventar estado del mundo.'],
+  ['GEODIA', 'Memoria: claims, evidencia, decisiones y witness log con hashes.'],
+];
+---
+<Base title="Agentes - OSIT">
+  <h1 class="text-3xl font-bold text-gradient">Agentes</h1>
+  <p class="text-[var(--mut)] mt-3 max-w-2xl">Ecosistema local-first con gates de acción y rollback obligatorio. Un proyecto, tres caras.</p>
+  <div class="grid sm:grid-cols-2 gap-4 mt-8">
+    {agents.map(([t, d]) => (
+      <div class="border border-[var(--line)] rounded-xl p-4 hover:border-[rgba(124,196,255,0.3)] hover:shadow-[0_0_24px_rgba(124,196,255,0.06)] transition-all duration-250"><div class="text-white font-medium">{t}</div><div class="text-[var(--mut)] text-sm mt-1">{d}</div></div>
+    ))}
+  </div>
+  <p class="text-[var(--mut)] text-sm mt-6">Cada agente actúa bajo contrato (C-GATE, GhostGate, ActionGate). Ningún claim BLOQUEADO llega a salida como hecho.</p>
+
+  <section class="mt-10 border-t border-[var(--line)] pt-8">
+    <h2 class="text-xl font-semibold text-white">DUAT engine + motor gráfico</h2>
+    <p class="text-[var(--mut)] mt-2 max-w-2xl">
+      DUAT incluye un <strong class="text-white">motor de linaje y simulación</strong> (genealogía de
+      agentes, evolución tipo Conway, economía y scheduler de investigación) y una capa de
+      <strong class="text-white">motor gráfico</strong> sobre engines existentes (no desde cero).
+      El núcleo público-seguro está liberado como código abierto; el runtime completo y el contenido
+      narrativo permanecen privados.
+    </p>
+    <div class="grid sm:grid-cols-3 gap-3 mt-4">
+      <a href="https://github.com/Lutren/duat-lab" target="_blank" rel="noopener" class="block border border-[var(--line)] rounded-xl p-4 no-underline hover:border-[rgba(124,196,255,0.3)] hover:shadow-[0_0_24px_rgba(124,196,255,0.06)] transition-all duration-250"><div class="text-white font-medium">duat-lab</div><div class="text-[var(--mut)] text-sm mt-1">Lab falsable observer-aware: demos sintéticas, gates, controles negativos.</div></a>
+      <a href="https://github.com/Lutren/duat-genesis" target="_blank" rel="noopener" class="block border border-[var(--line)] rounded-xl p-4 no-underline hover:border-[rgba(124,196,255,0.3)] hover:shadow-[0_0_24px_rgba(124,196,255,0.06)] transition-all duration-250"><div class="text-white font-medium">duat-genesis</div><div class="text-[var(--mut)] text-sm mt-1">Sandbox de simulación sintética (MIT): corridas observables y falsadores.</div></a>
+      <a href="https://github.com/Lutren/medioevo-duat-public-release" target="_blank" rel="noopener" class="block border border-[var(--line)] rounded-xl p-4 no-underline hover:border-[rgba(124,196,255,0.3)] hover:shadow-[0_0_24px_rgba(124,196,255,0.06)] transition-all duration-250"><div class="text-white font-medium">medioevo-duat-public-release</div><div class="text-[var(--mut)] text-sm mt-1">Release público del display de orquestación DUAT / MEDIOEVO.</div></a>
+    </div>
+  </section>
+</Base>

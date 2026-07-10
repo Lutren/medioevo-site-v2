@@ -1,0 +1,144 @@
+---
+import { getAtlasDocs } from '../../../lib/medioevo';
+import { EPISTEMIC_META } from '../../../lib/medioevo';
+import Layout from '../../../layouts/Base.astro';
+import AtlasCard from '../../../components/wiki/AtlasCard.astro';
+
+const atlasDocs = await getAtlasDocs();
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Atlas Dual MEDIOEVO',
+  description: '13 documentos canónicos: cronología dual, facciones, personajes, tecnología, magia, flora, fauna, vehículos, leyes',
+  url: 'https://medioevo.space/wiki/atlas',
+  inLanguage: 'es',
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: atlasDocs.length,
+    itemListElement: atlasDocs.map((doc, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Article',
+        headline: doc.data.title,
+        author: {
+          '@type': 'Person',
+          name: 'Luis René González'
+        },
+        description: `Documento del Atlas Dual: ${doc.data.title}`,
+        url: `https://medioevo.space/wiki/atlas/${doc.data.slug}`,
+        inLanguage: 'es',
+        datePublished: '2024-01-01',
+        dateModified: new Date().toISOString(),
+        isPartOf: {
+          '@type': 'CreativeWork',
+          name: 'Atlas Dual MEDIOEVO'
+        }
+      }
+    }))
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Wiki',
+      item: 'https://medioevo.space/wiki'
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Atlas Dual'
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Atlas Dual MEDIOEVO" 
+  description="13 documentos canónicos: cronología dual, facciones, personajes, tecnología, magia, flora, fauna, vehículos, leyes"
+  image="/og-default.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <div class="min-h-screen bg-background">
+    <!-- Header -->
+    <header class="relative py-16 lg:py-24 overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-block px-4 py-1.5 rounded-full bg-surface2 border border-cyan/20 text-cyan text-xs font-bold tracking-widest uppercase mb-6 animate-fade-in">
+            Atlas Dual
+          </div>
+          
+          <h1 class="text-4xl lg:text-6xl font-serif font-bold text-center mb-6 hero-title animate-fade-in">
+            Atlas <span class="text-gradient">Dual</span>
+          </h1>
+          
+          <p class="text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-8 hero-sub animate-fade-in-2">
+            Geografía, historia, facciones y sistemas del mundo MEDIOEVO. 
+            <br class="hidden lg:block" />
+            {atlasDocs.length} documentos técnicos con clasificación epistémica.
+          </p>
+          
+          <!-- Epistemic Legend -->
+          <div class="flex flex-wrap justify-center gap-3 animate-fade-in-3">
+            {Object.entries(EPISTEMIC_META).map(([key, meta]) => (
+              <span 
+                class="px-3 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase border transition-all hover:scale-105"
+                style={`color: ${meta.color}; background: ${meta.bg}; border-color: ${meta.color}33;`}
+              >
+                {meta.label}
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+      
+      <!-- Background Glow -->
+      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-64 bg-gradient-to-b from-cyan/5 to-transparent pointer-events-none"></div>
+    </header>
+
+    <!-- Atlas Grid -->
+    <div class="container mx-auto px-4 py-12 max-w-7xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {atlasDocs.map((doc, index) => (
+          <div 
+            class="animate-fade-in" 
+            style={`animation-delay: ${Math.min(index * 50, 500)}ms;`}
+          >
+            <AtlasCard doc={doc} />
+          </div>
+        ))}
+      </div>
+      
+      <!-- Summary -->
+      <div class="mt-16 text-center">
+        <div class="inline-flex items-center gap-4 px-6 py-4 rounded-lg bg-surface border border-line">
+          <div class="text-left">
+            <div class="text-2xl font-bold text-gold">{atlasDocs.length}</div>
+            <div class="text-xs text-muted-foreground uppercase tracking-wider">Documentos</div>
+          </div>
+          <div class="w-px h-12 bg-line"></div>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-green-400">
+              {atlasDocs.filter(d => d.data.status === 'canon').length}
+            </div>
+            <div class="text-xs text-muted-foreground uppercase tracking-wider">Canónicos</div>
+          </div>
+          <div class="w-px h-12 bg-line"></div>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-yellow-400">
+              {atlasDocs.filter(d => d.data.needsReview).length}
+            </div>
+            <div class="text-xs text-muted-foreground uppercase tracking-wider">Revisar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

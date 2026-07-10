@@ -1,0 +1,125 @@
+---
+import { getBooks } from '../../../lib/medioevo';
+import Layout from '../../../layouts/Base.astro';
+import BookCard from '../../../components/wiki/BookCard.astro';
+
+const books = await getBooks();
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Biblioteca MEDIOEVO',
+  description: '45 libros de la saga MEDIOEVO: fichas completas con loglines, constantes canónicas y portadas',
+  url: 'https://medioevo.space/wiki/books',
+  inLanguage: 'es',
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: books.length,
+    itemListElement: books.map((book, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Book',
+        name: book.data.title,
+        author: {
+          '@type': 'Person',
+          name: 'Luis René González'
+        },
+        description: book.data.logline,
+        image: book.data.cover?.replace('/wiki/covers/', '/wiki/covers/webp/').replace('.jpg', '-800.webp'),
+        url: `https://medioevo.space/wiki/books/${book.data.slug}`,
+        inLanguage: 'es',
+        bookFormat: 'EBook'
+      }
+    }))
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Wiki',
+      item: 'https://medioevo.space/wiki'
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Biblioteca'
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Biblioteca MEDIOEVO" 
+  description="45 libros de la saga MEDIOEVO: fichas completas con loglines, constantes canónicas y portadas"
+  image="/og-default.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <div class="min-h-screen bg-background">
+    <!-- Header -->
+    <header class="relative py-16 lg:py-24 overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-block px-4 py-1.5 rounded-full bg-surface2 border border-gold/20 text-gold text-xs font-bold tracking-widest uppercase mb-6 animate-fade-in">
+            Biblioteca Canónica
+          </div>
+          
+          <h1 class="text-4xl lg:text-6xl font-serif font-bold text-center mb-6 hero-title animate-fade-in">
+            Biblioteca <span class="text-gradient">MEDIOEVO</span>
+          </h1>
+          
+          <p class="text-xl text-muted-foreground text-center max-w-2xl mx-auto hero-sub animate-fade-in-2">
+            {books.length} fichas canónicas. Cada ficha incluye logline, constantes, portada y estado epistémico.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Background Glow -->
+      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-64 bg-gradient-to-b from-gold/5 to-transparent pointer-events-none"></div>
+    </header>
+
+    <!-- Books Grid -->
+    <div class="container mx-auto px-4 py-12 max-w-7xl">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {books.map((book, index) => (
+          <div 
+            class="animate-fade-in" 
+            style={`animation-delay: ${Math.min(index * 50, 500)}ms;`}
+          >
+            <BookCard book={book} />
+          </div>
+        ))}
+      </div>
+      
+      <!-- Count Summary -->
+      <div class="mt-16 text-center">
+        <div class="inline-flex items-center gap-4 px-6 py-4 rounded-lg bg-surface border border-line">
+          <div class="text-left">
+            <div class="text-2xl font-bold text-gold">{books.length}</div>
+            <div class="text-xs text-muted-foreground uppercase tracking-wider">Libros Totales</div>
+          </div>
+          <div class="w-px h-12 bg-line"></div>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-cyan">
+              {books.filter(b => b.data.status === 'canon').length}
+            </div>
+            <div class="text-xs text-muted-foreground uppercase tracking-wider">Canónicos</div>
+          </div>
+          <div class="w-px h-12 bg-line"></div>
+          <div class="text-left">
+            <div class="text-2xl font-bold text-purple-400">
+              {books.filter(b => b.data.status === 'especial').length}
+            </div>
+            <div class="text-xs text-muted-foreground uppercase tracking-wider">Especiales</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>

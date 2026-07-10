@@ -1,0 +1,283 @@
+---
+import { getBooks, getAtlasDocs, getSystems, getCards } from '../../lib/medioevo';
+import Layout from '../../layouts/Base.astro';
+import StatCard from '../../components/wiki/StatCard.astro';
+import SectionCard from '../../components/wiki/SectionCard.astro';
+import FeaturedCard from '../../components/wiki/FeaturedCard.astro';
+
+const books = await getBooks();
+const atlasDocs = await getAtlasDocs();
+const systems = await getSystems();
+const cards = await getCards();
+
+const webPageSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: 'Wiki MEDIOEVO',
+  description: 'Enciclopedia canónica de la saga MEDIOEVO: 45 libros, 13 atlas, sistemas OSIT/MOI/DUAT, mapas y TCG',
+  url: 'https://medioevo.space/wiki',
+  inLanguage: 'es',
+  publisher: {
+    '@type': 'Organization',
+    name: 'MEDIOEVO / OSIT',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://medioevo.space/favicon.svg'
+    }
+  },
+  mainEntity: {
+    '@type': 'CollectionPage',
+    name: 'Wiki MEDIOEVO',
+    description: 'Enciclopedia canónica de la saga MEDIOEVO',
+    mainEntity: {
+      '@type': 'ItemList',
+      name: 'Secciones de la Wiki MEDIOEVO',
+      numberOfItems: 6,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Biblioteca',
+          item: 'https://medioevo.space/wiki/books',
+          description: `${books.length} libros con fichas completas`
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Atlas Dual',
+          item: 'https://medioevo.space/wiki/atlas',
+          description: `${atlasDocs.length} documentos técnicos`
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: 'Sistemas Epistémicos',
+          item: 'https://medioevo.space/wiki/systems',
+          description: `${systems.length} sistemas fundamentales`
+        },
+        {
+          '@type': 'ListItem',
+          position: 4,
+          name: 'Mapas Canónicos',
+          item: 'https://medioevo.space/wiki/maps',
+          description: 'Mapas de planos, ciudades, zonas astrales'
+        },
+        {
+          '@type': 'ListItem',
+          position: 5,
+          name: 'Personajes',
+          item: 'https://medioevo.space/wiki/characters',
+          description: 'Leonardo, Faith, Darvi, Nico, Don Humo, ARCHON'
+        },
+        {
+          '@type': 'ListItem',
+          position: 6,
+          name: 'TCG Cards',
+          item: 'https://medioevo.space/wiki/cards',
+          description: `${cards.length} cartas coleccionables`
+        }
+      ]
+    }
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Wiki',
+      item: 'https://medioevo.space/wiki'
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Wiki MEDIOEVO" 
+  description="Enciclopedia canónica de la saga MEDIOEVO: 45 libros, 13 atlas, sistemas OSIT/MOI/DUAT, mapas y TCG"
+  image="/og-default.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(webPageSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <div class="min-h-screen bg-background">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden py-20 lg:py-32">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-block px-4 py-1.5 rounded-full bg-surface2 border border-gold/20 text-gold text-xs font-bold tracking-widest uppercase mb-6 animate-fade-in">
+            Enciclopedia Canónica
+          </div>
+          
+          <h1 class="text-5xl lg:text-7xl font-serif font-bold tracking-tight text-foreground mb-6 hero-title animate-fade-in">
+            Wiki <span class="text-gradient">MEDIOEVO</span>
+          </h1>
+          
+          <p class="text-xl lg:text-2xl text-muted-foreground mb-10 max-w-3xl mx-auto hero-sub animate-fade-in-2">
+            La enciclopedia canónica de la saga de ciencia ficción más ambiciosa en español.
+            <br class="hidden lg:block" />
+            {books.length} libros, {atlasDocs.length} atlas, {systems.length} sistemas, {cards.length} cartas TCG.
+          </p>
+          
+          <div class="flex flex-wrap justify-center gap-4 mb-16 hero-cta-group animate-fade-in-3">
+            <a 
+              href="/wiki/books" 
+              class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-lg bg-gradient-to-r from-gold to-gold-dim text-bg hover:shadow-glow-gold transition-all duration-300 hover:scale-105"
+            >
+              Explorar Libros
+              <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+              </svg>
+            </a>
+            <a 
+              href="/wiki/atlas" 
+              class="inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-lg border-2 border-gold/30 text-gold hover:bg-gold/10 hover:border-gold transition-all duration-300 hover:scale-105"
+            >
+              Atlas Dual
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Hero Glow Effect -->
+      <div class="hero-glow"></div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-surface/50 border-y border-line">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+          <StatCard 
+            value={String(books.length)} 
+            label="Libros" 
+            description="Principales + especiales" 
+          />
+          <StatCard 
+            value={String(atlasDocs.length)} 
+            label="Atlas" 
+            description="Facciones, tech, lore" 
+          />
+          <StatCard 
+            value={String(systems.length)} 
+            label="Sistemas" 
+            description="OSIT, MOI, DUAT, FCU" 
+          />
+          <StatCard 
+            value={String(cards.length)} 
+            label="Cartas TCG" 
+            description="Artefactos, personajes" 
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Wiki Sections -->
+    <section class="py-20">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
+            Secciones de la Wiki
+          </h2>
+          <p class="text-muted-foreground max-w-2xl mx-auto">
+            Explora la enciclopedia completa de MEDIOEVO
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <SectionCard 
+            href="/wiki/books" 
+            title="Biblioteca" 
+            description="Fichas completas con loglines, constantes canónicas, portadas y estado" 
+            count={`${books.length} libros`} 
+          />
+          <SectionCard 
+            href="/wiki/atlas" 
+            title="Atlas Dual" 
+            description="Cronología dual, facciones, personajes, tecnología, magia" 
+            count={`${atlasDocs.length} documentos`} 
+          />
+          <SectionCard 
+            href="/wiki/systems" 
+            title="Sistemas Epistémicos" 
+            description="OSIT (7D ResidueVector), MOI, DUAT, FCU v2.0" 
+            count={`${systems.length} sistemas`} 
+          />
+          <SectionCard 
+            href="/wiki/maps" 
+            title="Mapas Canónicos" 
+            description="Mapas de planos, ciudades, zonas astrales, ruinas y territorios" 
+          />
+          <SectionCard 
+            href="/wiki/characters" 
+            title="Personajes" 
+            description="Leonardo, Faith, Darvi, Nico, Don Humo, ARCHON y más" 
+          />
+          <SectionCard 
+            href="/wiki/cards" 
+            title="TCG Cards" 
+            description="Cartas coleccionables: personajes, artefactos, localizaciones" 
+            count={`${cards.length} cartas`} 
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Content -->
+    <section class="py-20 bg-surface/30">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl lg:text-4xl font-serif font-bold text-foreground mb-4">
+            Contenido Destacado
+          </h2>
+          <p class="text-muted-foreground max-w-2xl mx-auto">
+            Documentos fundamentales de la saga
+          </p>
+        </div>
+        
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <FeaturedCard 
+            title="Tesis del Flujo" 
+            description="La existencia es producto del trauma. Somos una falla en el flujo de comunicación." 
+            href="/wiki/atlas/ciencia-y-frecuencias" 
+            badge="CANON" 
+          />
+          <FeaturedCard 
+            title="Ecuación de los Planos" 
+            description="Lambert W (Lw). Los tres planos son regímenes de esta ecuación." 
+            href="/wiki/atlas/ciencia-y-frecuencias" 
+            badge="MATEMÁTICAS" 
+          />
+          <FeaturedCard 
+            title="847 Hz" 
+            description="847 torres TAAT, División 47. El número central que opera en todos los niveles." 
+            href="/wiki/atlas/magia-y-frecuencias" 
+            badge="FRECUENCIA" 
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Epistemic Note -->
+    <section class="py-16">
+      <div class="container mx-auto px-4 max-w-4xl">
+        <div class="wiki-card bg-surface2/50 border-gold/20">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-gold text-2xl">⚠️</div>
+            <div>
+              <h3 class="text-lg font-bold text-foreground mb-2">Nota Epistémica</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">
+                El contenido de esta wiki está clasificado según su estatus canónico: 
+                <span class="text-green-400 font-semibold">CANON</span> (verificado), 
+                <span class="text-gold font-semibold">INFERIDO</span> (derivado), 
+                <span class="text-purple-400 font-semibold">ESPECULATIVO</span> (hipótesis). 
+                Revisa las etiquetas en cada documento para conocer su grado de certeza.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

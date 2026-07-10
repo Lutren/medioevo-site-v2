@@ -1,0 +1,122 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: apps/medioevo-site-v2/package-lock.json
+      
+      - name: Install dependencies
+        working-directory: apps/medioevo-site-v2
+        run: npm ci --legacy-peer-deps
+      
+      - name: Build site
+        working-directory: apps/medioevo-site-v2
+        run: npm run build
+      
+      - name: Start HTTP server
+        working-directory: apps/medioevo-site-v2
+        run: npx http-server ./dist -p 4321 -s &
+        shell: bash
+      
+      - name: Wait for server
+        run: sleep 5 && curl -f http://localhost:4321/wiki || exit 1
+        shell: bash
+      
+      - name: Run Lighthouse CI
+        run: |
+          npx lhci autorun \
+            --config=apps/medioevo-site-v2/lighthouserc.json \
+            --collect.url=http://localhost:4321/wiki \
+            --collect.url=http://localhost:4321/wiki/books \
+            --collect.url=http://localhost:4321/wiki/books/00-el-observador \
+            --collect.url=http://localhost:4321/wiki/atlas \
+            --collect.url=http://localhost:4321/wiki/systems
+        shell: bash
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+      
+      - name: Upload Lighthouse report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: lighthouse-report
+          path: apps/medioevo-site-v2/lh-report-*.html
+          retention-days: 7
+
+  deploy-preview:
+    needs: lighthouse
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: apps/medioevo-site-v2/package-lock.json
+      
+      - name: Install dependencies
+        working-directory: apps/medioevo-site-v2
+        run: npm ci --legacy-peer-deps
+      
+      - name: Build site
+        working-directory: apps/medioevo-site-v2
+        run: npm run build
+      
+      - name: Deploy to Cloudflare Pages (Preview)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=medioevo-site --branch=${{ github.event.pull_request.head.ref }}
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+
+  deploy-production:
+    needs: lighthouse
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: apps/medioevo-site-v2/package-lock.json
+      
+      - name: Install dependencies
+        working-directory: apps/medioevo-site-v2
+        run: npm ci --legacy-peer-deps
+      
+      - name: Build site
+        working-directory: apps/medioevo-site-v2
+        run: npm run build
+      
+      - name: Deploy to Cloudflare Pages (Production)
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=medioevo-site
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

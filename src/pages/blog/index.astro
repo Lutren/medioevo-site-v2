@@ -1,0 +1,30 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+const posts = (await getCollection('blog'))
+  .filter((p) => p.data.lang === 'es')
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const stateClass = (state: string) => {
+  if (state === 'CERTEZA') return 'cert';
+  if (state === 'INCÓGNITA') return 'incog';
+  if (state === 'BLOQUEADO') return 'block';
+  return 'inf';
+};
+---
+<Base title="Blog - MEDIOEVO / OSIT">
+  <h1 class="text-3xl font-bold text-gradient">Bitácora de construcción</h1>
+  <p class="text-[var(--mut)] mt-2 max-w-2xl">La trayectoria de OSIT y MEDIOEVO, entrada por entrada. Cada una con su estado epistémico, sin sobreclaim.</p>
+  <div class="mt-8 space-y-4">
+    {posts.map((p) => (
+      <a href={`/blog/${p.id}`} class="block border border-[var(--line)] rounded-xl p-5 no-underline hover:border-[rgba(124,196,255,0.3)] hover:shadow-[0_0_24px_rgba(124,196,255,0.06)] transition-all duration-250">
+        <div class="flex items-center gap-2 text-xs">
+          <span class="tag">{p.data.category}</span>
+          <span class={`epistemic-tag ${stateClass(p.data.estado)}`}>{p.data.estado}</span>
+        </div>
+        <div class="text-white text-lg font-medium mt-2 leading-snug">{p.data.title}</div>
+        <div class="text-[var(--mut)] text-sm mt-1.5 leading-relaxed">{p.data.summary}</div>
+      </a>
+    ))}
+    {posts.length === 0 && <p class="text-[var(--mut)]">Pronto.</p>}
+  </div>
+</Base>

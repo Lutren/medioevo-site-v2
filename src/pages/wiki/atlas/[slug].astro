@@ -1,0 +1,198 @@
+---
+import { getCollection } from 'astro:content';
+import { EPISTEMIC_META } from '../../../lib/medioevo';
+import Layout from '../../../layouts/Base.astro';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('atlas');
+  return entries.map(entry => ({
+    params: { slug: entry.data.slug },
+  }));
+}
+
+const entries = await getCollection('atlas');
+const doc = entries.find(d => d.data.slug === Astro.params.slug);
+
+if (!doc) {
+  return Astro.redirect('/wiki/atlas');
+}
+
+const { data, body } = doc;
+const htmlContent = body ? marked.parse(body, { async: false }) : '';
+const meta = EPISTEMIC_META[data.status as keyof typeof EPISTEMIC_META] || EPISTEMIC_META.canon;
+
+// Get previous and next docs
+const allDocs = entries.sort((a, b) => a.data.slug.localeCompare(b.data.slug));
+const currentIndex = allDocs.findIndex(d => d.data.slug === data.slug);
+const prevDoc = currentIndex > 0 ? allDocs[currentIndex - 1] : null;
+const nextDoc = currentIndex < allDocs.length - 1 ? allDocs[currentIndex + 1] : null;
+
+// Schema.org structured data
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: data.title,
+  author: {
+    '@type': 'Person',
+    name: 'Luis René González',
+    alternateName: 'Lutren'
+  },
+  datePublished: '2024-01-01',
+  dateModified: new Date().toISOString().split('T')[0],
+  description: data.title,
+  image: '/og-default.jpg',
+  inLanguage: 'es',
+  articleSection: 'Atlas MEDIOEVO',
+  publisher: {
+    '@type': 'Organization',
+    name: 'MEDIOEVO / OSIT',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://medioevo.space/favicon.svg'
+    }
+  }
+};
+
+// Breadcrumb schema
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Wiki',
+      item: 'https://medioevo.space/wiki'
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Atlas Dual',
+      item: 'https://medioevo.space/wiki/atlas'
+    },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: data.title
+    }
+  ]
+};
+---
+
+<Layout 
+  title={`Atlas MEDIOEVO | ${data.title}`} 
+  description={data.title}
+  image="/og-default.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(articleSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <div class="min-h-screen bg-background">
+    <!-- Breadcrumbs -->
+    <div class="bg-surface/50 border-b border-line">
+      <div class="container mx-auto px-4 max-w-6xl py-4">
+        <nav aria-label="Navegación principal" class="flex items-center gap-2 text-sm">
+          <a href="/wiki" class="text-muted-foreground hover:text-gold transition-colors">Wiki</a>
+          <span class="text-muted-foreground" aria-hidden="true">/</span>
+          <a href="/wiki/atlas" class="text-muted-foreground hover:text-gold transition-colors">Atlas</a>
+          <span class="text-muted-foreground" aria-hidden="true">/</span>
+          <span class="text-cyan font-semibold" aria-current="page">{data.title}</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="relative py-12 lg:py-16 overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="max-w-4xl mx-auto">
+          <!-- Status Badge -->
+          <div class="flex flex-wrap items-center gap-3 mb-6" aria-label="Estado del documento">
+            <span 
+              class="px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase border shadow-sm"
+              style={`color: ${meta.color}; background: ${meta.color}1a; border-color: ${meta.color}4d;`}
+            >
+              {meta.label}
+            </span>
+            {data.needsReview && (
+              <span class="px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase bg-yellow-500/20 text-yellow-400 border border-yellow-500/40 flex items-center gap-2" aria-label="Documento requiere revisión">
+                <span aria-hidden="true">⚠️</span>
+                REQUIERE REVISIÓN
+              </span>
+            )}
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">{data.title}</h1>
+
+          <!-- Description/Intro -->
+          {data.file && (
+            <div class="wiki-card bg-surface2/50 border-cyan/20" aria-label="Fuente del documento">
+              <div class="flex items-start gap-3">
+                <div class="text-cyan text-2xl" aria-hidden="true">📄</div>
+                <div>
+                  <div class="text-sm text-muted-foreground mb-1">Fuente del documento</div>
+                  <div class="text-gold font-mono text-sm">{data.file}</div>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      <!-- Background Glow -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-cyan/5 rounded-full blur-3xl pointer-events-none" aria-hidden="true"></div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-12 max-w-4xl">
+      {htmlContent ? (
+        <article class="prose-wiki" aria-label="Contenido del documento">
+          <div class="markdown-body" set:html={htmlContent} />
+        </article>
+      ) : (
+        <div class="text-center py-12" role="status">
+          <div class="text-6xl mb-4" aria-hidden="true">📄</div>
+          <p class="text-muted-foreground text-lg">Contenido no disponible</p>
+        </div>
+      )}
+
+      <!-- Navigation -->
+      {(prevDoc || nextDoc) && (
+        <nav class="mt-16 pt-8 border-t border-line" aria-label="Navegación entre documentos del atlas">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {prevDoc && (
+              <a 
+                href={`/wiki/atlas/${prevDoc.data.slug}`} 
+                class="wiki-card flex items-center gap-4 group"
+                aria-label={`Documento anterior: ${prevDoc.data.title}`}
+              >
+                <div class="text-4xl flex-shrink-0" aria-hidden="true">📄</div>
+                <div>
+                  <div class="text-xs text-muted-foreground uppercase tracking-wider mb-1">Anterior</div>
+                  <div class="text-lg font-bold text-foreground group-hover:text-cyan transition-colors">
+                    {prevDoc.data.title}
+                  </div>
+                </div>
+              </a>
+            )}
+            {nextDoc && (
+              <a 
+                href={`/wiki/atlas/${nextDoc.data.slug}`} 
+                class="wiki-card flex items-center gap-4 group md:text-right"
+                aria-label={`Documento siguiente: ${nextDoc.data.title}`}
+              >
+                <div class={prevDoc ? "md:ml-auto" : ""}>
+                  <div class="text-xs text-muted-foreground uppercase tracking-wider mb-1">Siguiente</div>
+                  <div class="text-lg font-bold text-foreground group-hover:text-cyan transition-colors">
+                    {nextDoc.data.title}
+                  </div>
+                </div>
+                <div class="text-4xl flex-shrink-0" aria-hidden="true">📄</div>
+              </a>
+            )}
+          </div>
+        </nav>
+      )}
+    </div>
+  </div>
+</Layout>

@@ -1,0 +1,119 @@
+---
+import { getCards } from '../../../lib/medioevo';
+import Layout from '../../../layouts/Base.astro';
+
+const cards = await getCards();
+const typeLabels: Record<string, string> = {
+  character: 'Personaje',
+  artifact: 'Artefacto',
+  location: 'Localización',
+  event: 'Evento',
+  ability: 'Habilidad',
+};
+const rarityConfig: Record<string, { color: string; label: string; glow: string }> = {
+  common: { color: '#9ca3af', label: 'Common', glow: 'rgba(156, 163, 175, 0.3)' },
+  uncommon: { color: '#4ade80', label: 'Uncommon', glow: 'rgba(74, 222, 128, 0.3)' },
+  rare: { color: 'var(--cyan)', label: 'Rare', glow: 'rgba(80, 200, 224, 0.3)' },
+  epic: { color: '#a78bfa', label: 'Epic', glow: 'rgba(167, 139, 250, 0.3)' },
+  legendary: { color: 'var(--gold)', label: 'Legendary', glow: 'rgba(212, 160, 80, 0.4)' },
+};
+---
+
+<Layout 
+  title="TCG Cards MEDIOEVO" 
+  description="Cartas coleccionables del MEDIOEVO TCG: personajes, artefactos, localizaciones, eventos y habilidades"
+>
+  <div class="min-h-screen bg-background">
+    <!-- Header -->
+    <header class="relative py-16 lg:py-24 overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-block px-4 py-1.5 rounded-full bg-surface2 border border-gold/20 text-gold text-xs font-bold tracking-widest uppercase mb-6 animate-fade-in">
+            TCG Collection
+          </div>
+          
+          <h1 class="text-4xl lg:text-6xl font-serif font-bold text-center mb-6 hero-title animate-fade-in">
+            Cartas <span class="text-gradient">TCG</span>
+          </h1>
+          
+          <p class="text-xl text-muted-foreground text-center max-w-2xl mx-auto hero-sub animate-fade-in-2">
+            {cards.length} cartas coleccionables del universo MEDIOEVO.
+            <br class="hidden lg:block" />
+            Personajes, artefactos, localizaciones, eventos y habilidades.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Background Glow -->
+      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-64 bg-gradient-to-b from-gold/5 to-purple-500/5 pointer-events-none"></div>
+    </header>
+
+    <!-- Cards Grid -->
+    <main class="container mx-auto px-4 py-12 max-w-7xl">
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
+        {cards.map((card, index) => {
+          const rarity = card.data.rarity || 'common';
+          const config = rarityConfig[rarity] || rarityConfig.common;
+          const typeLabel = typeLabels[card.data.type || ''] || card.data.type || 'Carta';
+          
+          return (
+            <div 
+              class="animate-fade-in group" 
+              style={`animation-delay: ${Math.min(index * 10, 300)}ms;`}
+            >
+              <div 
+                class="relative aspect-[3/4] rounded-lg overflow-hidden bg-surface border-2 transition-all duration-300 group-hover:scale-105 group-hover:shadow-lg"
+                style={`border-color: ${config.color}4d; box-shadow: 0 0 20px ${config.glow};`}
+              >
+                <img
+                  src={card.data.image}
+                  alt={card.data.name}
+                  class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div class="absolute bottom-0 left-0 right-0 p-3">
+                    <div class="text-white font-bold text-sm truncate">{card.data.name}</div>
+                    <div class="text-xs" style={`color: ${config.color}`}>{typeLabel}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Rarity Summary -->
+      <div class="mt-16">
+        <h2 class="text-2xl font-serif font-bold text-foreground mb-6 text-center">Distribución por Rareza</h2>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {Object.entries(rarityConfig).map(([key, config]) => {
+            const count = cards.filter(c => (c.data.rarity || 'common') === key).length;
+            return (
+              <div class="wiki-card text-center p-4">
+                <div class="text-3xl font-bold mb-1" style={`color: ${config.color}`}>{count}</div>
+                <div class="text-xs text-muted-foreground uppercase tracking-wider">{config.label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <!-- Type Summary -->
+      <div class="mt-12">
+        <h2 class="text-2xl font-serif font-bold text-foreground mb-6 text-center">Distribución por Tipo</h2>
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          {Object.entries(typeLabels).map(([key, label]) => {
+            const count = cards.filter(c => c.data.type === key).length;
+            return (
+              <div class="wiki-card text-center p-4">
+                <div class="text-3xl font-bold mb-1 text-cyan">{count}</div>
+                <div class="text-xs text-muted-foreground uppercase tracking-wider">{label}</div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </main>
+  </div>
+</Layout>

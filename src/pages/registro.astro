@@ -1,0 +1,60 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Registro - MEDIOEVO / OSIT" description="Regístrate para recibir actualizaciones de la saga MEDIOEVO, herramientas local-first y OSIT.">
+  <h1 class="text-3xl font-bold text-gradient">Registro de interés</h1>
+  <p class="text-[var(--mut)] mt-2 max-w-2xl">
+    Nuevos libros, herramientas y contenido llegarán pronto. Déjanos tu correo
+    para recibir actualizaciones cuando cada uno esté disponible.
+  </p>
+
+  <div class="mt-8 max-w-lg border border-[var(--line)] rounded-xl p-6 bg-[var(--surface)]">
+    <form action="https://gumroad.com/follow" method="GET" target="_blank" class="space-y-4">
+      <div>
+        <label for="email" class="block text-sm text-white font-medium mb-1">Correo electrónico</label>
+        <input
+          type="email" id="email" name="email" required
+          placeholder="tu@correo.com"
+          class="w-full rounded-lg border border-[var(--line)] bg-[var(--bg)] px-4 py-2.5 text-sm text-white focus:outline-none focus:border-[var(--gold)] transition-colors"
+        />
+      </div>
+      <div class="flex items-center gap-2 text-sm text-[var(--mut)]">
+        <input type="checkbox" id="acepto" required class="accent-[var(--gold)]" />
+        <label for="acepto">Acepto recibir notificaciones sobre nuevos lanzamientos de MEDIOEVO.</label>
+      </div>
+      <button
+        type="submit"
+        class="w-full rounded-lg bg-[var(--gold)] text-[var(--bg)] font-medium px-4 py-2.5 hover:brightness-120 transition-all"
+      >
+        Suscribirme
+      </button>
+    </form>
+    <p class="mt-4 text-xs text-[var(--mut)]">
+      No compartimos tu correo. Puedes darte de baja en cualquier momento.
+      También puedes seguir en <a href="https://x.com/medioevospace" class="text-[var(--cyan)] hover:text-white transition-colors" target="_blank" rel="noopener">X (@medioevospace)</a>.
+    </p>
+  </div>
+
+  <section class="mt-12">
+    <h2 class="text-xl font-semibold text-white">¿Qué viene?</h2>
+    <ul class="mt-4 space-y-3 text-sm text-[var(--mut)] max-w-2xl">
+      <li class="flex gap-3">
+        <span class="text-[var(--gold)] shrink-0">I</span>
+        <span><strong class="text-white">Libros III-VI de MEDIOEVO</strong> — Umbral del Ciclo, Babel, Le Jardin y Nexus. Cada uno $4.99 USD.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-[var(--gold)] shrink-0">I</span>
+        <span><strong class="text-white">MOI Fact-Check v0.1.0</strong> — Motor de verificación local-first. CLI + API. $3.00 USD.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-[var(--gold)] shrink-0">I</span>
+        <span><strong class="text-white">Panel W1 (Wabi-Sabi)</strong> — Panel de control para tu runtime local de IA.</span>
+      </li>
+      <li class="flex gap-3">
+        <span class="text-[var(--gold)] shrink-0">I</span>
+        <span><strong class="text-white">Más herramientas OSIT</strong> — TokenSaver, ActionGate, ResidueTracker como productos standalone.</span>
+      </li>
+    </ul>
+  </section>
+</Base>

@@ -1,0 +1,207 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Accesibilidad - MEDIOEVO" description="Herramientas de accesibilidad local-first, zero-install: lectura en voz alta, dictado por voz, simplificación de texto, alto contraste y tamaño de fuente ajustable. Pensado para llegar a cualquiera, en cualquier dispositivo.">
+  <h1 class="text-3xl font-bold text-gradient">Accesibilidad</h1>
+  <p class="text-[var(--mut)] mt-3 max-w-2xl">
+    Herramientas <strong class="text-white">zero-install</strong> que corren en tu navegador, sin servidor ni cuenta:
+    voz (leer y dictar), simplificación de texto, alto contraste y fuente ajustable. Parte del norte
+    de MEDIOEVO: tecnología útil para quien menos recursos tiene. Todo local, nada se envía. Tus ajustes se recuerdan.
+  </p>
+
+  <details class="mt-5 border border-[var(--line)] rounded-xl p-4" open>
+    <summary class="text-white font-medium cursor-pointer">Guía en lectura fácil</summary>
+    <div class="text-[var(--ink)] mt-3" style="line-height:2">
+      <p>Esta página te ayuda a leer y a escribir.</p>
+      <p>El botón <strong>Leer en voz alta</strong> lee tu texto.</p>
+      <p>El botón <strong>Dictar</strong> escribe lo que tú dices.</p>
+      <p>El botón <strong>Simplificar</strong> hace el texto más corto y fácil.</p>
+      <p>Con <strong>A+</strong> y <strong>A−</strong> cambias el tamaño de la letra.</p>
+      <p>Con <strong>Contraste máximo</strong> ves mejor las letras.</p>
+      <p>Todo pasa en tu aparato. Nada se envía a internet.</p>
+    </div>
+  </details>
+
+  <!-- Barra de ajustes -->
+  <div class="mt-6 flex flex-wrap gap-3 items-center" role="toolbar" aria-label="Ajustes de accesibilidad">
+    <button id="fmenos" class="a11y-btn" aria-label="A− reducir tamaño de letra">A−</button>
+    <button id="fmas" class="a11y-btn" aria-label="A+ aumentar tamaño de letra">A+</button>
+    <button id="contraste" class="a11y-btn" aria-pressed="false" aria-label="Alternar contraste máximo">Contraste máximo</button>
+    <label class="text-[var(--mut)] text-sm flex items-center gap-2">Velocidad voz
+      <input id="rate" type="range" min="0.5" max="2" step="0.1" value="1" aria-label="Velocidad de voz">
+    </label>
+    <label class="text-[var(--mut)] text-sm flex items-center gap-2">Voz
+      <select id="voz" class="bg-[var(--surface)] text-[var(--ink)] border border-[var(--line)] rounded-xl p-2 focus:outline-none focus:ring-2 focus:ring-[var(--acc)]" aria-label="Elegir voz"></select>
+    </label>
+  </div>
+
+  <!-- Texto -->
+  <label for="txt" class="block text-white font-medium mt-8 mb-2">Tu texto</label>
+  <textarea id="txt" rows="6" class="w-full bg-[var(--surface)] text-[var(--ink)] border border-[var(--line)] rounded-xl p-3 focus:outline-none focus:ring-2 focus:ring-[var(--acc)]"
+    aria-label="Texto para leer en voz alta, dictar o simplificar">El observacionismo propone observar sin prejuicio, documentar sin juicio y actuar sin distracción. Esta es una oración deliberadamente larga para mostrar cómo la herramienta de simplificación divide y recorta frases extensas en partes más cortas y legibles para todo el mundo.</textarea>
+
+  <div class="mt-4 flex flex-wrap gap-3">
+    <button id="leer" class="a11y-btn a11y-primary" aria-label="Leer en voz alta el texto">🔊 Leer en voz alta</button>
+    <button id="parar" class="a11y-btn" aria-label="Detener la voz">⏹ Detener</button>
+    <button id="dictar" class="a11y-btn" aria-pressed="false" aria-label="Dictar por voz (escribe lo que digas)">🎤 Dictar</button>
+    <button id="simplificar" class="a11y-btn" aria-label="Simplificar el texto">✂ Simplificar</button>
+  </div>
+
+  <div id="salida" class="mt-4 border border-[var(--acc)] rounded-xl p-4 text-[var(--ink)] whitespace-pre-wrap" role="region" aria-live="polite" hidden></div>
+  <div id="metricas" class="mt-2 text-sm text-[var(--mut)]" aria-live="polite"></div>
+  <div id="estado" class="mt-2 text-sm text-[var(--acc)]" aria-live="polite"></div>
+
+  <!-- Demo interactiva accesible (validación motor web, Sprint 16) -->
+  <section class="mt-12 border-t border-[var(--line)] pt-8">
+    <h2 class="text-xl font-semibold text-white">Demo interactiva (motor web, sin instalar)</h2>
+    <p class="text-[var(--mut)] mt-2 max-w-2xl text-sm">
+      Prueba de que un motor 2D corre en el navegador en cualquier dispositivo. Mueve el punto con las
+      <strong class="text-white">flechas del teclado</strong> (o toca/arrastra). Cada movimiento se anuncia para lectores de pantalla.
+    </p>
+    <canvas id="lienzo" width="640" height="240" tabindex="0" role="img"
+      aria-label="Lienzo interactivo: usa las flechas para mover el punto dorado"
+      class="mt-4 w-full max-w-2xl bg-[#0a0c10] border border-[var(--line)] rounded-xl focus:outline-none focus:ring-2 focus:ring-[var(--acc)]"></canvas>
+    <div id="posicion" class="mt-2 text-sm text-[var(--mut)]" aria-live="polite"></div>
+  </section>
+
+  <p class="text-[var(--mut)] text-xs mt-10">
+    Voz por <code>SpeechSynthesis</code> / <code>SpeechRecognition</code> del navegador (sin dependencias; el dictado
+    requiere un navegador compatible, p.ej. Chrome/Edge). Simplificación basada en las primitivas open de
+    <a href="/canon/27_NAVAJA_SUIZA_58_DOMINIOS.md">la navaja suiza OSIT</a>. Código en <a href="/open-source">Open Source</a>.
+  </p>
+
+  <style>
+    .a11y-btn{min-height:48px;min-width:48px;padding:10px 16px;border-radius:10px;border:2px solid var(--acc);background:#1a2030;color:var(--acc);font-size:1rem;cursor:pointer;transition:all .15s;font-weight:500}
+    .a11y-btn:hover{background:var(--acc);color:#000;border-color:var(--acc)}
+    .a11y-btn:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
+    .a11y-btn[aria-pressed="true"]{background:var(--acc);color:#000;font-weight:700}
+    .a11y-primary{background:var(--acc);color:#000;font-weight:700;border-color:var(--acc)}
+    .a11y-btn.a11y-primary:hover{background:#6ab8ff;color:#000}
+    html.maxcontrast{--ink:#ffffff;--mut:#e8e8e8}
+    html.maxcontrast body{background:#000}
+  </style>
+
+  <script is:inline>
+    const root = document.documentElement;
+    const $ = (id) => document.getElementById(id);
+    const estado = (m) => { $('estado').textContent = m; };
+
+    // --- Persistencia de ajustes (localStorage) ---
+    const PREFS = JSON.parse(localStorage.getItem('medioevo_a11y') || '{}');
+    const savePrefs = () => localStorage.setItem('medioevo_a11y', JSON.stringify(PREFS));
+
+    let fs = PREFS.fs || 18;
+    const setFs = (v) => { fs = Math.max(14, Math.min(34, v)); document.body.style.fontSize = fs + 'px'; PREFS.fs = fs; savePrefs(); };
+    setFs(fs);
+    $('fmas').onclick = () => setFs(fs + 2);
+    $('fmenos').onclick = () => setFs(fs - 2);
+
+    const cbtn = $('contraste');
+    const setContrast = (on) => { root.classList.toggle('maxcontrast', on); cbtn.setAttribute('aria-pressed', on); PREFS.contrast = on; savePrefs(); };
+    setContrast(!!PREFS.contrast);
+    cbtn.onclick = () => setContrast(!root.classList.contains('maxcontrast'));
+
+    // --- Voz: lectura (TTS) + selección de voz ---
+    let RATE = PREFS.rate || 1; $('rate').value = RATE;
+    $('rate').addEventListener('input', (e) => { RATE = parseFloat(e.target.value); PREFS.rate = RATE; savePrefs(); });
+
+    let VOICES = [];
+    function loadVoices() {
+      VOICES = (speechSynthesis.getVoices() || []).filter(v => /es|spa/i.test(v.lang));
+      const sel = $('voz'); sel.innerHTML = '';
+      if (!VOICES.length) { const o = document.createElement('option'); o.textContent = 'Voz por defecto'; sel.appendChild(o); return; }
+      VOICES.forEach((v, i) => { const o = document.createElement('option'); o.value = i; o.textContent = `${v.name} (${v.lang})`; sel.appendChild(o); });
+      if (PREFS.voice != null && VOICES[PREFS.voice]) sel.value = PREFS.voice;
+    }
+    $('voz').addEventListener('change', (e) => { PREFS.voice = parseInt(e.target.value); savePrefs(); });
+    if ('speechSynthesis' in window) { loadVoices(); speechSynthesis.onvoiceschanged = loadVoices; }
+
+    $('leer').onclick = () => {
+      const t = $('txt').value; if (!t) return;
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(t); u.lang = 'es-ES'; u.rate = RATE;
+      const vi = PREFS.voice; if (VOICES[vi]) u.voice = VOICES[vi];
+      estado('Leyendo…'); u.onend = () => estado(''); speechSynthesis.speak(u);
+    };
+    $('parar').onclick = () => { speechSynthesis.cancel(); estado(''); };
+
+    // --- Voz: dictado (STT) ---
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+    const dbtn = $('dictar');
+    if (!SR) { dbtn.disabled = true; dbtn.title = 'Tu navegador no soporta dictado'; }
+    else {
+      let rec = null, listening = false;
+      dbtn.onclick = () => {
+        if (listening) { rec && rec.stop(); return; }
+        rec = new SR(); rec.lang = 'es-ES'; rec.interimResults = true; rec.continuous = false;
+        let base = $('txt').value ? $('txt').value + ' ' : '';
+        rec.onstart = () => { listening = true; dbtn.setAttribute('aria-pressed', 'true'); estado('Escuchando… habla ahora.'); };
+        rec.onresult = (e) => {
+          let txt = ''; for (let i = 0; i < e.results.length; i++) txt += e.results[i][0].transcript;
+          $('txt').value = base + txt;
+        };
+        rec.onerror = (e) => estado('Dictado: ' + e.error);
+        rec.onend = () => { listening = false; dbtn.setAttribute('aria-pressed', 'false'); estado(''); };
+        rec.start();
+      };
+    }
+
+    // --- Simplificación (port JS de text_simplify) ---
+    const sentences = (text) => (text.match(/[^.!?]+[.!?]?/g) || []).map(s => s.trim()).filter(Boolean);
+    const simplify = (text, maxWords = 20, keep = 15) => sentences(text).map(s => {
+      const w = s.split(/\s+/); return w.length > maxWords ? w.slice(0, keep).join(' ') + ' …' : s;
+    });
+    const metrics = (text) => {
+      const w = text.trim() ? text.trim().split(/\s+/).length : 0; const s = sentences(text).length;
+      return { palabras: w, oraciones: s, ppo: s ? Math.round((w / s) * 10) / 10 : 0 };
+    };
+    $('simplificar').onclick = () => {
+      const t = $('txt').value; const out = $('salida'); out.hidden = false;
+      out.textContent = simplify(t).join('\n'); const m = metrics(t);
+      $('metricas').textContent = `palabras: ${m.palabras} · oraciones: ${m.oraciones} · palabras/oración: ${m.ppo}`;
+    };
+
+    // --- Demo canvas accesible ---
+    const cv = $('lienzo'), ctx = cv.getContext('2d'); let px = 320, py = 120; const STEP = 16;
+    function draw() {
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      ctx.fillStyle = '#0a0c10'; ctx.fillRect(0, 0, cv.width, cv.height);
+      ctx.strokeStyle = '#2a2f3a'; ctx.strokeRect(4, 4, cv.width - 8, cv.height - 8);
+      ctx.beginPath(); ctx.arc(px, py, 14, 0, Math.PI * 2); ctx.fillStyle = '#d4a017'; ctx.fill();
+      $('posicion').textContent = `Punto en x:${Math.round(px)}, y:${Math.round(py)}`;
+    }
+    cv.addEventListener('keydown', (e) => {
+      const k = e.key;
+      if (k === 'ArrowLeft') px = Math.max(18, px - STEP);
+      else if (k === 'ArrowRight') px = Math.min(cv.width - 18, px + STEP);
+      else if (k === 'ArrowUp') py = Math.max(18, py - STEP);
+      else if (k === 'ArrowDown') py = Math.min(cv.height - 18, py + STEP);
+      else return;
+      e.preventDefault(); draw();
+    });
+    cv.addEventListener('pointerdown', (e) => {
+      const r = cv.getBoundingClientRect();
+      px = (e.clientX - r.left) * (cv.width / r.width); py = (e.clientY - r.top) * (cv.height / r.height); draw();
+    });
+    draw();
+
+    // --- Medición de FPS bajo demanda (validación de motor 2D en gama baja, Sprint 16) ---
+    // No anima en reposo (ahorra batería); corre un loop rAF medido sólo cuando se invoca.
+    // Respeta prefers-reduced-motion: si está activo, no se ejecuta animación decorativa.
+    window.__measureFPS = (ms = 1500) => new Promise((resolve) => {
+      const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) { draw(); return resolve({ fps: null, reduced_motion: true, frames: 0, ms }); }
+      const ox = px, oy = py; let frames = 0; const t0 = performance.now(); let raf = 0;
+      const loop = (t) => {
+        const a = (t - t0) / 1000;
+        px = ox + Math.cos(a * 3) * 60; py = oy + Math.sin(a * 3) * 40;
+        draw(); frames++;
+        if (t - t0 < ms) raf = requestAnimationFrame(loop);
+        else { cancelAnimationFrame(raf); px = ox; py = oy; draw();
+          const elapsed = (performance.now() - t0) / 1000;
+          resolve({ fps: Math.round(frames / elapsed), reduced_motion: false, frames, ms: Math.round(elapsed * 1000) }); }
+      };
+      raf = requestAnimationFrame(loop);
+    });
+  </script>
+</Base>

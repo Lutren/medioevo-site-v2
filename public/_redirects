@@ -1,0 +1,9 @@
+# Preserva SEO de las URLs viejas del sitio (Netlify/Cloudflare _redirects)
+/about.html        /sobre-mi/                 301
+/agents.html       /agentes/                  301
+/apps.html         /herramientas/             301
+/brainos.html      /agentes/                  301
+/claudio-os.html   /agentes/                  301
+/catalogo-completo.html  /tienda/             301
+/contacto/*        /sobre-mi/                 301
+/blog/en/*         /en/                       301

@@ -1,0 +1,262 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+import Base from '../layouts/Base.astro';
+
+const stripeTest = import.meta.env.PUBLIC_STRIPE_TEST_MODE === '1';
+
+// ------------------------------------------------------------------
+// Load live Gumroad API data (store_api.json) enriched with descriptions
+// ------------------------------------------------------------------
+interface ApiProduct {
+    name: string;
+    price_cents: number;
+    price_display: string;
+    currency: string;
+    published: boolean;
+    description: string;
+    url: string;
+    permalink: string;
+    sales_count: number;
+}
+
+interface StoreApi {
+    fetched_at: string;
+    products: ApiProduct[];
+    by_permalink: Record<string, ApiProduct>;
+    total_published: number;
+}
+
+let storeApi: StoreApi | null = null;
+try {
+    const apiPath = path.resolve('public/store_api.json');
+    if (fs.existsSync(apiPath)) {
+        storeApi = JSON.parse(fs.readFileSync(apiPath, 'utf-8'));
+    }
+} catch (e) {
+    console.warn('store_api.json not found or invalid, using fallback data');
+}
+
+// Helper: get live data by permalink
+function getLiveData(permalink: string): ApiProduct | undefined {
+    if (!storeApi) return undefined;
+    return storeApi.by_permalink?.[permalink] || storeApi.products?.find(p => p.permalink === permalink);
+}
+
+// Helper: format price
+function formatPrice(cents: number): string {
+    return `$${(cents / 100).toFixed(2)} USD`;
+}
+
+// ------------------------------------------------------------------
+// Product definitions with Gumroad permalink mapping
+// ------------------------------------------------------------------
+interface ProductDef {
+    t: string;           // title
+    d: string;           // description
+    url: string;         // fallback URL
+    permalink?: string;    // Gumroad permalink for live data lookup
+    stripe?: string;       // Stripe payment link
+    tag: string;
+    cover?: string;
+    productKey?: string;
+    customPrice?: string; // override price display
+}
+
+interface LineDef {
+    t: string;           // section title
+    icon: string;
+    d: string;           // section description
+    productos: ProductDef[];
+}
+
+const lines: LineDef[] = [
+    {
+        t: 'Saga MEDIOEVO - Edición Estándar',
+        icon: '◈',
+        d: 'Libro por libro. La entrada principal a MEDIOEVO.',
+        productos: [
+            {
+                t: 'I: Despertar',
+                d: 'Entrada a la saga. El mundo despierta.',
+                url: 'https://lrgonzalez.gumroad.com/l/dmqgzi',
+                stripe: 'https://buy.stripe.com/test_fZu4gy3WT0fa8jJd7lfbq00',
+                tag: 'Libro I',
+                cover: '/images/covers/01-despertar.jpg',
+                productKey: 'medioevo_despertar',
+            },
+            {
+                t: 'III: Umbral del Ciclo',
+                d: 'Tercer libro. El ciclo se cierra.',
+                url: 'https://lrgonzalez.gumroad.com/l/eaowrm',
+                permalink: 'eaowrm',
+                stripe: 'https://buy.stripe.com/test_00wdR8dxt3rmbvVfftfbq01',
+                tag: 'Libro III',
+            },
+            {
+                t: 'IV: Babel. Las Cinco Torres',
+                d: 'Cinco torres, cinco voces, una verdad.',
+                url: 'https://lrgonzalez.gumroad.com/l/hgmwi',
+                permalink: 'hgmwi',
+                stripe: 'https://buy.stripe.com/test_14A4gyctp2niarR1oDfbq02',
+                tag: 'Libro IV',
+            },
+            {
+                t: 'V: Le Jardin',
+                d: 'El jardín como espacio de transición.',
+                url: 'https://lrgonzalez.gumroad.com/l/medioevo-v-le-jardin',
+                permalink: 'medioevo-v-le-jardin',
+                stripe: 'https://buy.stripe.com/test_00w9AS50XbXSdE30kzfbq03',
+                tag: 'Libro V',
+            },
+            {
+                t: 'VI: Nexus. El Dios con Mandil',
+                d: 'El nexo entre mundos.',
+                url: 'https://lrgonzalez.gumroad.com/l/bnzxh',
+                permalink: 'bnzxh',
+                stripe: 'https://buy.stripe.com/test_9B6d88d9e602Zp4APfbq04',
+                tag: 'Libro VI',
+            },
+        ],
+    },
+    {
+        t: 'Universo Expandido',
+        icon: '▣',
+        d: 'Ensayos, companion docs, derivados del canon y material complementario.',
+        productos: [
+            {
+                t: 'El Observacionista: Notas de un Constructor',
+                d: '25 años construyendo un universo. Aquí está la bitácora.',
+                url: 'https://lrgonzalez.gumroad.com/l/fuxcn',
+                permalink: 'fuxcn',
+                stripe: 'https://buy.stripe.com/test_7sY14mctp9PK57x3wLfbq05',
+                tag: 'Expandido',
+                cover: '/images/covers/00-observador.jpg',
+            },
+        ],
+    },
+    {
+        t: 'Herramientas de Escritura e Investigación',
+        icon: '⎔',
+        d: 'Software que corre en tu navegador. Sin cuentas, sin suscripción, pago único.',
+        productos: [
+            {
+                t: 'Anti-IA Detector',
+                d: 'Detecta si un texto fue escrito por IA: 12 patrones, 4 categorías. 50 análisis incluidos.',
+                url: 'https://lrgonzalez.gumroad.com/l/hsnfab',
+                permalink: 'hsnfab',
+                stripe: 'https://buy.stripe.com/test_fZueVc50X2ni0Rhd7lfbq06',
+                tag: 'Anti-IA',
+                productKey: 'anti_ia_detector',
+            },
+            {
+                t: 'Fact-Check OSIT',
+                d: 'Clasifica afirmaciones en CERTEZA/INFERENCIA/INCÓGNITA/BLOQUEADO. 50 verificaciones incluidas.',
+                url: 'https://lrgonzalez.gumroad.com/l/ucnkl',
+                permalink: 'ucnkl',
+                stripe: 'https://buy.stripe.com/test_eVqbJ0bpl3rmarR3wLfbq07',
+                tag: 'Fact-Check',
+                productKey: 'factcheck_osit',
+            },
+            {
+                t: 'MOI Fact-Check v0.1.0',
+                d: 'Motor de fact-checking basado en OSIT. CLI + Chrome Extension + API.',
+                url: 'https://lrgonzalez.gumroad.com/l/esxaq',
+                permalink: 'esxaq',
+                stripe: 'https://buy.stripe.com/test_4gM4gy7950fa6bB3wLfbq08',
+                tag: 'Fact-Check',
+                productKey: 'factcheck_pro',
+            },
+            {
+                t: 'MOI Fact-Check Bundle v0.1.0',
+                d: 'Bundle completo: CLI + Chrome Extension + Native Host (.exe) + Android PWA. 100% offline.',
+                url: 'https://lrgonzalez.gumroad.com/l/yujtrt',
+                permalink: 'yujtrt',
+                stripe: 'https://buy.stripe.com/test_bJebJ0gJF2nieI75ETfbq09',
+                tag: 'Fact-Check',
+                productKey: 'factcheck_bundle',
+            },
+        ],
+    },
+];
+
+// Enrich product data with live API info
+for (const line of lines) {
+    for (const p of line.productos) {
+        if (p.permalink) {
+            const live = getLiveData(p.permalink);
+            if (live) {
+                // Override with live data if available
+                p.url = live.url || p.url;
+                if (live.description && live.description.length > 10) {
+                    // Strip HTML tags for clean display
+                    p.d = live.description.replace(/<[^>]*>/g, '').substring(0, 200) + (live.description.length > 200 ? '...' : '');
+                }
+                p.customPrice = live.price_display;
+            }
+        }
+    }
+}
+
+const hasUrl = (p: ProductDef) => p.url && p.url.startsWith('http');
+---
+
+<Base title="Tienda - MEDIOEVO / OSIT" description="Libros, packs y herramientas MEDIOEVO: edición estándar, universo expandido y herramientas local-first.">
+  <h1 class="text-3xl font-bold text-gradient">Tienda</h1>
+  <p class="text-[var(--mut)] mt-2 max-w-2xl">Libros, plantillas y packs. Pago seguro con tarjeta o Gumroad.</p>
+
+  {lines.map((line) => (
+    <section class="mt-10">
+      <div class="flex items-center gap-2 mb-4">
+        <span class="text-xl text-[var(--gold)]">{line.icon}</span>
+        <h2 class="text-xl font-semibold text-white">{line.t}</h2>
+      </div>
+      <p class="text-[var(--ink2)] text-sm mb-4 max-w-2xl">{line.d}</p>
+      <div class="grid sm:grid-cols-2 gap-4">
+        {line.productos.map((p) => (
+          <div class="border border-[var(--line)] rounded-xl p-5 flex flex-col hover:border-[rgba(212,160,80,0.2)] hover:shadow-[0_0_24px_rgba(212,160,80,0.06)] transition-all duration-250 bg-[var(--surface)]">
+            {p.cover && (
+              <div class="mb-4 rounded-lg overflow-hidden border border-[var(--line)] bg-[var(--bg)]" style="aspect-ratio:3/4">
+                <img src={p.cover} alt={`Portada - ${p.t}`} loading="lazy" width="400" height="533" class="w-full h-full object-cover" />
+              </div>
+            )}
+            <span class="tag self-start">{p.tag}</span>
+            <div class="text-white text-base font-medium mt-2 leading-snug">{p.t}</div>
+            <div class="text-[var(--mut)] text-sm mt-1 flex-1">{p.d}</div>
+            {p.customPrice && (
+              <div class="text-[var(--gold)] font-semibold mt-2 text-sm">{p.customPrice}</div>
+            )}
+            <div class="mt-4 flex flex-col gap-2">
+              {p.stripe && (
+                <a href={p.stripe} target="_blank" rel="noopener" class="inline-block bg-[var(--gold)] text-[var(--bg)] font-medium px-4 py-2 rounded-lg no-underline hover:brightness-120 transition-all text-center text-sm">
+                  Comprar con tarjeta
+                </a>
+              )}
+              {hasUrl(p) ? (
+                <a href={p.url} target="_blank" rel="noopener" class="inline-block border border-[var(--gold)] text-[var(--gold)] font-medium px-4 py-2 rounded-lg no-underline hover:brightness-120 transition-all text-center text-sm">
+                  Comprar en Gumroad
+                </a>
+              ) : (
+                <span class="inline-block border border-[var(--mut)] text-[var(--mut)] px-4 py-2 rounded-lg text-sm text-center">
+                  Próximamente
+                </span>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  ))}
+
+  {stripeTest && (
+    <div class="mt-8 border border-[var(--cyan)] rounded-xl p-4 text-sm text-[var(--mut)]">
+      <strong class="text-white">Checkout con tarjeta (Stripe) - modo prueba.</strong> Los pagos con
+      tarjeta están en modo de prueba: <strong class="text-white">ningún cargo es real</strong>.
+      Usa la tarjeta de prueba <code class="bg-[var(--line)] px-1 rounded">4242 4242 4242 4242</code> con cualquier fecha CVV.
+    </div>
+  )}
+
+  <p class="text-[var(--mut)] text-xs mt-10">
+    ¿Buscas el código abierto? Visita <a href="/open-source" class="text-[var(--cyan)] hover:text-white transition-colors">Open Source</a>.
+  </p>
+</Base>

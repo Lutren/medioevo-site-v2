@@ -1,0 +1,21 @@
+---
+import Base from '../layouts/Base.astro';
+const skills = [
+  ['token-saver', 'v0.5', 'Comprime contexto para cualquier LLM preservando hechos críticos. Instalable como skill.'],
+  ['osit-claim-classifier', 'v1.0', 'Clasifica claims en CERTEZA/INFERENCIA/INCÓGNITA/BLOQUEADO; bloquea los peligrosos.'],
+  ['osit-residue-tracker', 'v1.0', 'Monitorea residuo 7D + R_vel/R_acc; detecta pre-jamming.'],
+  ['brain-os-auditor', 'v1.0', 'Audita el ecosistema (duplicados, secretos, drift) en solo lectura.'],
+];
+---
+<Base title="Skills - OSIT">
+  <h1 class="text-3xl font-bold text-gradient">Skills</h1>
+  <p class="text-[var(--mut)] mt-3 max-w-2xl">Skills operativos para Claude/opencode. CERTEZA operacional.</p>
+  <div class="mt-8 space-y-3">
+    {skills.map(([t, v, d]) => (
+      <div class="border border-[var(--line)] rounded-xl p-4 hover:border-[rgba(124,196,255,0.3)] hover:shadow-[0_0_24px_rgba(124,196,255,0.06)] transition-all duration-250">
+        <div class="flex items-center gap-2"><span class="text-white font-medium">{t}</span><span class="tag">{v}</span></div>
+        <div class="text-[var(--mut)] text-sm mt-1">{d}</div>
+      </div>
+    ))}
+  </div>
+</Base>
