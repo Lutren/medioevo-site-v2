@@ -1,0 +1,115 @@
+---
+import Base from '../../layouts/Base.astro';
+
+const ldSoftware = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'DECES',
+  alternateName: 'Dubito Ergo Cogito Ergo Sum',
+  applicationCategory: 'EducationalApplication',
+  operatingSystem: 'Windows, macOS, Linux',
+  offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+  description:
+    'Tribunal epistémico adversarial local: 8 agentes heterogéneos auditan afirmaciones científicas con sello SHA256 y traza reproducible.',
+  softwareVersion: '3.2.0',
+  author: { '@type': 'Person', name: 'Luis René González', alternateName: 'Lutren' },
+};
+
+const agentes = [
+  ['A1', 'Sintáctico (Z3)', 'Verifica que la afirmación sea evaluable formalmente.'],
+  ['A1+', 'Dimensional', 'Chequea consistencia de unidades (L/T/M) — caza errores de dimensión que otros agentes no ven.'],
+  ['A2', 'MDL', 'Penaliza explicaciones innecesariamente complejas frente a una más simple con igual poder.'],
+  ['A3', 'Falsabilidad', '¿Existe un experimento que podría demostrar que la afirmación es falsa?'],
+  ['A4', 'Literatura (arXiv/OpenAlex)', 'Busca evidencia — y busca activamente si la afirmación ya fue refutada o superada.'],
+  ['A5', 'Hipóstasis', 'Detecta cuando un concepto abstracto se trata como si fuera una entidad con existencia propia.'],
+  ['A6', 'Marcos en competencia', '¿Hay otro marco teórico establecido que explique lo mismo mejor?'],
+  ['A7', 'Consistencia numérica', 'Recalcula las cifras que la afirmación cita y compara contra lo declarado.'],
+];
+---
+
+<Base
+  title="DECES — Tribunal epistémico gratuito | MEDIOEVO"
+  description="DECES audita afirmaciones científicas con 8 agentes adversariales, sello SHA256 y traza reproducible. Gratuito para universidades, investigadores independientes y personas autistas. Corre 100% local."
+>
+  <script type="application/ld+json" set:html={JSON.stringify(ldSoftware)} />
+
+  <div class="flex items-center gap-3 text-xs flex-wrap">
+    <span class="tag">MEDIOEVO Herramientas</span>
+    <span class="epistemic-tag cert">Gratuito</span>
+    <span class="epistemic-tag inf">100% local</span>
+    <span class="epistemic-tag incog">Código abierto</span>
+  </div>
+
+  <h1 class="text-3xl sm:text-4xl font-bold text-gradient mt-4">DECES</h1>
+  <p class="text-[var(--gold)] mt-1">Dubito Ergo Cogito Ergo Sum — tribunal epistémico adversarial</p>
+
+  <p class="text-[var(--ink2)] mt-5 max-w-3xl leading-relaxed">
+    DECES toma una afirmación científica y la somete a un panel de <strong class="text-[var(--ink)]">8 agentes
+    heterogéneos</strong> que compiten entre sí: uno verifica dimensiones físicas, otro busca si la afirmación
+    ya fue refutada en la literatura, otro recalcula las cifras citadas. El veredicto (nivel 0 a 5) viene con
+    <strong class="text-[var(--ink)]"> sello SHA256 y traza reproducible</strong> — cualquiera puede repetir la
+    auditoría y llegar al mismo resultado. No hay caja negra: cada agente que no encuentra nada verificable se
+    abstiene en vez de inflar el puntaje.
+  </p>
+
+  <div class="mt-6 rounded-xl border border-[rgba(122,176,162,0.25)] bg-[var(--cyan-glow)] p-5 max-w-3xl">
+    <h2 class="text-white font-semibold text-sm uppercase tracking-wide">Por qué existe</h2>
+    <p class="text-[var(--ink2)] text-sm mt-2 leading-relaxed">
+      Se construyó para compensar dos sesgos concretos: el <strong class="text-[var(--ink)]">sesgo de autoridad
+      académica</strong> (una afirmación no vale más por venir de una institución prestigiosa — DECES audita el
+      argumento, no la firma) y las barreras de acceso para <strong class="text-[var(--ink)]">personas autistas
+      e investigadores fuera de la academia</strong>, que necesitan una herramienta literal, sin jerga social,
+      que explique su veredicto en lenguaje llano (<code>--claro</code>) tanto como en el detalle técnico completo.
+    </p>
+  </div>
+
+  <section class="mt-10 rounded-2xl border border-[var(--line)] bg-[var(--surface)] p-6 sm:p-8">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <h2 class="text-xl font-semibold text-white">Descargar DECES v3.2</h2>
+        <p class="text-[var(--ink2)] text-sm mt-1">
+          CLI + motor GENESIS + manuales (es/en) + suite de pruebas. Licencia MIT. ~51 KB.
+        </p>
+      </div>
+      <a href="/downloads/deces_v3.2_universidades.zip" download
+         class="inline-block bg-[var(--gold)] text-[var(--bg)] font-semibold px-6 py-3 rounded-lg no-underline hover:brightness-120 transition-all text-center whitespace-nowrap">
+        Descargar .zip →
+      </a>
+    </div>
+    <div class="grid sm:grid-cols-3 gap-3 mt-6 text-sm">
+      <div class="border border-[var(--line)] rounded-lg p-3">
+        <div class="text-[var(--gold)] font-mono text-xs uppercase">Requiere</div>
+        <div class="text-[var(--ink2)] mt-1">Python ≥ 3.10 (Windows: doble clic en <code>INSTALAR_WINDOWS.bat</code>; Mac/Linux: <code>instalar_mac.sh</code>)</div>
+      </div>
+      <div class="border border-[var(--line)] rounded-lg p-3">
+        <div class="text-[var(--gold)] font-mono text-xs uppercase">Sin GPU / poca RAM</div>
+        <div class="text-[var(--ink2)] mt-1">Corre completo con <code>--no-llm</code> (sin red, sin modelo local) — pensado para equipos de 4 GB de RAM.</div>
+      </div>
+      <div class="border border-[var(--line)] rounded-lg p-3">
+        <div class="text-[var(--gold)] font-mono text-xs uppercase">Uso</div>
+        <div class="text-[var(--ink2)] mt-1"><code>deces audit "tu afirmación" --claro</code></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-10">
+    <div class="section-label gold mb-5"><span>Los 8 agentes</span></div>
+    <div class="grid sm:grid-cols-2 gap-3">
+      {agentes.map(([id, nombre, desc]) => (
+        <div class="border border-[var(--line)] rounded-xl p-4 bg-[var(--surface)]">
+          <div class="flex items-center gap-2">
+            <span class="tag">{id}</span>
+            <span class="text-white font-medium text-sm">{nombre}</span>
+          </div>
+          <p class="text-[var(--ink2)] text-sm mt-2 leading-relaxed">{desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <p class="text-[var(--mut)] text-sm mt-10 max-w-2xl">
+    DECES es honesto sobre sus propios límites: si ningún agente encuentra evidencia verificable, el veredicto
+    lo dice explícitamente en vez de simular certeza. Es una herramienta de auditoría, no un oráculo.
+    Forma parte del mismo ecosistema que <a href="/herramientas" class="text-[var(--cyan)] hover:text-[var(--gold)] transition-colors">MEDIOEVO Tools</a>.
+  </p>
+</Base>

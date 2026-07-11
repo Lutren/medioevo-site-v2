@@ -1,0 +1,47 @@
+{
+  "Anti-IA Detector v0.1.0": {
+    "url": "https://lrgonzalez.gumroad.com/l/hsnfab",
+    "published": true,
+    "files": true,
+    "price_cents": 300,
+    "description": "Detecta contenido generado por IA en textos y videos. 8 patrones de manipulación, Chrome Extension + CLI + API. Funciona offline."
+  },
+  "Fact-Check OSIT v0.1.0": {
+    "url": "https://lrgonzalez.gumroad.com/l/ucnkl",
+    "published": true,
+    "files": true,
+    "price_cents": 300,
+    "description": "Motor de fact-checking epistémico OSIT. 9 dominios, clasificación CERTEZA/INFERENCIA/INCÓGNITA/BLOQUEADO. CLI + Chrome Extension."
+  },
+  "MOI Fact-Check Bundle v0.1.0": {
+    "url": "https://lrgonzalez.gumroad.com/l/yujtrt",
+    "published": true,
+    "files": true,
+    "price_cents": 900,
+    "description": "Bundle completo: CLI + Chrome Extension + Native Host (.exe). Verifica cualquier texto o video con detección de manipulación y clasificación epistémica OSIT. 100% offline después de instalación."
+  },
+  "MEDIOEVO III: Umbral del Ciclo": {
+    "url": "https://lrgonzalez.gumroad.com/l/eaowrm",
+    "published": true,
+    "files": true,
+    "price_cents": 499
+  },
+  "MEDIOEVO IV: Babel. Las Cinco Torres": {
+    "url": "https://lrgonzalez.gumroad.com/l/hgmwi",
+    "published": true,
+    "files": true,
+    "price_cents": 499
+  },
+  "MEDIOEVO V: Le Jardin": {
+    "url": "https://lrgonzalez.gumroad.com/l/zmrlr",
+    "published": true,
+    "files": true,
+    "price_cents": 499
+  },
+  "MEDIOEVO VI: Nexus. El Dios con Mandil": {
+    "url": "https://lrgonzalez.gumroad.com/l/bnzxh",
+    "published": true,
+    "files": true,
+    "price_cents": 499
+  }
+}

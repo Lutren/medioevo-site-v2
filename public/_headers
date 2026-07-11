@@ -1,0 +1,54 @@
+# Cloudflare Pages Headers
+# Configuración de seguridad para deployment
+
+# Content Security Policy
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: https:; connect-src 'self' https://api.medioevo.space; frame-ancestors 'none'; base-uri 'self'; form-action 'self';
+
+# Security Headers
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), magnetometer=(), gyroscope=(), accelerometer=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+
+# Cache Headers for Static Assets
+/wiki/covers/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/wiki/covers/webp/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/wiki/maps/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/wiki/cards/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/_astro/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.svg
+  Cache-Control: public, max-age=31536000, immutable
+
+/og-default.jpg
+  Cache-Control: public, max-age=86400, must-revalidate
+
+# API Routes - No Cache
+/wiki/api/*
+  Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate
+  Access-Control-Allow-Origin: https://medioevo.space
+  Access-Control-Allow-Methods: POST, OPTIONS
+  Access-Control-Allow-Headers: Content-Type
+
+# HTML Pages - Short Cache with Revalidation
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# Prevent MIME sniffing
+/*
+  X-Content-Type-Options: nosniff

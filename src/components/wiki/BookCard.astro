@@ -1,0 +1,102 @@
+---
+import type { Book } from '../../lib/medioevo';
+
+interface Props {
+  book: Book;
+}
+const { book } = Astro.props;
+const { data } = book;
+
+const statusColors: Record<string, { border: string; bg: string; text: string; label: string }> = {
+  canon: { 
+    border: 'rgba(74, 222, 128, 0.3)', 
+    bg: 'rgba(74, 222, 128, 0.08)', 
+    text: '#4ade80',
+    label: 'CANON' 
+  },
+  fusion: { 
+    border: 'rgba(212, 160, 80, 0.3)', 
+    bg: 'rgba(212, 160, 80, 0.08)', 
+    text: 'var(--gold)',
+    label: 'FUSIÓN' 
+  },
+  especial: { 
+    border: 'rgba(167, 139, 250, 0.3)', 
+    bg: 'rgba(167, 139, 250, 0.08)', 
+    text: '#a78bfa',
+    label: 'ESPECIAL' 
+  },
+};
+
+const status = statusColors[data.status] || statusColors.canon;
+---
+
+<article class="book-card">
+  <div class="book-card__cover">
+    <img
+      src={data.cover?.replace('/wiki/covers/', '/wiki/covers/webp/').replace('.jpg', '-800.webp') || '/wiki/covers/webp/placeholder-800.webp'}
+      srcset={`
+        ${data.cover?.replace('/wiki/covers/', '/wiki/covers/webp/').replace('.jpg', '-400.webp') || '/wiki/covers/webp/placeholder-400.webp'} 400w,
+        ${data.cover?.replace('/wiki/covers/', '/wiki/covers/webp/').replace('.jpg', '-800.webp') || '/wiki/covers/webp/placeholder-800.webp'} 800w,
+        ${data.cover?.replace('/wiki/covers/', '/wiki/covers/webp/').replace('.jpg', '-1200.webp') || '/wiki/covers/webp/placeholder-1200.webp'} 1200w
+      `}
+      sizes="(max-width: 640px) 400px, (max-width: 1024px) 800px, 1200px"
+      alt={`Portada de ${data.title}`}
+      loading="lazy"
+      width="800"
+      height="1200"
+    />
+    <div class="book-card__overlay" aria-hidden="true">
+      <div class="flex flex-wrap gap-2">
+        <span 
+          class="px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase"
+          style={`background: ${status.bg}; color: ${status.text}; border: 1px solid ${status.border};`}
+        >
+          {status.label}
+        </span>
+        {data.publicationBlock && (
+          <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-red-500/20 text-red-400 border border-red-500/30" aria-label="Publicación bloqueada">
+            BLOQUEADO
+          </span>
+        )}
+      </div>
+    </div>
+  </div>
+  
+  <div class="book-card__content">
+    <div class="flex items-baseline gap-2 mb-2">
+      <span class="text-xs font-mono text-muted-foreground opacity-70" aria-label={`Libro número ${data.num}`}>#{String(data.num).padStart(2, '0')}</span>
+      <h2 class="book-card__title">{data.title}</h2>
+    </div>
+    
+    <p class="book-card__logline">{data.logline}</p>
+    
+    {(data.constants || []).length > 0 && (
+      <div class="flex flex-wrap gap-1.5 mt-2" aria-label="Constantes de la física en este libro">
+        {(data.constants || []).slice(0, 3).map((c: string) => (
+          <span class="px-2 py-0.5 rounded bg-surface2 border border-line text-xs text-muted-foreground">{c}</span>
+        ))}
+      </div>
+    )}
+    
+    <div class="book-card__meta" aria-label="Metadatos del libro">
+      <span>{data.wordCount?.toLocaleString() ?? '?'} palabras</span>
+      <span aria-hidden="true">•</span>
+      <span>{data.chapterCount ?? '?'} capítulos</span>
+      {data.genre && (
+        <>
+          <span aria-hidden="true">•</span>
+          <span>{data.genre}</span>
+        </>
+      )}
+    </div>
+  </div>
+  
+  <a 
+    href={`/wiki/books/${data.slug}`} 
+    class="book-card__cta"
+    aria-label={`Leer ficha completa de ${data.title}`}
+  >
+    Leer ficha completa →
+  </a>
+</article>

@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" role="img" aria-label="Escalera canonica OSIT: residuo R mapeado a regimen y estado epistemico">
+  <defs>
+    <style>
+      text { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+      .title { fill: #e6edf3; font-size: 22px; font-weight: 700; }
+      .sub   { fill: #7d8590; font-size: 13px; }
+      .lbl   { fill: #0a0e14; font-size: 13px; font-weight: 600; }
+      .lblw  { fill: #e6edf3; font-size: 13px; font-weight: 600; }
+      .tick  { fill: #7d8590; font-size: 11px; }
+      .cap   { fill: #58a6ff; font-size: 12px; font-weight: 600; letter-spacing: .04em; }
+      .foot  { fill: #57606a; font-size: 11px; }
+    </style>
+  </defs>
+
+  <rect x="0" y="0" width="960" height="420" rx="14" fill="#0a0e14"/>
+  <rect x="0.5" y="0.5" width="959" height="419" rx="14" fill="none" stroke="#1c2330"/>
+
+  <text class="title" x="40" y="50">Escalera canónica OSIT</text>
+  <text class="sub" x="40" y="74">residuo R  →  régimen  →  estado epistémico · una sola escalera para obsai-core, agentes, juego y firmware</text>
+
+  <!-- Estado epistemico (banda superior) -->
+  <text class="cap" x="40" y="108">ESTADO EPISTÉMICO</text>
+  <g>
+    <rect x="60"  y="118" width="126" height="26" rx="5" fill="#34d399"/>
+    <rect x="186" y="118" width="252" height="26" rx="5" fill="#38bdf8"/>
+    <rect x="438" y="118" width="126" height="26" rx="5" fill="#fbbf24"/>
+    <rect x="564" y="118" width="336" height="26" rx="5" fill="#f87171"/>
+    <text class="lbl" x="123" y="136" text-anchor="middle">CERTEZA</text>
+    <text class="lbl" x="312" y="136" text-anchor="middle">INFERENCIA</text>
+    <text class="lbl" x="501" y="136" text-anchor="middle">INCÓGNITA</text>
+    <text class="lbl" x="732" y="136" text-anchor="middle">BLOQUEADO</text>
+  </g>
+
+  <!-- Regimen (banda principal) -->
+  <text class="cap" x="40" y="186">RÉGIMEN</text>
+  <g>
+    <rect x="60"  y="196" width="126" height="54" rx="6" fill="#1f8a5b"/>
+    <rect x="186" y="196" width="126" height="54" rx="6" fill="#2c7fb8"/>
+    <rect x="312" y="196" width="126" height="54" rx="6" fill="#b8860b"/>
+    <rect x="438" y="196" width="126" height="54" rx="6" fill="#c2682a"/>
+    <rect x="564" y="196" width="336" height="54" rx="6" fill="#b33a3a"/>
+    <text class="lblw" x="123" y="228" text-anchor="middle">OPTIMO</text>
+    <text class="lblw" x="249" y="228" text-anchor="middle">FUNCIONAL</text>
+    <text class="lblw" x="375" y="228" text-anchor="middle">PRE_JAMMING</text>
+    <text class="lblw" x="501" y="222" text-anchor="middle">JAMMING</text>
+    <text class="lblw" x="501" y="238" text-anchor="middle">TEMPRANO</text>
+    <text class="lblw" x="732" y="228" text-anchor="middle">JAMMING</text>
+  </g>
+
+  <!-- Eje R con cortes canonicos -->
+  <line x1="60" y1="276" x2="900" y2="276" stroke="#30363d" stroke-width="1.5"/>
+  <g class="tick" text-anchor="middle">
+    <line x1="60"  y1="270" x2="60"  y2="282" stroke="#30363d"/><text x="60"  y="298">R 0.00</text>
+    <line x1="186" y1="270" x2="186" y2="282" stroke="#30363d"/><text x="186" y="298">0.15</text>
+    <line x1="312" y1="270" x2="312" y2="282" stroke="#30363d"/><text x="312" y="298">0.30</text>
+    <line x1="438" y1="270" x2="438" y2="282" stroke="#30363d"/><text x="438" y="298">0.45</text>
+    <line x1="564" y1="270" x2="564" y2="282" stroke="#30363d"/><text x="564" y="298">0.60</text>
+    <line x1="900" y1="270" x2="900" y2="282" stroke="#30363d"/><text x="900" y="298">1.00</text>
+  </g>
+
+  <text class="sub" x="40" y="346">El gate bloquea en R ≥ 0.60 (JAMMING). Límites estrictos «&lt;». Un fallo crítico no se</text>
+  <text class="sub" x="40" y="366">diluye entre aciertos: R_or = 1 − Π(1 − rᵢ).</text>
+  <text class="foot" x="40" y="398">Calibración DEMO_ONLY · obsai_core.estimate_regime / estimate_epistemic_state · medioevo.space</text>
+</svg>

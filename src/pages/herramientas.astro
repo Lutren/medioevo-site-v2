@@ -1,0 +1,67 @@
+---
+import Base from '../layouts/Base.astro';
+const tools = [
+  ['DECES', 'TRIBUNAL EPISTÉMICO', '8 agentes adversariales auditan afirmaciones científicas: sello SHA256, traza reproducible, gratuito para universidades y uso accesible. →', '/herramientas/deces'],
+  ['TokenSaver v0.5', 'COMPRESION', 'Preserva restricciones, fechas, rutas, decisiones, evidencia y contradicciones. Reduce tokens sin borrar lo decisional.'],
+  ['ActionGate', 'GATE', 'Evalua si una accion local debe ejecutarse, revisarse o bloquearse antes de tocar archivos, publicar o enviar informacion.'],
+  ['WitnessLog', 'EVIDENCIA', 'Convierte pruebas, hashes, comandos, decisiones y cierres en un rastro auditable para humanos y agentes.'],
+  ['Source Intake', 'CURACION', 'Absorbe fuentes con ficha, procedencia, limite de privacidad, destino exacto y falsificador verificable.'],
+  ['EML Search', 'BUSQUEDA', 'Recuperacion local BM25 + ranking EML sobre SQLite. Pensado para consultar mucho sin mandar todo a un LLM.'],
+  ['Brain OS Auditor', 'AUDITORIA', 'Detecta duplicados, drift, pendientes, archivos no registrados, riesgos y exposicion potencial de secretos.'],
+  ['ARP Prime Residue Analyzer', 'FORMAL LAB', 'CLI offline para R_H(n) y metricas de factorizacion prima. Public-safe, sin claim de matematica cerrada.'],
+  ['Context Compiler', 'CONTEXTO', 'Indexa, comprime y entrega solo lo relevante para mantener continuidad entre sesiones largas.'],
+];
+const lanes = [
+  ['Publico', 'Prompts, repos MIT revisados, docs de metodo, schemas, validadores y demos sinteticas.'],
+  ['Comercial', 'Packs, plantillas, soporte, UI premium, instaladores y productos con revision legal/listing.'],
+  ['Protegido', 'Libros completos, RPG/TCG, runtime privado, prompts internos, datasets reales y calibracion propietaria.'],
+];
+---
+<Base title="MEDIOEVO Tools - OSIT" description="Catalogo publico de herramientas MEDIOEVO: TokenSaver, ActionGate, WitnessLog, Source Intake, EML Search, Brain OS Auditor, ARP y Context Compiler.">
+  <div class="flex items-center gap-3 text-xs">
+    <span class="tag">MEDIOEVO Tools</span>
+    <span class="epistemic-tag cert">Public-safe</span>
+  </div>
+  <h1 class="text-3xl font-bold text-gradient mt-4">Herramientas para trabajar con IA sin perder el sistema</h1>
+  <p class="text-[var(--ink2)] mt-3 max-w-3xl">
+    El objetivo no es abrir otra conversacion infinita. El objetivo es cerrar ciclos:
+    comprimir contexto, clasificar riesgo, absorber fuentes con procedencia, probar y dejar handoff.
+    Todo esta pensado para uso local, bajo recurso y con evidencia antes de accion.
+  </p>
+
+  <div class="grid sm:grid-cols-2 gap-4 mt-8">
+    {tools.map(([t, status, d, href]) => {
+      const Tag = href ? 'a' : 'div';
+      return (
+        <Tag
+          {...(href ? { href } : {})}
+          class={`block border border-[var(--line)] rounded-xl p-4 hover:border-[rgba(80,200,224,0.3)] hover:shadow-[0_0_24px_rgba(80,200,224,0.06)] transition-all duration-250 bg-[var(--surface)] no-underline ${href ? 'cursor-pointer' : ''}`}
+        >
+          <div class="flex items-center justify-between gap-3">
+            <div class="text-white font-medium">{t}</div>
+            <span class="tag">{status}</span>
+          </div>
+          <div class="text-[var(--ink2)] text-sm mt-2 leading-relaxed">{d}</div>
+        </Tag>
+      );
+    })}
+  </div>
+
+  <section class="mt-10 border border-[var(--line)] rounded-xl p-5 bg-[var(--surface)]">
+    <h2 class="text-xl font-semibold text-white">Tres carriles, una frontera</h2>
+    <div class="grid sm:grid-cols-3 gap-3 mt-4">
+      {lanes.map(([t, d]) => (
+        <div class="border border-[var(--line)] rounded-xl p-4">
+          <div class="text-white font-medium">{t}</div>
+          <p class="text-[var(--ink2)] text-sm mt-1.5 leading-relaxed">{d}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <p class="text-[var(--mut)] text-sm mt-6">
+    Empieza por <a href="/skills" class="text-[var(--cyan)] hover:text-[var(--gold)] transition-colors">Skills</a>,
+    revisa los <a href="/open-source" class="text-[var(--cyan)] hover:text-[var(--gold)] transition-colors">repos publicos</a>
+    o consulta el <a href="/canon" class="text-[var(--cyan)] hover:text-[var(--gold)] transition-colors">canon abierto</a>.
+  </p>
+</Base>

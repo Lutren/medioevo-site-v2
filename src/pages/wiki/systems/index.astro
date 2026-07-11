@@ -1,0 +1,86 @@
+---
+import { getSystems } from '../../../lib/medioevo';
+import Layout from '../../../layouts/Base.astro';
+import SystemCard from '../../../components/wiki/SystemCard.astro';
+
+const systems = await getSystems();
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Sistemas Epistémicos MEDIOEVO',
+  description: 'OSIT, MOI, DUAT, FCU v2.0 - Documentación técnica completa de los 5 sistemas epistémicos fundamentales',
+  url: 'https://medioevo.space/wiki/systems',
+  inLanguage: 'es',
+  mainEntity: {
+    '@type': 'ItemList',
+    numberOfItems: systems.length,
+    itemListElement: systems.map((sys, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'TechArticle',
+        headline: sys.data.title,
+        author: {
+          '@type': 'Person',
+          name: 'Luis René González'
+        },
+        description: `Documentación técnica del sistema ${sys.data.title}`,
+        url: `https://medioevo.space/wiki/systems/${sys.data.slug}`,
+        inLanguage: 'es',
+        datePublished: '2024-01-01',
+        dateModified: new Date().toISOString(),
+        isPartOf: {
+          '@type': 'CreativeWork',
+          name: 'Sistemas Epistémicos MEDIOEVO'
+        }
+      }
+    }))
+  }
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    {
+      '@type': 'ListItem',
+      position: 1,
+      name: 'Wiki',
+      item: 'https://medioevo.space/wiki'
+    },
+    {
+      '@type': 'ListItem',
+      position: 2,
+      name: 'Sistemas Epistémicos'
+    }
+  ]
+};
+---
+
+<Layout 
+  title="Sistemas Epistémicos" 
+  description="OSIT, MOI, DUAT, FCU v2.0 - Documentación técnica completa de los 5 sistemas epistémicos fundamentales"
+  image="/og-default.jpg"
+>
+  <script type="application/ld+json" set:html={JSON.stringify(collectionSchema)} />
+  <script type="application/ld+json" set:html={JSON.stringify(breadcrumbSchema)} />
+  <div class="min-h-screen bg-background -m-10 px-0">
+    <header class="py-12 lg:py-16 bg-gradient-to-b from-muted/20 to-background">
+      <div class="container mx-auto px-4">
+        <h1 class="text-4xl lg:text-5xl font-serif font-bold text-center mb-4">Sistemas Epistemicos</h1>
+        <p class="text-xl text-muted-foreground text-center max-w-2xl mx-auto mb-8">
+          {systems.length} sistemas fundamentales: OSIT (7D ResidueVector), MOI, DUAT, FCU v2.0.
+        </p>
+      </div>
+    </header>
+
+    <div class="container mx-auto px-4 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+        {systems.map(sys => (
+          <SystemCard system={sys} />
+        ))}
+      </div>
+    </div>
+  </div>
+</Layout>

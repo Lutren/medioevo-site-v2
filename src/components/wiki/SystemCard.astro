@@ -1,0 +1,46 @@
+---
+import type { SystemDoc } from '../../lib/medioevo';
+
+interface Props {
+  system: SystemDoc;
+}
+const { system } = Astro.props;
+const { data } = system;
+
+const categoryStyles: Record<string, { color: string; label: string }> = {
+  osit: { color: 'var(--cyan)', label: 'OSIT' },
+  moi: { color: '#a78bfa', label: 'MOI' },
+  duat: { color: '#f59e0b', label: 'DUAT' },
+  math: { color: '#4ade80', label: 'MATEMÁTICAS' },
+  fcu: { color: '#f87171', label: 'FCU' },
+};
+
+const category = categoryStyles[data.category] || categoryStyles.osit;
+---
+
+<article class="system-card">
+  <div class="system-card__header">
+    <span 
+      class="system-card__category"
+      style={`color: ${category.color}; border-color: ${category.color}33;`}
+    >
+      {category.label}
+    </span>
+    <span class="text-xs text-muted-foreground uppercase tracking-wider font-semibold" aria-label={`Estado: ${data.status}`}>
+      {data.status}
+    </span>
+  </div>
+  
+  <h2 class="system-card__title">{data.title}</h2>
+  
+  <p class="system-card__desc">
+    Documentación técnica del sistema {data.title}.
+  </p>
+  
+  <a href={`/wiki/systems/${data.slug}`} class="system-card__link" aria-label={`Ver documentación completa de ${data.title}`}>
+    Ver documentación
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M5 12h14M12 5l7 7-7 7"/>
+    </svg>
+  </a>
+</article>

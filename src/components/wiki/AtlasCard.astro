@@ -1,0 +1,39 @@
+---
+import type { AtlasDoc } from '../../lib/medioevo';
+import { EPISTEMIC_META } from '../../lib/medioevo';
+
+interface Props {
+  doc: AtlasDoc;
+}
+const { doc } = Astro.props;
+const { data } = doc;
+const meta = EPISTEMIC_META[data.status as keyof typeof EPISTEMIC_META] || EPISTEMIC_META.canon;
+---
+
+<article class="atlas-card">
+  <div class="atlas-card__icon" aria-hidden="true">📄</div>
+  
+  <h2 class="atlas-card__title">{data.title}</h2>
+  
+  <div class="atlas-card__footer" aria-label="Estado epistémico">
+    <span 
+      class="px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase border"
+      style={`color: ${meta.color}; background: ${meta.bg}; border-color: ${meta.color}33;`}
+    >
+      {meta.label}
+    </span>
+    {data.needsReview && (
+      <span class="px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase bg-yellow-500/20 text-yellow-400 border border-yellow-500/30" aria-label="Documento necesita revisión">
+        REVISAR
+      </span>
+    )}
+  </div>
+  
+  <a 
+    href={`/wiki/atlas/${data.slug}`} 
+    class="block mt-4 text-center px-4 py-2.5 rounded bg-surface2 border border-line text-sm font-semibold text-gold hover:bg-gold hover:text-bg transition-all"
+    aria-label={`Leer documento completo: ${data.title}`}
+  >
+    Leer documento →
+  </a>
+</article>

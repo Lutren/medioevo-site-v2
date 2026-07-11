@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+---
+
+<Base title="Pulsera MEDIOEVO — Chat con personajes" description="Interfaz virtual para hablar con los personajes de la saga MEDIOEVO via OSIT/DUAT local.">
+  <div class="starfield" aria-hidden="true">
+    {Array.from({ length: 40 }, (_, i) => (
+      <span style={`top:${Math.random()*100}%;left:${Math.random()*100}%;animation-duration:${2+Math.random()*4}s;animation-delay:${Math.random()*3}s;width:${1+Math.random()*2}px;height:${1+Math.random()*2}px`}></span>
+    ))}
+  </div>
+
+  <section class="hero-section pt-14 pb-6">
+    <div class="flex items-center gap-3 text-xs mb-5">
+      <span class="tag">Demo Local-First</span>
+      <span class="epistemic-tag cert">R 0.00 · Sin telemetría</span>
+    </div>
+
+    <h1 class="hero-title text-5xl sm:text-6xl font-bold text-white mt-2 leading-[1.0] tracking-tight">
+      Pulsera <span class="text-gradient">MEDIOEVO</span>
+    </h1>
+    <p class="hero-sub text-xl sm:text-2xl text-[var(--gold)] mt-3 font-light">
+      Tu enlace directo con la saga · 5 personajes · OSIT + DUAT + VibeForge
+    </p>
+
+    <p class="hero-desc text-[var(--ink2)] text-base sm:text-lg mt-5 max-w-3xl leading-relaxed">
+      La <strong class="text-white">pulsera virtual</strong> es un <strong class="text-[var(--cyan)]">Web Component</strong> 
+      que conecta tu navegador con el <strong class="text-white">kernel local Wabi-Sabi</strong> (puerto 8787).
+      Habla con <strong class="text-white">Claudio</strong>, <strong class="text-white">Archivero</strong>, 
+      <strong class="text-white">Pregonero</strong>, <strong class="text-white">Faith</strong> o 
+      <strong class="text-white">Darvi</strong>. Ejecuta simulaciones DUAT. Genera mundos con VibeForge.
+      Todo <strong class="text-[var(--gold)]">offline, sin telemetría, sin cloud obligatorio</strong>.
+    </p>
+
+    <div class="hero-cta-group flex flex-wrap gap-4 mt-8">
+      <a href="/herramientas" class="hero-cta border border-[var(--line)] px-6 py-3 rounded-lg no-underline hover:border-[var(--gold)] hover:text-[var(--gold)] hover:bg-[rgba(212,160,80,0.06)] transition-all text-[var(--ink2)]">
+        Ver Laboratorio →
+      </a>
+    </div>
+  </section>
+
+  <section class="mt-16 reveal">
+    <div class="section-label gold mb-6"><span>Personajes disponibles</span></div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      {[
+        { id: 'claudio', name: 'Claudio', emoji: '📋', role: 'Archivero ejecutivo', desc: 'Organiza, cataloga, recupera. Corpus 3M palabras, FCU v2.0.', color: 'gold' },
+        { id: 'archivero', name: 'Archivero', emoji: '🏛️', role: 'Custodio epistémico', desc: 'Clasifica: CERTEZA, INFERENCIA, INCÓGNITA, BLOQUEADO. Residuo explícito.', color: 'cyan' },
+        { id: 'pregonero', name: 'Pregonero', emoji: '📜', role: 'Voz narrativa', desc: 'Traduce datos a prosa MEDIOEVO. Densa, evocadora, sin relleno.', color: 'gold' },
+        { id: 'faith', name: 'Faith', emoji: '🔍', role: 'Observadora empírica', desc: 'Ve patrones antes que causas. Verifica, no teoriza.', color: 'emerald' },
+        { id: 'darvi', name: 'Darvi', emoji: '♟️', role: 'Estratega sistémico', desc: 'Ve conexiones, propone palancas. Planes de acción.', color: 'pink' }
+      ].map((p, i) => (
+        <div class={`bento-card reveal reveal-delay-${i+1} border-l-4 border-[var(--${p.color})]`}>
+          <div class="text-3xl mb-2">{p.emoji}</div>
+          <h3 class="text-white font-semibold">{p.name}</h3>
+          <p class="text-[var(--ink2)] text-sm mt-1">{p.role}</p>
+          <p class="text-[var(--mut)] text-xs mt-2 leading-relaxed">{p.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-16 reveal reveal-delay-1">
+    <div class="section-label cyan mb-6"><span>Qué puedes hacer</span></div>
+    <div class="grid sm:grid-cols-3 gap-4">
+      {[
+        { icon: '💬', title: 'Conversar', desc: 'Pregunta a cualquier personaje sobre la saga, OSIT, tus propios textos.' },
+        { icon: '🧪', title: 'Simular DUAT', desc: '"Simula 16 agentes 50 ticks época digital" → ejecuta motor observacionista.' },
+        { icon: '🎮', title: 'Generar con VibeForge', desc: '"Crea un juego plataformas tema MEDIOEVO" → materializa mundo/escena.' },
+        { icon: '📊', title: 'Ver residuo R', desc: 'Cada respuesta muestra estado epistémico y residuo. Gates APPROVE/REVIEW/BLOCK.' },
+        { icon: '🔒', title: 'Privacidad total', desc: 'Localhost only. Sin telemetría. Historial en tu navegador (opcional).' },
+        { icon: '⚡', title: 'Extensible', desc: 'Web Component estándar. Embebe en cualquier página. API REST simple.' }
+      ].map((f, i) => (
+        <div class={`bento-card reveal reveal-delay-${i+1}`}>
+          <div class="text-2xl mb-2">{f.icon}</div>
+          <h3 class="text-white font-semibold">{f.title}</h3>
+          <p class="text-[var(--ink2)] text-sm mt-2 leading-relaxed">{f.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-16 reveal reveal-delay-2">
+    <div class="section-label gold mb-6"><span>Demo interactiva</span></div>
+    <p class="text-[var(--ink2)] mb-6 max-w-2xl">
+      La pulsera vive aquí abajo a la derecha. Requiere <strong class="text-white">wabi-local-server</strong> corriendo 
+      (puerto 8787). Si no está activo, el indicador se pondrá rojo.
+    </p>
+
+    <div class="manifesto-block border border-[var(--line)] rounded-2xl p-6 sm:p-8 bg-[var(--surface)]">
+      <div class="flex items-center gap-2 text-xs mb-3">
+        <span class="tag">Estado</span>
+        <span class="epistemic-tag cert" id="demoStatus">Verificando servidor...</span>
+      </div>
+      <div class="text-[var(--ink2)] text-sm leading-relaxed space-y-2">
+        <p>• Haz clic en el botón <strong class="text-white">📋</strong> (abajo a la derecha) para abrir el chat.</p>
+        <p>• Cambia de personaje con los botones arriba del input.</p>
+        <p>• Prueba: <code class="bg-[var(--bg)] px-2 py-1 rounded font-mono text-[var(--cyan)] text-xs">simula 8 agentes 20 ticks época digital</code></p>
+        <p>• Prueba: <code class="bg-[var(--bg)] px-2 py-1 rounded font-mono text-[var(--cyan)] text-xs">crea un juego de plataformas tema MEDIOEVO</code></p>
+        <p>• Prueba: <code class="bg-[var(--bg)] px-2 py-1 rounded font-mono text-[var(--cyan)] text-xs">clasifica esta inferencia: el residuo R mide incertidumbre</code></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mt-14 reveal reveal-delay-3">
+    <div class="section-label cyan mb-6"><span>Arquitectura</span></div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 text-sm">
+      {[
+        { label: 'Navegador', items: ['Web Component (Lit/Vanilla)', 'localStorage opcional', 'Fetch → /api/orchestrator/process'] },
+        { label: 'Wabi Local Server\n:8787', items: ['ThreadingHTTPServer', 'Endpoint /api/orchestrator/process', 'PublicationGate=BLOCK'] },
+        { label: 'UnifiedOrchestrator', items: ['OSITRouter.classify()', 'AgentPool + Personas MEDIOEVO', 'DuatSimulatorPlugin', 'WabiVibeForgeBridge'] },
+        { label: 'Motores', items: ['duat_sim (determinista, seed→resultado)', 'vibeforge_engine (world/scene)', 'ResidueTracker (R/Φ_eff)'] }
+      ].map((b, i) => (
+        <div class={`bento-card reveal reveal-delay-${i+1}`}>
+          <h3 class="text-white font-semibold mb-2 border-b border-[var(--line)] pb-2">{b.label}</h3>
+          <ul class="space-y-1 text-[var(--ink2)]">
+            {b.items.map(item => <li class="flex items-start gap-1">· {item}</li>)}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-14 reveal reveal-delay-4">
+    <div class="section-label gold mb-6"><span>Próximos pasos</span></div>
+    <div class="grid sm:grid-cols-3 gap-4">
+      {[
+        { title: 'Iniciar servidor', cmd: 'cd 02_CLAUDIO && python server/wabi_local_server.py', desc: 'Levanta API en localhost:8787' },
+        { title: 'Probar endpoint', cmd: 'curl -X POST localhost:8787/api/orchestrator/process -H "Content-Type: application/json" -d "{\"text\":\"hola\",\"persona\":\"faith\"}"', desc: 'Verifica respuesta JSON' },
+        { title: 'Integrar en tu web', cmd: '<script type="module" src="/components/MedioevoBracelet.astro"></script>\n<medioevo-bracelet server-url="http://localhost:8787"></medioevo-bracelet>', desc: 'Un componente, una línea' }
+      ].map((s, i) => (
+        <div class={`bento-card reveal reveal-delay-${i+1}`}>
+          <h3 class="text-white font-semibold mb-2">{s.title}</h3>
+          <code class="bg-[var(--bg)] p-3 rounded block text-xs text-[var(--cyan)] overflow-x-auto whitespace-pre-wrap">{s.cmd}</code>
+          <p class="text-[var(--ink2)] text-xs mt-2">{s.desc}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Check server health on load
+  async function checkHealth() {
+    const el = document.getElementById('demoStatus');
+    try {
+      const resp = await fetch('http://127.0.0.1:8787/health', { signal: AbortSignal.timeout(2000) });
+      if (resp.ok) {
+        el.textContent = 'Servidor ONLINE';
+        el.className = 'epistemic-tag cert';
+      } else throw new Error();
+    } catch {
+      el.textContent = 'Servidor OFFLINE (puerto 8787)';
+      el.className = 'epistemic-tag block';
+    }
+  }
+  checkHealth();
+  setInterval(checkHealth, 10000);
+</script>
+
+<style>
+  .starfield span {
+    position: fixed;
+    background: var(--gold);
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: twinkle 3s ease-in-out infinite;
+    pointer-events: none;
+  }
+  @keyframes twinkle { 0%,100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 1; transform: scale(1.5); } }
+</style>

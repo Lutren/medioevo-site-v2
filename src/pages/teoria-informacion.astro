@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+---
+<Base title="Teoría de la Información - OSIT">
+  <h1 class="text-3xl font-bold text-gradient">Teoría de la Información</h1>
+  <p class="text-[var(--mut)] mt-3 max-w-2xl">El núcleo de OSIT: tratar la información como cambio que reduce incertidumbre útil bajo un costo.</p>
+  <div class="prose-osit mt-8 max-w-3xl">
+    <h2>Información usable</h2>
+    <p><code>U(X;R) = H(X) · Φ(R)</code>, con <code>Φ(R) = 1 − R</code>. Un párrafo corto con una restricción crítica vale más que páginas de relleno.</p>
+    <h2>Residuo compuesto</h2>
+    <p><code>R_or = 1 − Π(1 − r_i)</code> (noisy-OR): la contradicción y el fallo crítico no se diluyen. Vector 7D: semántico, memoria, latencia, privacidad, contradicción, costo, acción.</p>
+    <h2>Utilidad neta y EML</h2>
+    <p><code>N_T = U / (1 + costos)</code>; el selector <code>EML(s,c) = σ(αs − β·log(1+c) − θ)</code> decide expandir, comprimir o bloquear.</p>
+    <h2>Termodinámica (Landauer)</h2>
+    <p>Borrar/recordar un bit cuesta ≥ <code>k_B·T·ln2</code>: ahorrar tokens también ahorra energía.</p>
+  </div>
+  <a href="/blog" class="inline-block mt-8 text-sm text-[var(--acc)] hover:text-white transition-colors">Entradas relacionadas en la bitácora →</a>
+</Base>

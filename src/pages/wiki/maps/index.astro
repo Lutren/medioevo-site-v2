@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../../layouts/Base.astro';
+
+const atlasDocs = await getCollection('atlas');
+const maps = atlasDocs.filter(d => 
+  d.data.slug.includes('map') || 
+  d.data.slug.includes('geografia') || 
+  d.data.slug.includes('niveles')
+);
+---
+
+<Layout 
+  title="Mapas Canónicos MEDIOEVO" 
+  description="Mapas de planos, ciudades, zonas astrales, ruinas y territorios del universo MEDIOEVO"
+>
+  <div class="min-h-screen bg-background">
+    <!-- Header -->
+    <header class="relative py-16 lg:py-24 overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="inline-block px-4 py-1.5 rounded-full bg-surface2 border border-cyan/20 text-cyan text-xs font-bold tracking-widest uppercase mb-6 animate-fade-in">
+            Cartografía Canónica
+          </div>
+          
+          <h1 class="text-4xl lg:text-6xl font-serif font-bold text-center mb-6 hero-title animate-fade-in">
+            Mapas <span class="text-gradient">MEDIOEVO</span>
+          </h1>
+          
+          <p class="text-xl text-muted-foreground text-center max-w-2xl mx-auto hero-sub animate-fade-in-2">
+            Explora la geografía del universo MEDIOEVO.
+            <br class="hidden lg:block" />
+            Planos, ciudades, zonas astrales, ruinas y territorios.
+          </p>
+        </div>
+      </div>
+      
+      <!-- Background Glow -->
+      <div class="absolute top-0 left-1/2 transform -translate-x-1/2 w-full max-w-4xl h-64 bg-gradient-to-b from-cyan/5 to-blue-500/5 pointer-events-none"></div>
+    </header>
+
+    <!-- Maps Grid -->
+    <main class="container mx-auto px-4 py-12 max-w-7xl">
+      {maps.length > 0 ? (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {maps.map((doc, index) => (
+            <div 
+              class="wiki-card animate-fade-in"
+              style={`animation-delay: ${Math.min(index * 100, 500)}ms;`}
+            >
+              <h3 class="text-xl font-bold text-foreground mb-2">{doc.data.title}</h3>
+              <p class="text-muted-foreground text-sm mb-4">
+                Documento de referencia: {doc.data.slug}
+              </p>
+              <a 
+                href={`/wiki/atlas/${doc.data.slug}`}
+                class="inline-flex items-center gap-2 text-cyan font-semibold hover:text-gold transition-colors"
+              >
+                Ver mapa
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          ))}
+        </div>
+      ) : (
+        <div class="text-center py-20">
+          <div class="text-6xl mb-4">🗺️</div>
+          <h3 class="text-2xl font-bold text-foreground mb-3">Mapas en Construcción</h3>
+          <p class="text-muted-foreground max-w-md mx-auto mb-8">
+            La cartografía del universo MEDIOEVO está siendo mapeada. 
+            Revisa el Atlas Dual para información geográfica disponible.
+          </p>
+          <a 
+            href="/wiki/atlas"
+            class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-gold text-bg font-bold hover:shadow-glow-gold transition-all"
+          >
+            Ver Atlas Dual
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+      )}
+    </main>
+  </div>
+</Layout>

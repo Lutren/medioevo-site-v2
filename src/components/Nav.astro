@@ -1,0 +1,101 @@
+---
+const groups = [
+  {
+    label: 'Obra',
+    links: [
+      { href: '/wiki', label: 'Wiki' },
+      { href: '/mundo', label: 'Mundo' },
+      { href: '/canon', label: 'Canon' },
+      { href: '/blog', label: 'Blog' },
+    ],
+  },
+  {
+    label: 'Herramientas',
+    links: [
+      { href: '/herramientas', label: 'Catálogo' },
+      { href: '/herramientas/deces', label: 'DECES' },
+      { href: '/agentes', label: 'Agentes' },
+      { href: '/skills', label: 'Skills' },
+      { href: '/open-source', label: 'Código' },
+    ],
+  },
+  {
+    label: 'Ciencia',
+    links: [
+      { href: '/teoria-informacion', label: 'Teoría' },
+    ],
+  },
+  {
+    label: 'Tienda',
+    links: [
+      { href: '/tienda', label: 'Tienda' },
+      { href: '/registro', label: 'Registro' },
+    ],
+  },
+  {
+    label: 'Sobre',
+    links: [
+      { href: '/sobre-mi', label: 'Sobre mí' },
+      { href: '/accesibilidad', label: 'Accesibilidad' },
+    ],
+  },
+];
+const path = Astro.url.pathname.replace(/\/$/, '') || '/';
+const isActive = (href: string) => path === href;
+const allLinks = groups.flatMap((g) => g.links);
+---
+
+<header class="border-b border-[var(--line)] sticky top-0 z-50 backdrop-blur bg-[rgba(7,8,10,0.92)]">
+  <nav class="max-w-5xl mx-auto flex items-center justify-between px-5 py-3 text-sm">
+    <a href="/"
+      class="font-semibold tracking-tight shrink-0 flex items-center gap-2 no-underline text-white hover:text-[var(--gold)] transition-colors">
+      <span class="text-[var(--gold)] text-lg leading-none">◈</span>
+      MEDIOEVO
+      <span class="text-[var(--cyan)] font-mono text-[0.65rem] tracking-wider">/OSIT</span>
+    </a>
+
+    <div class="hidden md:flex items-center gap-1">
+      {groups.map((g) => (
+        <div class="flex items-center">
+          <span class="text-[0.55rem] font-mono tracking-[0.12em] uppercase text-[var(--mut)] mx-2">{g.label}</span>
+          {g.links.map((l) => (
+            <a href={l.href}
+              class={`transition-colors no-underline px-2.5 py-1 rounded ${
+                isActive(l.href)
+                  ? 'text-[var(--gold)] bg-[var(--gold-glow)] font-medium'
+                  : 'text-[var(--mut)] hover:text-[var(--ink)] hover:bg-white/[0.03]'
+              }`}>{l.label}</a>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <label for="nav-toggle" class="md:hidden cursor-pointer p-2 -mr-2" aria-label="Menú de navegación">
+      <svg width="22" height="18" viewBox="0 0 22 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" class="text-[var(--ink)]">
+        <line x1="2" y1="3" x2="20" y2="3" />
+        <line x1="2" y1="9" x2="20" y2="9" />
+        <line x1="2" y1="15" x2="20" y2="15" />
+      </svg>
+    </label>
+  </nav>
+
+  <input type="checkbox" id="nav-toggle" class="hidden peer" />
+  <div class="max-h-0 peer-checked:max-h-[36rem] overflow-hidden transition-all duration-300 ease-in-out md:hidden border-t border-[var(--line)] bg-[rgba(7,8,10,0.98)]">
+    <div class="flex flex-col px-5 py-4 text-sm">
+      {groups.map((g) => (
+        <div class="mb-3 last:mb-0">
+          <span class="text-[0.55rem] font-mono tracking-[0.12em] uppercase text-[var(--mut)] block mb-1 px-3">{g.label}</span>
+          {g.links.map((l) => (
+            <a href={l.href}
+              class={`block py-2 rounded-lg px-3 transition-colors no-underline ${
+                isActive(l.href)
+                  ? 'text-[var(--gold)] bg-[var(--gold-glow)] font-medium'
+                  : 'text-[var(--mut)] hover:text-[var(--ink)] hover:bg-white/5'
+              }`}>{l.label}</a>
+          ))}
+        </div>
+      ))}
+      <a href="/" class="block py-2 rounded-lg px-3 text-[var(--mut)] hover:text-[var(--ink)] transition-colors mt-1 border-t border-[var(--line)] pt-3">Inicio</a>
+    </div>
+  </div>
+</header>

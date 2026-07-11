@@ -1,0 +1,147 @@
+---
+import { getSystems } from '../../../lib/medioevo';
+import Layout from '../../../layouts/Base.astro';
+import { marked } from 'marked';
+
+export async function getStaticPaths() {
+  const systems = await getSystems();
+  return systems.map(s => ({
+    params: { slug: s.data.slug },
+  }));
+}
+
+const systems = await getSystems();
+const system = systems.find(s => s.data.slug === Astro.params.slug);
+
+if (!system) {
+  return Astro.redirect('/wiki/systems');
+}
+
+const { data, body } = system;
+const htmlContent = body ? marked.parse(body, { async: false }) : '';
+
+const categoryStyles: Record<string, { color: string; label: string; bg: string }> = {
+  osit: { color: 'var(--cyan)', label: 'OSIT', bg: 'rgba(80, 200, 224, 0.1)' },
+  moi: { color: '#a78bfa', label: 'MOI', bg: 'rgba(167, 139, 250, 0.1)' },
+  duat: { color: '#f59e0b', label: 'DUAT', bg: 'rgba(245, 158, 11, 0.1)' },
+  math: { color: '#4ade80', label: 'MATEMÁTICAS', bg: 'rgba(74, 222, 128, 0.1)' },
+  fcu: { color: '#f87171', label: 'FCU', bg: 'rgba(248, 113, 113, 0.1)' },
+};
+
+const category = categoryStyles[data.category] || categoryStyles.osit;
+const status = data.status === 'canon' 
+  ? { color: '#4ade80', label: 'CANON', bg: 'rgba(74, 222, 128, 0.1)' }
+  : { color: 'var(--gold)', label: 'INFERIDO', bg: 'rgba(212, 160, 80, 0.1)' };
+---
+
+<Layout 
+  title={`Sistemas | ${data.title}`} 
+  description={`Documentación técnica: ${data.title}`}
+>
+  <div class="min-h-screen bg-background">
+    <!-- Breadcrumbs -->
+    <div class="bg-surface/50 border-b border-line">
+      <div class="container mx-auto px-4 max-w-6xl py-4">
+        <nav class="flex items-center gap-2 text-sm">
+          <a href="/wiki" class="text-muted-foreground hover:text-gold transition-colors">Wiki</a>
+          <span class="text-muted-foreground">/</span>
+          <a href="/wiki/systems" class="text-muted-foreground hover:text-gold transition-colors">Sistemas</a>
+          <span class="text-muted-foreground">/</span>
+          <span class="text-gold font-semibold">{data.title}</span>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="relative py-12 lg:py-16 overflow-hidden">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="max-w-4xl mx-auto">
+          <!-- Category and Status Badges -->
+          <div class="flex flex-wrap items-center gap-3 mb-6">
+            <span 
+              class="px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase border shadow-sm"
+              style={`color: ${category.color}; background: ${category.bg}; border-color: ${category.color}4d;`}
+            >
+              {category.label}
+            </span>
+            <span 
+              class="px-4 py-2 rounded-full text-sm font-bold tracking-wider uppercase border shadow-sm"
+              style={`color: ${status.color}; background: ${status.bg}; border-color: ${status.color}4d;`}
+            >
+              {status.label}
+            </span>
+          </div>
+
+          <!-- Title -->
+          <h1 class="text-4xl lg:text-5xl font-serif font-bold text-foreground mb-6">{data.title}</h1>
+
+          <!-- Description Card -->
+          <div class="wiki-card bg-surface2/50 border-cyan/20">
+            <div class="flex items-start gap-3">
+              <div class="text-cyan text-2xl">⚙️</div>
+              <div>
+                <div class="text-sm text-muted-foreground mb-1">Sistema técnico</div>
+                <div class="text-foreground leading-relaxed">
+                  Framework epistémico del ecosistema MEDIOEVO. Documentación completa de arquitectura, componentes y casos de uso.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Glow -->
+      <div class="absolute top-0 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl pointer-events-none"></div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12 max-w-4xl">
+      {htmlContent ? (
+        <article class="prose-wiki">
+          <div class="markdown-body" set:html={htmlContent} />
+        </article>
+      ) : (
+        <div class="text-center py-12">
+          <div class="text-6xl mb-4">⚙️</div>
+          <h3 class="text-xl font-bold text-foreground mb-2">Documentación en Desarrollo</h3>
+          <p class="text-muted-foreground max-w-md mx-auto">
+            La documentación técnica de este sistema está siendo redactada. 
+            Revisa los otros sistemas epistémicos mientras tanto.
+          </p>
+        </div>
+      )}
+
+      <!-- Related Systems -->
+      <div class="mt-16 pt-8 border-t border-line">
+        <h3 class="text-2xl font-serif font-bold text-foreground mb-6">Otros Sistemas</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {systems
+            .filter(s => s.data.slug !== system.data.slug)
+            .slice(0, 4)
+            .map((s) => {
+              const catStyle = categoryStyles[s.data.category] || categoryStyles.osit;
+              return (
+                <a 
+                  href={`/wiki/systems/${s.data.slug}`}
+                  class="wiki-card flex items-center gap-4 group"
+                >
+                  <div 
+                    class="w-12 h-12 rounded flex items-center justify-center text-lg font-bold flex-shrink-0"
+                    style={`background: ${catStyle.bg}; color: ${catStyle.color};`}
+                  >
+                    {catStyle.label.substring(0, 2)}
+                  </div>
+                  <div>
+                    <div class="text-sm text-muted-foreground mb-1">{catStyle.label}</div>
+                    <div class="text-lg font-bold text-foreground group-hover:text-cyan transition-colors">
+                      {s.data.title}
+                    </div>
+                  </div>
+                </a>
+              );
+            })}
+        </div>
+      </div>
+    </main>
+  </div>
+</Layout>

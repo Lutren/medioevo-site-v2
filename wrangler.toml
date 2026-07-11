@@ -1,0 +1,13 @@
+name = "medioevo-site"
+compatibility_date = "2026-06-25"
+pages_build_output_dir = "./dist"
+
+
+# Nota: SITE_URL y los SECRETOS (STRIPE_*, LICENSE_SIGNING_SECRET) ya están
+# configurados como env vars/secrets del proyecto Pages — NO se repiten aquí
+# (causaría colisión de binding en el deploy).
+
+# KV real en producción (pedidos + licencias entregadas por el webhook Stripe).
+[[kv_namespaces]]
+binding = "ORDERS"
+id = "3d2c51140f1c4bbf86254d035c01eec4"
