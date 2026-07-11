@@ -3,8 +3,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 import Base from '../layouts/Base.astro';
 
-const stripeTest = import.meta.env.PUBLIC_STRIPE_TEST_MODE === '1';
-
 // ------------------------------------------------------------------
 // Load live Gumroad API data (store_api.json) enriched with descriptions
 // ------------------------------------------------------------------
@@ -61,6 +59,7 @@ interface ProductDef {
     cover?: string;
     productKey?: string;
     customPrice?: string; // override price display
+    live?: ApiProduct;    // datos reales de Gumroad al momento del build (o undefined si no se pudo verificar)
 }
 
 interface LineDef {
@@ -180,13 +179,21 @@ const lines: LineDef[] = [
     },
 ];
 
+// Un permalink de Gumroad extraído de /l/<permalink> aunque el dato no venga precargado en el objeto.
+function derivePermalink(p: ProductDef): string | undefined {
+    if (p.permalink) return p.permalink;
+    const m = p.url?.match(/\/l\/([^/?#]+)/);
+    return m ? m[1] : undefined;
+}
+
 // Enrich product data with live API info
 for (const line of lines) {
     for (const p of line.productos) {
-        if (p.permalink) {
-            const live = getLiveData(p.permalink);
+        const permalink = derivePermalink(p);
+        if (permalink) {
+            const live = getLiveData(permalink);
             if (live) {
-                // Override with live data if available
+                p.live = live;
                 p.url = live.url || p.url;
                 if (live.description && live.description.length > 10) {
                     // Strip HTML tags for clean display
@@ -198,12 +205,20 @@ for (const line of lines) {
     }
 }
 
-const hasUrl = (p: ProductDef) => p.url && p.url.startsWith('http');
+// Anti-humo (C.3): si tenemos snapshot de Gumroad, SOLO se marca disponible lo que la API
+// confirma publicado — nunca el link de respaldo a ciegas. Sin snapshot (build local sin
+// store_api.json), degrada al chequeo permisivo anterior para no romper el dev build.
+const isAvailable = (p: ProductDef) => (storeApi ? p.live?.published === true : p.url?.startsWith('http'));
+const isStripeTest = (url?: string) => !!url && url.includes('/test_');
+const anyStripeTest = lines.some((l) => l.productos.some((p) => isStripeTest(p.stripe)));
 ---
 
 <Base title="Tienda - MEDIOEVO / OSIT" description="Libros, packs y herramientas MEDIOEVO: edición estándar, universo expandido y herramientas local-first.">
   <h1 class="text-3xl font-bold text-gradient">Tienda</h1>
-  <p class="text-[var(--mut)] mt-2 max-w-2xl">Libros, plantillas y packs. Pago seguro con tarjeta o Gumroad.</p>
+  <p class="text-[var(--mut)] mt-2 max-w-2xl">
+    Libros, plantillas y packs. Pago activo por Gumroad
+    {anyStripeTest && <> · pago con tarjeta (Stripe) en <strong class="text-[var(--ink)]">modo demo</strong>, sin cargos reales todavía</>}.
+  </p>
 
   {lines.map((line) => (
     <section class="mt-10">
@@ -227,19 +242,22 @@ const hasUrl = (p: ProductDef) => p.url && p.url.startsWith('http');
               <div class="text-[var(--gold)] font-semibold mt-2 text-sm">{p.customPrice}</div>
             )}
             <div class="mt-4 flex flex-col gap-2">
-              {p.stripe && (
-                <a href={p.stripe} target="_blank" rel="noopener" class="inline-block bg-[var(--gold)] text-[var(--bg)] font-medium px-4 py-2 rounded-lg no-underline hover:brightness-120 transition-all text-center text-sm">
-                  Comprar con tarjeta
-                </a>
-              )}
-              {hasUrl(p) ? (
-                <a href={p.url} target="_blank" rel="noopener" class="inline-block border border-[var(--gold)] text-[var(--gold)] font-medium px-4 py-2 rounded-lg no-underline hover:brightness-120 transition-all text-center text-sm">
+              {isAvailable(p) ? (
+                <a href={p.live?.url ?? p.url} target="_blank" rel="noopener" class="inline-block bg-[var(--gold)] text-[var(--bg)] font-medium px-4 py-2 rounded-lg no-underline hover:brightness-120 transition-all text-center text-sm">
                   Comprar en Gumroad
                 </a>
               ) : (
-                <span class="inline-block border border-[var(--mut)] text-[var(--mut)] px-4 py-2 rounded-lg text-sm text-center">
+                <span class="inline-block border border-[var(--mut)] text-[var(--mut)] px-4 py-2 rounded-lg text-sm text-center" title="Aún no confirmado como publicado en Gumroad">
                   Próximamente
                 </span>
+              )}
+              {p.stripe && (
+                <a href={p.stripe} target="_blank" rel="noopener"
+                   class={isStripeTest(p.stripe)
+                     ? "inline-block border border-dashed border-[var(--mut)] text-[var(--mut)] font-medium px-4 py-2 rounded-lg no-underline hover:border-[var(--cyan)] hover:text-[var(--cyan)] transition-all text-center text-sm"
+                     : "inline-block border border-[var(--gold)] text-[var(--gold)] font-medium px-4 py-2 rounded-lg no-underline hover:brightness-120 transition-all text-center text-sm"}>
+                  {isStripeTest(p.stripe) ? 'Tarjeta — modo demo, sin cargo' : 'Comprar con tarjeta'}
+                </a>
               )}
             </div>
           </div>
@@ -248,11 +266,12 @@ const hasUrl = (p: ProductDef) => p.url && p.url.startsWith('http');
     </section>
   ))}
 
-  {stripeTest && (
+  {anyStripeTest && (
     <div class="mt-8 border border-[var(--cyan)] rounded-xl p-4 text-sm text-[var(--mut)]">
-      <strong class="text-white">Checkout con tarjeta (Stripe) - modo prueba.</strong> Los pagos con
-      tarjeta están en modo de prueba: <strong class="text-white">ningún cargo es real</strong>.
-      Usa la tarjeta de prueba <code class="bg-[var(--line)] px-1 rounded">4242 4242 4242 4242</code> con cualquier fecha CVV.
+      <strong class="text-white">Checkout con tarjeta (Stripe) - modo demo.</strong> Los botones marcados
+      "modo demo" están en modo de prueba: <strong class="text-white">ningún cargo es real</strong>.
+      Usa la tarjeta de prueba <code class="bg-[var(--line)] px-1 rounded">4242 4242 4242 4242</code> con cualquier fecha/CVV.
+      El pago real y activo hoy es <strong class="text-white">Gumroad</strong>.
     </div>
   )}
 

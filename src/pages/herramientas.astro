@@ -1,6 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 const tools = [
+  ['DECES', 'TRIBUNAL EPISTÉMICO', '8 agentes adversariales auditan afirmaciones científicas: sello SHA256, traza reproducible, gratuito para universidades y uso accesible. →', '/herramientas/deces'],
   ['TokenSaver v0.5', 'COMPRESION', 'Preserva restricciones, fechas, rutas, decisiones, evidencia y contradicciones. Reduce tokens sin borrar lo decisional.'],
   ['ActionGate', 'GATE', 'Evalua si una accion local debe ejecutarse, revisarse o bloquearse antes de tocar archivos, publicar o enviar informacion.'],
   ['WitnessLog', 'EVIDENCIA', 'Convierte pruebas, hashes, comandos, decisiones y cierres en un rastro auditable para humanos y agentes.'],
@@ -29,15 +30,21 @@ const lanes = [
   </p>
 
   <div class="grid sm:grid-cols-2 gap-4 mt-8">
-    {tools.map(([t, status, d]) => (
-      <div class="border border-[var(--line)] rounded-xl p-4 hover:border-[rgba(80,200,224,0.3)] hover:shadow-[0_0_24px_rgba(80,200,224,0.06)] transition-all duration-250 bg-[var(--surface)]">
-        <div class="flex items-center justify-between gap-3">
-          <div class="text-white font-medium">{t}</div>
-          <span class="tag">{status}</span>
-        </div>
-        <div class="text-[var(--ink2)] text-sm mt-2 leading-relaxed">{d}</div>
-      </div>
-    ))}
+    {tools.map(([t, status, d, href]) => {
+      const Tag = href ? 'a' : 'div';
+      return (
+        <Tag
+          {...(href ? { href } : {})}
+          class={`block border border-[var(--line)] rounded-xl p-4 hover:border-[rgba(80,200,224,0.3)] hover:shadow-[0_0_24px_rgba(80,200,224,0.06)] transition-all duration-250 bg-[var(--surface)] no-underline ${href ? 'cursor-pointer' : ''}`}
+        >
+          <div class="flex items-center justify-between gap-3">
+            <div class="text-white font-medium">{t}</div>
+            <span class="tag">{status}</span>
+          </div>
+          <div class="text-[var(--ink2)] text-sm mt-2 leading-relaxed">{d}</div>
+        </Tag>
+      );
+    })}
   </div>
 
   <section class="mt-10 border border-[var(--line)] rounded-xl p-5 bg-[var(--surface)]">
