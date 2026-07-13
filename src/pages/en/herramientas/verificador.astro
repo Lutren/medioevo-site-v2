@@ -1,0 +1,279 @@
+---
+import Base from '../../../layouts/Base.astro';
+---
+<Base
+  title="Intuition Verifier — MEDIOEVO Tools"
+  description="Write an intuition, claim, or question. The verifier searches Wikipedia, extracts key claims, and classifies them by epistemic level. Free."
+>
+  <div class="flex items-center gap-3 text-xs flex-wrap">
+    <span class="tag">MEDIOEVO Tools</span>
+    <span class="epistemic-tag cert">Free</span>
+    <span class="epistemic-tag inf">Web + Wikipedia</span>
+  </div>
+
+  <div class="mt-6 mb-8">
+    <h1 class="text-3xl sm:text-4xl font-bold text-gradient">
+      Intuition Verifier
+    </h1>
+    <p class="text-[var(--ink2)] mt-2 max-w-2xl leading-relaxed">
+      Type an intuition, a claim, a question. The system searches Wikipedia,
+      extracts key claims and classifies them by epistemic strength:
+      <strong class="text-[var(--ink)]">CERTAINTY</strong>,
+      <strong class="text-[var(--ink)]">INFERENCE</strong>,
+      <strong class="text-[var(--ink)]">UNKNOWN</strong> or
+      <strong class="text-[var(--ink)]">BLOCKED</strong>.
+    </p>
+  </div>
+
+  <div id="app" class="border border-[var(--line)] rounded-2xl bg-[var(--surface)] p-5 sm:p-7">
+    <textarea id="input"
+      class="w-full min-h-[120px] bg-[var(--bg)] text-[var(--ink)] border border-[var(--line)] rounded-xl p-4 text-base font-[inherit] resize-y placeholder:text-[var(--mut)] focus:outline-none focus:border-[var(--gold)] transition-colors"
+      placeholder="e.g.: Is dark energy real or just modified gravity?"></textarea>
+
+    <div class="flex flex-wrap items-center gap-3 mt-4">
+      <button id="btn" onclick="verificar()"
+        class="bg-[var(--gold)] text-[var(--bg)] font-semibold px-6 py-2.5 rounded-lg border-none cursor-pointer text-base hover:brightness-120 transition-all disabled:opacity-50 disabled:cursor-not-allowed">
+        Verify
+      </button>
+      <span id="status" class="text-[var(--mut)] text-sm"></span>
+    </div>
+
+    <div id="error" class="hidden mt-4 p-3 rounded-lg border border-[rgba(243,139,168,0.3)] bg-[rgba(243,139,168,0.06)] text-[#f38ba8] text-sm"></div>
+
+    <div id="result" class="hidden mt-6 space-y-4">
+      <div id="wiki-box" class="hidden rounded-xl border border-[var(--line)] p-4 text-sm">
+        <div class="text-[var(--gold)] text-xs font-mono uppercase tracking-wide">Source: Wikipedia</div>
+        <div id="wiki-topic" class="text-white font-medium mt-1"></div>
+        <p id="wiki-extract" class="text-[var(--ink2)] mt-1 leading-relaxed"></p>
+        <a id="wiki-link" href="#" target="_blank" rel="noopener noreferrer"
+          class="text-[var(--cyan)] hover:text-[var(--gold)] transition-colors text-xs mt-1 inline-block">
+          Open on Wikipedia →
+        </a>
+      </div>
+
+      <div id="veredicto-box" class="rounded-xl border border-[var(--line)] p-4">
+        <div class="text-[var(--gold)] text-xs font-mono uppercase tracking-wide">Verdict</div>
+        <div id="veredicto-estado" class="text-xl font-bold mt-1"></div>
+        <div id="veredicto-detalle" class="text-[var(--ink2)] text-sm mt-1"></div>
+      </div>
+
+      <div id="claims-box" class="hidden">
+        <div class="text-[var(--gold)] text-xs font-mono uppercase tracking-wide mb-3">Extracted Claims</div>
+        <div id="claims-list" class="space-y-2"></div>
+      </div>
+    </div>
+
+    <div id="empty-state" class="text-center py-12 text-[var(--mut)]">
+      <div class="text-5xl mb-4 opacity-30">◈</div>
+      <p class="text-sm">Type something above and press Verify<br>or <kbd class="bg-[var(--bg)] border border-[var(--line)] rounded px-1.5 py-0.5 font-[inherit]">Ctrl+Enter</kbd></p>
+    </div>
+  </div>
+
+  <div class="mt-8 grid sm:grid-cols-3 gap-4 text-sm">
+    <div class="border border-[var(--line)] rounded-xl p-4 bg-[var(--surface)]">
+      <div class="text-[var(--cyan)] font-semibold">How does it work?</div>
+      <p class="text-[var(--ink2)] mt-1 leading-relaxed">
+        Your intuition is sent to Wikipedia. If a related article is found,
+        key claims are extracted and classified by epistemic level using
+        a language model.
+      </p>
+    </div>
+    <div class="border border-[var(--line)] rounded-xl p-4 bg-[var(--surface)]">
+      <div class="text-[var(--cyan)] font-semibold">What do the levels mean?</div>
+      <p class="text-[var(--ink2)] mt-1 leading-relaxed">
+        <strong class="text-[var(--ink)]">CERTAINTY</strong> = direct evidence.
+        <strong class="text-[var(--ink)]">INFERENCE</strong> = plausible.
+        <strong class="text-[var(--ink)]">UNKNOWN</strong> = no data.
+        <strong class="text-[var(--ink)]">BLOCKED</strong> = contradicted.
+      </p>
+    </div>
+    <div class="border border-[var(--line)] rounded-xl p-4 bg-[var(--surface)]">
+      <div class="text-[var(--cyan)] font-semibold">Is it private?</div>
+      <p class="text-[var(--ink2)] mt-1 leading-relaxed">
+        Text is sent to Wikipedia and a cloud LLM. We store no queries.
+        No tracking cookies.
+      </p>
+    </div>
+  </div>
+
+  <div class="mt-8 rounded-xl border border-[var(--line)] bg-[var(--surface)] p-5 text-sm">
+    <div class="flex flex-wrap items-center justify-between gap-4">
+      <div>
+        <div class="text-[var(--gold)] font-mono text-xs uppercase tracking-wide">Local version (recommended)</div>
+        <p class="text-[var(--ink2)] mt-1 max-w-xl leading-relaxed">
+          The web version is limited. The <strong class="text-[var(--ink)]">local version</strong>
+          accepts audio, video, images and URLs, and runs fully offline with
+          Whisper + Ollama + DECES.
+        </p>
+      </div>
+      <code class="text-xs bg-[var(--bg)] border border-[var(--line)] rounded-lg px-4 py-2 text-[var(--cyan)] select-all whitespace-nowrap">pip install moi-deces</code>
+    </div>
+  </div>
+
+  <style>
+    .claim-card {
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      background: var(--bg);
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      animation: fadeIn 0.3s ease-out both;
+    }
+    .claim-card:nth-child(1) { animation-delay: 0.05s; }
+    .claim-card:nth-child(2) { animation-delay: 0.10s; }
+    .claim-card:nth-child(3) { animation-delay: 0.15s; }
+    .claim-card:nth-child(4) { animation-delay: 0.20s; }
+    .claim-card:nth-child(5) { animation-delay: 0.25s; }
+    .claim-card:nth-child(6) { animation-delay: 0.30s; }
+    .epistemic-badge {
+      display: inline-block;
+      padding: 0.15rem 0.5rem;
+      border-radius: 0.375rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+    .epistemic-badge.cert { background: rgba(166,227,161,0.15); color: #a6e3a1; border: 1px solid rgba(166,227,161,0.3); }
+    .epistemic-badge.inf  { background: rgba(249,226,175,0.15); color: #f9e2af; border: 1px solid rgba(249,226,175,0.3); }
+    .epistemic-badge.incog{ background: rgba(245,194,231,0.15); color: #f5c2e7; border: 1px solid rgba(245,194,231,0.3); }
+    .epistemic-badge.block{ background: rgba(243,139,168,0.15); color: #f38ba8; border: 1px solid rgba(243,139,168,0.3); }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes pulse-dot {
+      0%, 80%, 100% { opacity: 0.3; }
+      40% { opacity: 1; }
+    }
+    .loading-dots span {
+      animation: pulse-dot 1.4s infinite both;
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      margin: 0 2px;
+    }
+    .loading-dots span:nth-child(2) { animation-delay: 0.16s; }
+    .loading-dots span:nth-child(3) { animation-delay: 0.32s; }
+  </style>
+
+  <script>
+    const LABELS = {
+      CERTEZA: '[C] Confirmed',
+      INFERENCIA: '[I] Inference',
+      INCÓGNITA: '[?] Unknown',
+      BLOQUEADO: '[X] Blocked',
+      NO_CLASIFICADO: '[ ] Unclassified',
+    };
+    const COLOR_VEREDICTO = {
+      CERTEZA: { bg: 'rgba(166,227,161,0.12)', border: 'rgba(166,227,161,0.3)', text: '#a6e3a1' },
+      INFERENCIA: { bg: 'rgba(249,226,175,0.12)', border: 'rgba(249,226,175,0.3)', text: '#f9e2af' },
+      INCÓGNITA: { bg: 'rgba(245,194,231,0.12)', border: 'rgba(245,194,231,0.3)', text: '#f5c2e7' },
+      BLOQUEADO: { bg: 'rgba(243,139,168,0.12)', border: 'rgba(243,139,168,0.3)', text: '#f38ba8' },
+      NO_CLASIFICADO: { bg: 'rgba(88,91,112,0.12)', border: 'rgba(88,91,112,0.3)', text: '#a6adc8' },
+    };
+    const BADGE_CLASS = { CERTEZA: 'cert', INFERENCIA: 'inf', INCÓGNITA: 'incog', BLOQUEADO: 'block' };
+
+    async function verificar() {
+      const input = document.getElementById('input');
+      const btn = document.getElementById('btn');
+      const status = document.getElementById('status');
+      const error = document.getElementById('error');
+      const result = document.getElementById('result');
+      const empty = document.getElementById('empty-state');
+
+      const texto = input.value.trim();
+      if (!texto) { status.textContent = 'Type something first'; return; }
+
+      btn.disabled = true;
+      status.innerHTML = '<span class="loading-dots"><span></span><span></span><span></span></span>';
+      error.classList.add('hidden');
+      result.classList.add('hidden');
+      empty.classList.add('hidden');
+
+      try {
+        const resp = await fetch('/api/verify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ texto }),
+        });
+        const data = await resp.json();
+
+        if (data.error) {
+          error.textContent = data.error;
+          error.classList.remove('hidden');
+          empty.classList.remove('hidden');
+          status.textContent = '';
+          return;
+        }
+
+        mostrarResultados(data);
+        status.textContent = `Done — ${data.provider === 'nvidia' ? 'LLM' : 'simple extraction'}`;
+      } catch (e) {
+        error.textContent = 'Connection error. Try again.';
+        error.classList.remove('hidden');
+        empty.classList.remove('hidden');
+        status.textContent = '';
+      } finally {
+        btn.disabled = false;
+      }
+    }
+
+    function mostrarResultados(data) {
+      const result = document.getElementById('result');
+      result.classList.remove('hidden');
+
+      const wikiBox = document.getElementById('wiki-box');
+      if (data.wikipedia_url) {
+        wikiBox.classList.remove('hidden');
+        document.getElementById('wiki-topic').textContent = data.topic || '';
+        document.getElementById('wiki-extract').textContent = data.wikipedia_extract || '';
+        document.getElementById('wiki-link').href = data.wikipedia_url;
+      } else {
+        wikiBox.classList.add('hidden');
+      }
+
+      const v = data.veredicto || {};
+      const ve = v.estado || 'NO_CLASIFICADO';
+      const vc = COLOR_VEREDICTO[ve] || COLOR_VEREDICTO.NO_CLASIFICADO;
+      const vbox = document.getElementById('veredicto-box');
+      vbox.style.background = vc.bg;
+      vbox.style.borderColor = vc.border;
+
+      const confidenceMap = { alta: 'high', media: 'medium', baja: 'low' };
+      document.getElementById('veredicto-estado').innerHTML =
+        `<span style="color:${vc.text}">${LABELS[ve] || ve}</span>`;
+      const detalle = [];
+      if (v.confianza) detalle.push(`Confidence: ${confidenceMap[v.confianza] || v.confianza}`);
+      if (data.claims) detalle.push(`${data.claims.length} claims extracted`);
+      if (v.notas && v.notas.length) detalle.push(...v.notas);
+      document.getElementById('veredicto-detalle').textContent = detalle.join(' · ') || 'Insufficient data';
+
+      const claimsBox = document.getElementById('claims-box');
+      const claimsList = document.getElementById('claims-list');
+      claimsList.innerHTML = '';
+
+      if (data.claims && data.claims.length) {
+        claimsBox.classList.remove('hidden');
+        for (const c of data.claims) {
+          const badgeClass = BADGE_CLASS[c.estado] || 'incog';
+          const div = document.createElement('div');
+          div.className = 'claim-card';
+          div.innerHTML = `<span class="epistemic-badge ${badgeClass}">${c.estado}</span><span class="text-[var(--ink)] text-sm leading-relaxed">${c.claim}</span>`;
+          claimsList.appendChild(div);
+        }
+      } else {
+        claimsBox.classList.add('hidden');
+      }
+    }
+
+    document.getElementById('input').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) verificar();
+    });
+  </script>
+</Base>
