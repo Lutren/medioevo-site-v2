@@ -1,5 +1,12 @@
 import type { APIRoute } from 'astro';
 
+export const GET: APIRoute = async () => {
+  return new Response(JSON.stringify({ error: 'Method not allowed', allowed: ['POST'] }), {
+    status: 405,
+    headers: { 'Content-Type': 'application/json', 'Allow': 'POST' },
+  });
+};
+
 export const POST: APIRoute = async ({ request }) => {
   try {
     const body = await request.json();

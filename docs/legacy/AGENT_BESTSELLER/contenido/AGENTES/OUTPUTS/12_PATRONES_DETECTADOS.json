@@ -1,0 +1,820 @@
+{
+  "fecha_analisis": "2026-04-18T21:09:52.005394",
+  "version": "1.0",
+  "total_lectores_analizados": 150,
+  "analisis_por_perfil": {
+    "PERFIL_01": {
+      "perfil_id": "PERFIL_01",
+      "nombre_perfil": "El Buscador de Verdades Ocultas",
+      "total_muestra": 30,
+      "demografia": {
+        "edad": {
+          "25-30": {
+            "count": 16,
+            "pct": 53.3
+          },
+          "30-35": {
+            "count": 10,
+            "pct": 33.3
+          },
+          "35-40": {
+            "count": 4,
+            "pct": 13.3
+          }
+        },
+        "genero": {
+          "M": {
+            "count": 17,
+            "pct": 56.7
+          },
+          "F": {
+            "count": 13,
+            "pct": 43.3
+          }
+        },
+        "top_ocupaciones": [
+          [
+            "Filosofo",
+            9
+          ],
+          [
+            "Cientifico",
+            6
+          ],
+          [
+            "Tech",
+            6
+          ],
+          [
+            "Escritor",
+            6
+          ],
+          [
+            "Ingeniero",
+            3
+          ]
+        ]
+      },
+      "patrones_respuesta": {
+        "P1_01": {
+          "respuestas_populares": [
+            {
+              "respuesta": "1984",
+              "count": 8,
+              "pct": 26.7
+            },
+            {
+              "respuesta": "Sapiens",
+              "count": 8,
+              "pct": 26.7
+            },
+            {
+              "respuesta": "El Principito",
+              "count": 6,
+              "pct": 20.0
+            },
+            {
+              "respuesta": "Fahrenheit 451",
+              "count": 4,
+              "pct": 13.3
+            },
+            {
+              "respuesta": "Ninguno recientemente",
+              "count": 3,
+              "pct": 10.0
+            }
+          ],
+          "diversidad": 0.2
+        },
+        "P1_02": {
+          "respuestas_populares": [
+            {
+              "respuesta": "200+",
+              "count": 16,
+              "pct": 53.3
+            },
+            {
+              "respuesta": "100-200",
+              "count": 7,
+              "pct": 23.3
+            },
+            {
+              "respuesta": "0-50",
+              "count": 5,
+              "pct": 16.7
+            },
+            {
+              "respuesta": "50-100",
+              "count": 2,
+              "pct": 6.7
+            }
+          ],
+          "diversidad": 0.13333333333333333
+        },
+        "P1_03": {
+          "respuestas_populares": [
+            {
+              "respuesta": "Que me haga preguntas que no me habia hecho",
+              "count": 19,
+              "pct": 63.3
+            },
+            {
+              "respuesta": "Que me haga sentir parte de algo",
+              "count": 6,
+              "pct": 20.0
+            },
+            {
+              "respuesta": "Que me transporte a otro mundo",
+              "count": 3,
+              "pct": 10.0
+            },
+            {
+              "respuesta": "Que me sorprenda en cada pagina",
+              "count": 2,
+              "pct": 6.7
+            }
+          ],
+          "diversidad": 0.13333333333333333
+        }
+      },
+      "angulo_validado": {
+        "angulo_mas_frecuente": [
+          "MEDIOEVO como espejo filosofico",
+          30
+        ],
+        "consistencia": 100.0
+      },
+      "dolores_comunes": {
+        "Quiere que lo desafien intelectualmente": {
+          "count": 13,
+          "pct": 43.3
+        },
+        "Busca significado profundo": {
+          "count": 10,
+          "pct": 33.3
+        },
+        "Cansado de ficcion superficial": {
+          "count": 7,
+          "pct": 23.3
+        }
+      },
+      "recomendaciones": []
+    },
+    "PERFIL_02": {
+      "perfil_id": "PERFIL_02",
+      "nombre_perfil": "La Fan de Ficciones Complejas",
+      "total_muestra": 30,
+      "demografia": {
+        "edad": {
+          "18-23": {
+            "count": 16,
+            "pct": 53.3
+          },
+          "23-28": {
+            "count": 8,
+            "pct": 26.7
+          },
+          "28-35": {
+            "count": 6,
+            "pct": 20.0
+          }
+        },
+        "genero": {
+          "F": {
+            "count": 17,
+            "pct": 56.7
+          },
+          "M": {
+            "count": 13,
+            "pct": 43.3
+          }
+        },
+        "top_ocupaciones": [
+          [
+            "Disenador",
+            10
+          ],
+          [
+            "Estudiante",
+            8
+          ],
+          [
+            "Community Manager",
+            6
+          ],
+          [
+            "Marketing",
+            4
+          ],
+          [
+            "Freelance",
+            2
+          ]
+        ]
+      },
+      "patrones_respuesta": {
+        "P2_01": {
+          "respuestas_populares": [
+            {
+              "respuesta": "Harry Potter",
+              "count": 8,
+              "pct": 26.7
+            },
+            {
+              "respuesta": "Percy Jackson",
+              "count": 6,
+              "pct": 20.0
+            },
+            {
+              "respuesta": "Ninguna todavia",
+              "count": 6,
+              "pct": 20.0
+            },
+            {
+              "respuesta": "Cazadores de sombras",
+              "count": 6,
+              "pct": 20.0
+            },
+            {
+              "respuesta": "Cancion de hielo y fuego",
+              "count": 4,
+              "pct": 13.3
+            }
+          ],
+          "diversidad": 0.16666666666666666
+        },
+        "P2_02": {
+          "respuestas_populares": [
+            {
+              "respuesta": "Si, activamente",
+              "count": 18,
+              "pct": 60.0
+            },
+            {
+              "respuesta": "Si, pero solo leo",
+              "count": 8,
+              "pct": 26.7
+            },
+            {
+              "respuesta": "No, pero quiero",
+              "count": 3,
+              "pct": 10.0
+            },
+            {
+              "respuesta": "No me interesa",
+              "count": 1,
+              "pct": 3.3
+            }
+          ],
+          "diversidad": 0.13333333333333333
+        },
+        "P2_03": {
+          "respuestas_populares": [
+            {
+              "respuesta": "Un mundo que pueda explorar por anos",
+              "count": 16,
+              "pct": 53.3
+            },
+            {
+              "respuesta": "Personajes que se sientan reales",
+              "count": 7,
+              "pct": 23.3
+            },
+            {
+              "respuesta": "Un misterio que valga la pena resolver",
+              "count": 6,
+              "pct": 20.0
+            },
+            {
+              "respuesta": "Una comunidad de lectores apasionados",
+              "count": 1,
+              "pct": 3.3
+            }
+          ],
+          "diversidad": 0.13333333333333333
+        }
+      },
+      "angulo_validado": {
+        "angulo_mas_frecuente": [
+          "MEDIOEVO como saga para pertenecer",
+          30
+        ],
+        "consistencia": 100.0
+      },
+      "dolores_comunes": {
+        "Busca comunidad": {
+          "count": 11,
+          "pct": 36.7
+        },
+        "Quiere pertenecer a algo": {
+          "count": 11,
+          "pct": 36.7
+        },
+        "Le decepcionaron finales": {
+          "count": 8,
+          "pct": 26.7
+        }
+      },
+      "recomendaciones": []
+    },
+    "PERFIL_03": {
+      "perfil_id": "PERFIL_03",
+      "nombre_perfil": "El Esceptico de la Ciencia Ficcion",
+      "total_muestra": 30,
+      "demografia": {
+        "edad": {
+          "35-40": {
+            "count": 13,
+            "pct": 43.3
+          },
+          "40-50": {
+            "count": 9,
+            "pct": 30.0
+          },
+          "30-35": {
+            "count": 8,
+            "pct": 26.7
+          }
+        },
+        "genero": {
+          "F": {
+            "count": 17,
+            "pct": 56.7
+          },
+          "M": {
+            "count": 13,
+            "pct": 43.3
+          }
+        },
+        "top_ocupaciones": [
+          [
+            "Abogado",
+            10
+          ],
+          [
+            "Academico",
+            9
+          ],
+          [
+            "Ingeniero",
+            5
+          ],
+          [
+            "Ejecutivo",
+            4
+          ],
+          [
+            "Medico",
+            2
+          ]
+        ]
+      },
+      "patrones_respuesta": {
+        "P3_01": {
+          "respuestas_populares": [
+            {
+              "respuesta": "Coherencia cientifica",
+              "count": 13,
+              "pct": 43.3
+            },
+            {
+              "respuesta": "Predicciones que se cumplen",
+              "count": 10,
+              "pct": 33.3
+            },
+            {
+              "respuesta": "Detalles tecnicos precisos",
+              "count": 5,
+              "pct": 16.7
+            },
+            {
+              "respuesta": "Autores que sean expertos",
+              "count": 2,
+              "pct": 6.7
+            }
+          ],
+          "diversidad": 0.13333333333333333
+        },
+        "P3_02": {
+          "respuestas_populares": [
+            {
+              "respuesta": "Ideas que desafien mi pensamiento",
+              "count": 25,
+              "pct": 83.3
+            },
+            {
+              "respuesta": "Personajes con los que conecte",
+              "count": 4,
+              "pct": 13.3
+            },
+            {
+              "respuesta": "Mundos que pueda explorar",
+              "count": 1,
+              "pct": 3.3
+            }
+          ],
+          "diversidad": 0.1
+        }
+      },
+      "angulo_validado": {
+        "angulo_mas_frecuente": [
+          "MEDIOEVO como ciencia ficcion dura",
+          30
+        ],
+        "consistencia": 100.0
+      },
+      "dolores_comunes": {
+        "Ve ficcion como perdida de tiempo": {
+          "count": 12,
+          "pct": 40.0
+        },
+        "Requiere rigor intelectual": {
+          "count": 9,
+          "pct": 30.0
+        },
+        "Desprecia soft sci-fi": {
+          "count": 9,
+          "pct": 30.0
+        }
+      },
+      "recomendaciones": []
+    },
+    "PERFIL_04": {
+      "perfil_id": "PERFIL_04",
+      "nombre_perfil": "La Madre que Lee de Noche",
+      "total_muestra": 30,
+      "demografia": {
+        "edad": {
+          "45-50": {
+            "count": 12,
+            "pct": 40.0
+          },
+          "35-40": {
+            "count": 10,
+            "pct": 33.3
+          },
+          "40-45": {
+            "count": 8,
+            "pct": 26.7
+          }
+        },
+        "genero": {
+          "F": {
+            "count": 30,
+            "pct": 100.0
+          }
+        },
+        "top_ocupaciones": [
+          [
+            "Ama de casa",
+            14
+          ],
+          [
+            "Administrativa",
+            6
+          ],
+          [
+            "Psicologa",
+            5
+          ],
+          [
+            "Maestra",
+            3
+          ],
+          [
+            "Enfermera",
+            2
+          ]
+        ]
+      },
+      "patrones_respuesta": {
+        "P4_01": {
+          "respuestas_populares": [
+            {
+              "respuesta": "<30 min",
+              "count": 11,
+              "pct": 36.7
+            },
+            {
+              "respuesta": "30-60 min",
+              "count": 11,
+              "pct": 36.7
+            },
+            {
+              "respuesta": "1-2 horas",
+              "count": 8,
+              "pct": 26.7
+            }
+          ],
+          "diversidad": 0.1
+        },
+        "P4_02": {
+          "respuestas_populares": [
+            {
+              "respuesta": "Capitulo 2",
+              "count": 11,
+              "pct": 36.7
+            },
+            {
+              "respuesta": "Pagina 50",
+              "count": 10,
+              "pct": 33.3
+            },
+            {
+              "respuesta": "Pagina 10",
+              "count": 7,
+              "pct": 23.3
+            },
+            {
+              "respuesta": "Nunca abandonó un libro",
+              "count": 2,
+              "pct": 6.7
+            }
+          ],
+          "diversidad": 0.13333333333333333
+        },
+        "P4_03": {
+          "respuestas_populares": [
+            {
+              "respuesta": "No conecta en las primeras 50 paginas",
+              "count": 13,
+              "pct": 43.3
+            },
+            {
+              "respuesta": "El ritmo es muy lento",
+              "count": 8,
+              "pct": 26.7
+            },
+            {
+              "respuesta": "Demasiados personajes, me pierdo",
+              "count": 5,
+              "pct": 16.7
+            },
+            {
+              "respuesta": "No siento que valga mi tiempo limitado",
+              "count": 4,
+              "pct": 13.3
+            }
+          ],
+          "diversidad": 0.13333333333333333
+        }
+      },
+      "angulo_validado": {
+        "angulo_mas_frecuente": [
+          "MEDIOEVO como inmersion inmediata",
+          30
+        ],
+        "consistencia": 100.0
+      },
+      "dolores_comunes": {
+        "Abandona libros lentos": {
+          "count": 13,
+          "pct": 43.3
+        },
+        "Tiempo muy limitado": {
+          "count": 9,
+          "pct": 30.0
+        },
+        "Necesita hook rapido": {
+          "count": 8,
+          "pct": 26.7
+        }
+      },
+      "recomendaciones": []
+    },
+    "PERFIL_05": {
+      "perfil_id": "PERFIL_05",
+      "nombre_perfil": "El Gamer de Narrativas",
+      "total_muestra": 30,
+      "demografia": {
+        "edad": {
+          "20-25": {
+            "count": 12,
+            "pct": 40.0
+          },
+          "25-30": {
+            "count": 11,
+            "pct": 36.7
+          },
+          "30-35": {
+            "count": 7,
+            "pct": 23.3
+          }
+        },
+        "genero": {
+          "M": {
+            "count": 15,
+            "pct": 50.0
+          },
+          "F": {
+            "count": 15,
+            "pct": 50.0
+          }
+        },
+        "top_ocupaciones": [
+          [
+            "QA Tester",
+            9
+          ],
+          [
+            "Game Designer",
+            6
+          ],
+          [
+            "Estudiante",
+            5
+          ],
+          [
+            "Tecnico",
+            5
+          ],
+          [
+            "Desarrollador",
+            5
+          ]
+        ]
+      },
+      "patrones_respuesta": {
+        "P5_01": {
+          "respuestas_populares": [
+            {
+              "respuesta": "Detroit: Become Human",
+              "count": 8,
+              "pct": 26.7
+            },
+            {
+              "respuesta": "Mass Effect",
+              "count": 6,
+              "pct": 20.0
+            },
+            {
+              "respuesta": "Disco Elysium",
+              "count": 6,
+              "pct": 20.0
+            },
+            {
+              "respuesta": "The Witcher 3",
+              "count": 5,
+              "pct": 16.7
+            },
+            {
+              "respuesta": "Life is Strange",
+              "count": 5,
+              "pct": 16.7
+            }
+          ],
+          "diversidad": 0.16666666666666666
+        },
+        "P5_02": {
+          "respuestas_populares": [
+            {
+              "respuesta": "Explorar el mundo a mi ritmo",
+              "count": 9,
+              "pct": 30.0
+            },
+            {
+              "respuesta": "Elegir el orden de los capitulos",
+              "count": 8,
+              "pct": 26.7
+            },
+            {
+              "respuesta": "Ver multiples perspectivas",
+              "count": 7,
+              "pct": 23.3
+            },
+            {
+              "respuesta": "Nada, solo leer",
+              "count": 6,
+              "pct": 20.0
+            }
+          ],
+          "diversidad": 0.13333333333333333
+        }
+      },
+      "angulo_validado": {
+        "angulo_mas_frecuente": [
+          "MEDIOEVO como narrativa con agencia",
+          30
+        ],
+        "consistencia": 100.0
+      },
+      "dolores_comunes": {
+        "Ve libros como pasivos": {
+          "count": 13,
+          "pct": 43.3
+        },
+        "Quiere agencia narrativa": {
+          "count": 12,
+          "pct": 40.0
+        },
+        "Malacostumbrado por juegos": {
+          "count": 5,
+          "pct": 16.7
+        }
+      },
+      "recomendaciones": []
+    }
+  },
+  "insights_cruzados": [
+    {
+      "tipo": "comparacion_comportamiento",
+      "titulo": "Tolerancia a lectura densa por perfil",
+      "descripcion": "Diferencia en disposicion a leer textos largos",
+      "datos": {
+        "PERFIL_01": "200+"
+      },
+      "implicacion": "Ajustar densidad narrativa por segmento objetivo"
+    },
+    {
+      "tipo": "comportamiento_social",
+      "titulo": "Indice de participacion comunitaria",
+      "descripcion": "Porcentaje que ya participa o quiere participar en comunidades",
+      "datos": {
+        "PERFIL_02": 86.7
+      },
+      "implicacion": "PERFIL_02 requiere comunidad activa; otros menos prioridad"
+    },
+    {
+      "tipo": "preferencia_formato",
+      "titulo": "Deseo de interactividad narrativa",
+      "descripcion": "Porcentaje que quiere elementos de eleccion/agencia",
+      "datos": {
+        "PERFIL_05": 80.0
+      },
+      "implicacion": "PERFIL_05 requiere estructura no lineal opcional"
+    }
+  ],
+  "recomendaciones_accion": [
+    {
+      "perfil_id": "PERFIL_01",
+      "para_quien": "El Buscador de Verdades Ocultas",
+      "prioridad": "ALTA",
+      "angulo_confirmado": "MEDIOEVO como espejo filosofico",
+      "confianza": "100.0%",
+      "acciones": [
+        "Enfasis en capas filosoficas en marketing",
+        "Blurb: resaltar preguntas existenciales",
+        "Timing: liberar ensayos tematicos previo al lanzamiento",
+        "Contenido extra: glosario filosofico/simbolico"
+      ]
+    },
+    {
+      "perfil_id": "PERFIL_02",
+      "para_quien": "La Fan de Ficciones Complejas",
+      "prioridad": "ALTA",
+      "angulo_confirmado": "MEDIOEVO como saga para pertenecer",
+      "confianza": "100.0%",
+      "acciones": [
+        "Crear Discord server antes del lanzamiento",
+        "Programar contenido extra entre libros para mantener engagement",
+        "Estrategia de 'timed release' para fidelizar",
+        "Book boxes, ediciones especiales para coleccionistas"
+      ]
+    },
+    {
+      "perfil_id": "PERFIL_03",
+      "para_quien": "El Esceptico de la Ciencia Ficcion",
+      "prioridad": "ALTA",
+      "angulo_confirmado": "MEDIOEVO como ciencia ficcion dura",
+      "confianza": "100.0%",
+      "acciones": [
+        "Incluir notas tecnicas detalladas",
+        "Glosario cientifico validado",
+        "Referencias a papers/articulos reales como easter eggs",
+        "Portada minimalista, design serio"
+      ]
+    },
+    {
+      "perfil_id": "PERFIL_04",
+      "para_quien": "La Madre que Lee de Noche",
+      "prioridad": "ALTA",
+      "angulo_confirmado": "MEDIOEVO como inmersion inmediata",
+      "confianza": "100.0%",
+      "acciones": [
+        "Capitulo 1 reescrito para hook inmediato",
+        "Capitulos cortos (2000-2500 palabras)",
+        "Estructura: cliffhangers al final de cada capitulo",
+        "Audiolibro de alta calidad para multitasking"
+      ]
+    },
+    {
+      "perfil_id": "PERFIL_05",
+      "para_quien": "El Gamer de Narrativas",
+      "prioridad": "ALTA",
+      "angulo_confirmado": "MEDIOEVO como narrativa con agencia",
+      "confianza": "100.0%",
+      "acciones": [
+        "Estructura no lineal opcional (guia de lectura alternativa)",
+        "Easter eggs interactivos (codigos, URLs)",
+        "Contenido transmedia (parasociales, ARG ligero)",
+        "Gamificacion de la lectura (badges, progreso)"
+      ]
+    }
+  ],
+  "proximos_pasos": [
+    "Revisar matriz de calibracion y ajustar segun estos datos",
+    "Priorizar perfiles con mayor confianza (>80%)",
+    "Implementar acciones en orden de impacto",
+    "Validar con focus group antes del lanzamiento"
+  ]
+}

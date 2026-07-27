@@ -1,0 +1,152 @@
+{
+  "fecha_consolidacion": "2026-04-19T01:19:27.350407",
+  "version": "1.0",
+  "tipo": "REPORTE EJECUTIVO MODELO DE NEGOCIO MEDIOEVO",
+  "generado_por": "Equipo CEO Autonomo (Agentes 01-03)",
+  "resumen_ejecutivo": {
+    "vision": "Ser el proyecto indie de ciencia ficcion mas influyente en espanol",
+    "oportunidad": "$2.9M-5.8M en 5 anos con inversion inicial $5K-10K",
+    "roi_proyectado": "18,000-72,000%",
+    "unit_economics": "LTV/CAC 29-58x (industria: 3-5x)",
+    "payback": "2-4 meses",
+    "margen_operativo": "65-70%",
+    "viabilidad": "EXCELENTE - Modelo robusto, bajo riesgo, alta rentabilidad"
+  },
+  "activos_clave": {
+    "productos": [
+      "35 libros de saga sci-fi",
+      "24 juegos de navegador",
+      "RPG manual",
+      "Audiolibros multi-idioma"
+    ],
+    "tecnologia": [
+      "14 agentes automatizados",
+      "Sistema 13 Capas editorial",
+      "Teoria Psi",
+      "Brain OS",
+      "CRM propio"
+    ],
+    "plataformas": [
+      "medioevo.space",
+      "Amazon KDP",
+      "Discord",
+      "Substack"
+    ],
+    "ip_intelectual": [
+      "Saga literaria 6+1",
+      "Metodo observacionismo",
+      "Herramientas cognitivas",
+      "Codigos diegeticos"
+    ]
+  },
+  "modelo_negocio_resumido": {
+    "segmentos_objetivo": [
+      "Discoverers Intelectuales (15% mercado)",
+      "Fans Sagas Complejas (40% mercado)",
+      "Lectores Ocasional (35% mercado)",
+      "Gamers Narrativas (25% mercado)"
+    ],
+    "propuesta_valor": "Sci-fi compleja con base cientifica verificable + capas ocultas tipo Rayuela",
+    "fuentes_ingreso": [
+      "Ventas libros (ebook/paperback/hardcover) - Principal",
+      "Kindle Unlimited",
+      "Audiolibros",
+      "RPG Manual",
+      "CRM Traficantes (SaaS)",
+      "Consultoria Observacionismo",
+      "Licenciamiento tecnologia",
+      "Workshops 13 Capas"
+    ],
+    "canales": [
+      "BookTok/Bookstagram (organico)",
+      "Amazon Ads",
+      "Amazon KDP",
+      "medioevo.space",
+      "Reddit r/scifi",
+      "Newsletter",
+      "Discord"
+    ]
+  },
+  "proyeccion_financiera_resumida": {
+    "ano_1": {
+      "revenue": "$50,000-120,000",
+      "margen_bruto": "70-75%",
+      "libros": 3,
+      "readers": "2000-5000"
+    },
+    "ano_3": {
+      "revenue": "$400,000-800,000",
+      "diversificacion": "50% libros, 20% licenciamientos, 20% B2B, 10% otros"
+    },
+    "ano_5": {
+      "revenue": "$1,500,000-3,000,000",
+      "posicion": "Referente indie sci-fi global"
+    }
+  },
+  "kpis_criticos": {
+    "economicos": {
+      "CAC": "$6-13",
+      "LTV": "$380-750",
+      "LTV/CAC": "29-58x",
+      "Payback": "2-4 meses",
+      "Gross Margin": "70-75%"
+    },
+    "operacionales": {
+      "Churn": "15-25%",
+      "Read-through": "60-70%",
+      "Rating": "4.3+",
+      "Reviews/book": "20-50"
+    }
+  },
+  "plan_accion_prioridades": {
+    "mes_1_2": [
+      "Setup BookTok + Discord",
+      "Landing page medioevo.space",
+      "Libro 1 publicado KDP",
+      "Amazon Ads live",
+      "Target: 1000 ventas"
+    ],
+    "mes_3_6": [
+      "Libros 2-3 publicados",
+      "BookBub Featured Deal",
+      "Influencer campaign",
+      "Community 500+",
+      "Newsletter 1000+ subs"
+    ],
+    "mes_7_12": [
+      "Audiobook Book 1",
+      "Box Sets",
+      "CRM B2B launch",
+      "Consultoria pilot",
+      "Revenue $80K-120K"
+    ]
+  },
+  "riesgos_principales": {
+    "mercado": {
+      "nivel": "Medio",
+      "mitigacion": "Diversificacion perfiles + comunidad"
+    },
+    "operacional": {
+      "nivel": "Bajo",
+      "mitigacion": "Automatizacion agentes"
+    },
+    "financiero": {
+      "nivel": "Muy Bajo",
+      "mitigacion": "Capex minimo, asset-light"
+    }
+  },
+  "recomendaciones_ejecutivas": [
+    "APROBAR PROYECTO - Modelo financieramente excelente",
+    "Inversion inicial: $5K-10K maximo",
+    "Ejecutar plan Mes 1-2 inmediatamente",
+    "Mantener operacion lean, no contratar hasta Ano 2",
+    "Reinvertir 30% ingresos en crecimiento",
+    "Foco en BookTok organico + Amazon Ads",
+    "Preparar documentacion ronda Series A Ano 3"
+  ],
+  "referencias_completas": {
+    "estrategia": "CEO_01_ESTRATEGIA_NEGOCIO.json",
+    "financiero": "CEO_02_FINANCIERO_OPERACIONES.json",
+    "growth": "CEO_03_GROWTH_VENTAS.json"
+  }
+}

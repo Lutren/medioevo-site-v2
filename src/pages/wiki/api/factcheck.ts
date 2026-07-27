@@ -94,6 +94,13 @@ export const POST: APIRoute = async ({ request }) => {
   }
 };
 
+export const GET: APIRoute = async () => {
+  return new Response(JSON.stringify({ error: 'Method not allowed', allowed: ['POST', 'OPTIONS'] }), {
+    status: 405,
+    headers: { 'Content-Type': 'application/json', 'Allow': 'POST, OPTIONS' },
+  });
+};
+
 // Handle OPTIONS for CORS
 export const OPTIONS: APIRoute = async ({ request }) => {
   return new Response(null, {

@@ -1,0 +1,3374 @@
+{
+  "fecha_generacion": "2026-04-18T21:09:51.579572",
+  "version": "1.0",
+  "total_lectores": 150,
+  "por_perfil": {
+    "PERFIL_01": 30,
+    "PERFIL_02": 30,
+    "PERFIL_03": 30,
+    "PERFIL_04": 30,
+    "PERFIL_05": 30
+  },
+  "lectores": [
+    {
+      "id": "PERFIL_01_001",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "Cientifico",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "El Principito"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "0-50"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga sentir parte de algo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_002",
+      "perfil_id": "PERFIL_01",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Ingeniero",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "1984"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me transporte a otro mundo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_003",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Cientifico",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Cansado de ficcion superficial",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "El Principito"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_004",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Filosofo",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Un mundo feliz"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_005",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Cientifico",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "El Principito"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "100-200"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_006",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Filosofo",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Ninguno recientemente"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "50-100"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_007",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Filosofo",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Cansado de ficcion superficial",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Sapiens"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "0-50"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga sentir parte de algo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_008",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "Tech",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Ninguno recientemente"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "100-200"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_009",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Tech",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "El Principito"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_010",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Escritor",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "El Principito"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_011",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Filosofo",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Fahrenheit 451"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga sentir parte de algo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_012",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Escritor",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Fahrenheit 451"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "100-200"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me transporte a otro mundo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_013",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Tech",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Sapiens"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "100-200"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_014",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Ingeniero",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Cansado de ficcion superficial",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "1984"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "0-50"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me sorprenda en cada pagina"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_015",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Tech",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "El Principito"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_016",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Filosofo",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Sapiens"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me sorprenda en cada pagina"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_017",
+      "perfil_id": "PERFIL_01",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Ingeniero",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "1984"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "100-200"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga sentir parte de algo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_018",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Cientifico",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Cansado de ficcion superficial",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Sapiens"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "100-200"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga sentir parte de algo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_019",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Cientifico",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Fahrenheit 451"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_020",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Cientifico",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Sapiens"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_021",
+      "perfil_id": "PERFIL_01",
+      "edad": "35-40",
+      "genero": "M",
+      "ocupacion": "Tech",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "1984"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga sentir parte de algo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_022",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "Filosofo",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Cansado de ficcion superficial",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "1984"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_023",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "Escritor",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Cansado de ficcion superficial",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Fahrenheit 451"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_024",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Escritor",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "1984"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_025",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Escritor",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Sapiens"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "100-200"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me transporte a otro mundo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_026",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Filosofo",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Sapiens"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_027",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "Escritor",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Sapiens"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "0-50"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.575543"
+    },
+    {
+      "id": "PERFIL_01_028",
+      "perfil_id": "PERFIL_01",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Tech",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Cansado de ficcion superficial",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "1984"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "200+"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_01_029",
+      "perfil_id": "PERFIL_01",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "Filosofo",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Busca significado profundo",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "1984"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "0-50"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_01_030",
+      "perfil_id": "PERFIL_01",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Filosofo",
+      "angulo_detectado": "MEDIOEVO como espejo filosofico",
+      "punto_d": "Quiere que lo desafien intelectualmente",
+      "respuestas": [
+        {
+          "id": "P1_01",
+          "respuesta": "Ninguno recientemente"
+        },
+        {
+          "id": "P1_02",
+          "respuesta": "50-100"
+        },
+        {
+          "id": "P1_03",
+          "respuesta": "Que me haga preguntas que no me habia hecho"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_001",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "M",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Percy Jackson"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "No, pero quiero"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_002",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "M",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Ninguna todavia"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_003",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "F",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Harry Potter"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, pero solo leo"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Personajes que se sientan reales"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_004",
+      "perfil_id": "PERFIL_02",
+      "edad": "23-28",
+      "genero": "F",
+      "ocupacion": "Community Manager",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Percy Jackson"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Personajes que se sientan reales"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_005",
+      "perfil_id": "PERFIL_02",
+      "edad": "23-28",
+      "genero": "M",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cazadores de sombras"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un misterio que valga la pena resolver"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_006",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "M",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Ninguna todavia"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un misterio que valga la pena resolver"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_007",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "M",
+      "ocupacion": "Freelance",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cazadores de sombras"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_008",
+      "perfil_id": "PERFIL_02",
+      "edad": "23-28",
+      "genero": "M",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Percy Jackson"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Personajes que se sientan reales"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_009",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "F",
+      "ocupacion": "Marketing",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Ninguna todavia"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, pero solo leo"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_010",
+      "perfil_id": "PERFIL_02",
+      "edad": "28-35",
+      "genero": "F",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cazadores de sombras"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Personajes que se sientan reales"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_011",
+      "perfil_id": "PERFIL_02",
+      "edad": "28-35",
+      "genero": "F",
+      "ocupacion": "Community Manager",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Ninguna todavia"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_012",
+      "perfil_id": "PERFIL_02",
+      "edad": "23-28",
+      "genero": "M",
+      "ocupacion": "Community Manager",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Percy Jackson"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, pero solo leo"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Una comunidad de lectores apasionados"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_013",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "F",
+      "ocupacion": "Community Manager",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Le decepcionaron finales",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Harry Potter"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "No me interesa"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_014",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "F",
+      "ocupacion": "Marketing",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Harry Potter"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un misterio que valga la pena resolver"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_015",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "M",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Le decepcionaron finales",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cancion de hielo y fuego"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un misterio que valga la pena resolver"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_016",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "F",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Harry Potter"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un misterio que valga la pena resolver"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_017",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "M",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Harry Potter"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Personajes que se sientan reales"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_018",
+      "perfil_id": "PERFIL_02",
+      "edad": "28-35",
+      "genero": "M",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cazadores de sombras"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, pero solo leo"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_019",
+      "perfil_id": "PERFIL_02",
+      "edad": "23-28",
+      "genero": "F",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Harry Potter"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "No, pero quiero"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_020",
+      "perfil_id": "PERFIL_02",
+      "edad": "23-28",
+      "genero": "F",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Le decepcionaron finales",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Percy Jackson"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, pero solo leo"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_021",
+      "perfil_id": "PERFIL_02",
+      "edad": "28-35",
+      "genero": "M",
+      "ocupacion": "Marketing",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Le decepcionaron finales",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Ninguna todavia"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_022",
+      "perfil_id": "PERFIL_02",
+      "edad": "28-35",
+      "genero": "M",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Le decepcionaron finales",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cancion de hielo y fuego"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Personajes que se sientan reales"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_023",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "F",
+      "ocupacion": "Community Manager",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Percy Jackson"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_024",
+      "perfil_id": "PERFIL_02",
+      "edad": "23-28",
+      "genero": "F",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Le decepcionaron finales",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Harry Potter"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, pero solo leo"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_025",
+      "perfil_id": "PERFIL_02",
+      "edad": "28-35",
+      "genero": "F",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cazadores de sombras"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Personajes que se sientan reales"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_026",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "F",
+      "ocupacion": "Community Manager",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cancion de hielo y fuego"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "No, pero quiero"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un misterio que valga la pena resolver"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_027",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "F",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Le decepcionaron finales",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cazadores de sombras"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_028",
+      "perfil_id": "PERFIL_02",
+      "edad": "23-28",
+      "genero": "F",
+      "ocupacion": "Freelance",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Quiere pertenecer a algo",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Harry Potter"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, activamente"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_029",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "M",
+      "ocupacion": "Marketing",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Busca comunidad",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Cancion de hielo y fuego"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, pero solo leo"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_02_030",
+      "perfil_id": "PERFIL_02",
+      "edad": "18-23",
+      "genero": "F",
+      "ocupacion": "Disenador",
+      "angulo_detectado": "MEDIOEVO como saga para pertenecer",
+      "punto_d": "Le decepcionaron finales",
+      "respuestas": [
+        {
+          "id": "P2_01",
+          "respuesta": "Ninguna todavia"
+        },
+        {
+          "id": "P2_02",
+          "respuesta": "Si, pero solo leo"
+        },
+        {
+          "id": "P2_03",
+          "respuesta": "Un mundo que pueda explorar por anos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_03_001",
+      "perfil_id": "PERFIL_03",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_03_002",
+      "perfil_id": "PERFIL_03",
+      "edad": "40-50",
+      "genero": "M",
+      "ocupacion": "Academico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Requiere rigor intelectual",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_03_003",
+      "perfil_id": "PERFIL_03",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Academico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Requiere rigor intelectual",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_03_004",
+      "perfil_id": "PERFIL_03",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Ejecutivo",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_03_005",
+      "perfil_id": "PERFIL_03",
+      "edad": "40-50",
+      "genero": "F",
+      "ocupacion": "Academico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Personajes con los que conecte"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_03_006",
+      "perfil_id": "PERFIL_03",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Ingeniero",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Requiere rigor intelectual",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_03_007",
+      "perfil_id": "PERFIL_03",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Ingeniero",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_03_008",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "M",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Desprecia soft sci-fi",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.577559"
+    },
+    {
+      "id": "PERFIL_03_009",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Autores que sean expertos"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_010",
+      "perfil_id": "PERFIL_03",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Medico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Desprecia soft sci-fi",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_011",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "M",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Desprecia soft sci-fi",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_012",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Ingeniero",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Desprecia soft sci-fi",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_013",
+      "perfil_id": "PERFIL_03",
+      "edad": "40-50",
+      "genero": "F",
+      "ocupacion": "Ejecutivo",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Autores que sean expertos"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_014",
+      "perfil_id": "PERFIL_03",
+      "edad": "40-50",
+      "genero": "F",
+      "ocupacion": "Academico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_015",
+      "perfil_id": "PERFIL_03",
+      "edad": "40-50",
+      "genero": "M",
+      "ocupacion": "Ingeniero",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Requiere rigor intelectual",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_016",
+      "perfil_id": "PERFIL_03",
+      "edad": "40-50",
+      "genero": "M",
+      "ocupacion": "Academico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_017",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Desprecia soft sci-fi",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Detalles tecnicos precisos"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Personajes con los que conecte"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_018",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "M",
+      "ocupacion": "Academico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Detalles tecnicos precisos"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_019",
+      "perfil_id": "PERFIL_03",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Requiere rigor intelectual",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_020",
+      "perfil_id": "PERFIL_03",
+      "edad": "40-50",
+      "genero": "F",
+      "ocupacion": "Ejecutivo",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Desprecia soft sci-fi",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Detalles tecnicos precisos"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_021",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Academico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Desprecia soft sci-fi",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Personajes con los que conecte"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_022",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "M",
+      "ocupacion": "Academico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Requiere rigor intelectual",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Mundos que pueda explorar"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_023",
+      "perfil_id": "PERFIL_03",
+      "edad": "40-50",
+      "genero": "M",
+      "ocupacion": "Ejecutivo",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Desprecia soft sci-fi",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Personajes con los que conecte"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_024",
+      "perfil_id": "PERFIL_03",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "Academico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_025",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Ingeniero",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Requiere rigor intelectual",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Detalles tecnicos precisos"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_026",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Detalles tecnicos precisos"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_027",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Ve ficcion como perdida de tiempo",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Coherencia cientifica"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_028",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Requiere rigor intelectual",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_029",
+      "perfil_id": "PERFIL_03",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Medico",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Requiere rigor intelectual",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_03_030",
+      "perfil_id": "PERFIL_03",
+      "edad": "40-50",
+      "genero": "F",
+      "ocupacion": "Abogado",
+      "angulo_detectado": "MEDIOEVO como ciencia ficcion dura",
+      "punto_d": "Desprecia soft sci-fi",
+      "respuestas": [
+        {
+          "id": "P3_01",
+          "respuesta": "Predicciones que se cumplen"
+        },
+        {
+          "id": "P3_02",
+          "respuesta": "Ideas que desafien mi pensamiento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_001",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Administrativa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_002",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 10"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "Demasiados personajes, me pierdo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_003",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Tiempo muy limitado",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "1-2 horas"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "El ritmo es muy lento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_004",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Maestra",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Necesita hook rapido",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_005",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Necesita hook rapido",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "1-2 horas"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_006",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Necesita hook rapido",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "1-2 horas"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_007",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Enfermera",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Necesita hook rapido",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No siento que valga mi tiempo limitado"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_008",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Administrativa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Necesita hook rapido",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_009",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Administrativa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Tiempo muy limitado",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_010",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Necesita hook rapido",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_011",
+      "perfil_id": "PERFIL_04",
+      "edad": "40-45",
+      "genero": "F",
+      "ocupacion": "Psicologa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "El ritmo es muy lento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_012",
+      "perfil_id": "PERFIL_04",
+      "edad": "40-45",
+      "genero": "F",
+      "ocupacion": "Psicologa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_013",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Psicologa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 10"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "El ritmo es muy lento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_014",
+      "perfil_id": "PERFIL_04",
+      "edad": "40-45",
+      "genero": "F",
+      "ocupacion": "Psicologa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Tiempo muy limitado",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No siento que valga mi tiempo limitado"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_015",
+      "perfil_id": "PERFIL_04",
+      "edad": "40-45",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Tiempo muy limitado",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Nunca abandonó un libro"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "Demasiados personajes, me pierdo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_016",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Enfermera",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "1-2 horas"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_017",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 10"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_018",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Tiempo muy limitado",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No siento que valga mi tiempo limitado"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_019",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Tiempo muy limitado",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "1-2 horas"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_020",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Tiempo muy limitado",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "El ritmo es muy lento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_021",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Maestra",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "El ritmo es muy lento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_022",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Maestra",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "Demasiados personajes, me pierdo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_023",
+      "perfil_id": "PERFIL_04",
+      "edad": "40-45",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Tiempo muy limitado",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "1-2 horas"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 10"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "Demasiados personajes, me pierdo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_024",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Administrativa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "El ritmo es muy lento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_025",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Administrativa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Capitulo 2"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_026",
+      "perfil_id": "PERFIL_04",
+      "edad": "40-45",
+      "genero": "F",
+      "ocupacion": "Administrativa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Necesita hook rapido",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "1-2 horas"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 10"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No conecta en las primeras 50 paginas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_027",
+      "perfil_id": "PERFIL_04",
+      "edad": "45-50",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Necesita hook rapido",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 10"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "No siento que valga mi tiempo limitado"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_028",
+      "perfil_id": "PERFIL_04",
+      "edad": "35-40",
+      "genero": "F",
+      "ocupacion": "Psicologa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Tiempo muy limitado",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "<30 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Nunca abandonó un libro"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "Demasiados personajes, me pierdo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_029",
+      "perfil_id": "PERFIL_04",
+      "edad": "40-45",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "30-60 min"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 50"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "El ritmo es muy lento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_04_030",
+      "perfil_id": "PERFIL_04",
+      "edad": "40-45",
+      "genero": "F",
+      "ocupacion": "Ama de casa",
+      "angulo_detectado": "MEDIOEVO como inmersion inmediata",
+      "punto_d": "Abandona libros lentos",
+      "respuestas": [
+        {
+          "id": "P4_01",
+          "respuesta": "1-2 horas"
+        },
+        {
+          "id": "P4_02",
+          "respuesta": "Pagina 10"
+        },
+        {
+          "id": "P4_03",
+          "respuesta": "El ritmo es muy lento"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_001",
+      "perfil_id": "PERFIL_05",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "QA Tester",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Mass Effect"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Nada, solo leer"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_002",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "M",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "The Witcher 3"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Elegir el orden de los capitulos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_003",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "M",
+      "ocupacion": "Game Designer",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Life is Strange"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Explorar el mundo a mi ritmo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_004",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Mass Effect"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Elegir el orden de los capitulos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_005",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Mass Effect"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Ver multiples perspectivas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_006",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "QA Tester",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Life is Strange"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Nada, solo leer"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_007",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "QA Tester",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Mass Effect"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Nada, solo leer"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_008",
+      "perfil_id": "PERFIL_05",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Tecnico",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Detroit: Become Human"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Elegir el orden de los capitulos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_009",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "F",
+      "ocupacion": "Game Designer",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Disco Elysium"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Ver multiples perspectivas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_010",
+      "perfil_id": "PERFIL_05",
+      "edad": "30-35",
+      "genero": "M",
+      "ocupacion": "QA Tester",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "The Witcher 3"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Ver multiples perspectivas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_011",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "F",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Malacostumbrado por juegos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "The Witcher 3"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Explorar el mundo a mi ritmo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_012",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "M",
+      "ocupacion": "QA Tester",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Detroit: Become Human"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Explorar el mundo a mi ritmo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_013",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "QA Tester",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Detroit: Become Human"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Explorar el mundo a mi ritmo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_014",
+      "perfil_id": "PERFIL_05",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Desarrollador",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Detroit: Become Human"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Explorar el mundo a mi ritmo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_015",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "F",
+      "ocupacion": "Desarrollador",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Malacostumbrado por juegos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Life is Strange"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Explorar el mundo a mi ritmo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_016",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Desarrollador",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Disco Elysium"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Ver multiples perspectivas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_017",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Tecnico",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Disco Elysium"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Elegir el orden de los capitulos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_018",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "F",
+      "ocupacion": "Estudiante",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Life is Strange"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Ver multiples perspectivas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_019",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "F",
+      "ocupacion": "Game Designer",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Detroit: Become Human"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Explorar el mundo a mi ritmo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_020",
+      "perfil_id": "PERFIL_05",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Game Designer",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Disco Elysium"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Nada, solo leer"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_021",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "QA Tester",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Detroit: Become Human"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Elegir el orden de los capitulos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_022",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "M",
+      "ocupacion": "Game Designer",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Malacostumbrado por juegos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Detroit: Become Human"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Nada, solo leer"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_023",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "QA Tester",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Malacostumbrado por juegos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Disco Elysium"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Elegir el orden de los capitulos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_024",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "F",
+      "ocupacion": "Tecnico",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Mass Effect"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Nada, solo leer"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_025",
+      "perfil_id": "PERFIL_05",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Game Designer",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "The Witcher 3"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Explorar el mundo a mi ritmo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_026",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "M",
+      "ocupacion": "Desarrollador",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Detroit: Become Human"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Explorar el mundo a mi ritmo"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_027",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "M",
+      "ocupacion": "QA Tester",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Malacostumbrado por juegos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "The Witcher 3"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Elegir el orden de los capitulos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_028",
+      "perfil_id": "PERFIL_05",
+      "edad": "25-30",
+      "genero": "M",
+      "ocupacion": "Tecnico",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Disco Elysium"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Elegir el orden de los capitulos"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_029",
+      "perfil_id": "PERFIL_05",
+      "edad": "20-25",
+      "genero": "F",
+      "ocupacion": "Desarrollador",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Quiere agencia narrativa",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Life is Strange"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Ver multiples perspectivas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    },
+    {
+      "id": "PERFIL_05_030",
+      "perfil_id": "PERFIL_05",
+      "edad": "30-35",
+      "genero": "F",
+      "ocupacion": "Tecnico",
+      "angulo_detectado": "MEDIOEVO como narrativa con agencia",
+      "punto_d": "Ve libros como pasivos",
+      "respuestas": [
+        {
+          "id": "P5_01",
+          "respuesta": "Mass Effect"
+        },
+        {
+          "id": "P5_02",
+          "respuesta": "Ver multiples perspectivas"
+        }
+      ],
+      "timestamp": "2026-04-18T21:09:51.579572"
+    }
+  ]
+}

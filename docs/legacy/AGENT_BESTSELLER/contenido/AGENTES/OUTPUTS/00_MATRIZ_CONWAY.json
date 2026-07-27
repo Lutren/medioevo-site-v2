@@ -1,0 +1,4514 @@
+{
+  "fecha": "2026-04-18T21:09:49.866285",
+  "version": "1.0",
+  "tipo": "Simulacion Conway-style para analisis social MEDIOEVO",
+  "dimensiones_analizadas": [
+    "economica",
+    "social",
+    "politico",
+    "edad",
+    "biologico",
+    "mental",
+    "digital",
+    "espiritual"
+  ],
+  "parametros_conway": {
+    "supervivencia": [
+      2,
+      3
+    ],
+    "nacimiento": [
+      3
+    ],
+    "muerte_sobrepoblacion": ">3",
+    "muerte_aislamiento": "<2"
+  },
+  "resultados": {
+    "iteraciones": [
+      {
+        "iteracion": 1,
+        "fans": 109,
+        "discoverers": 132,
+        "total": 500,
+        "distribucion_estados": {
+          "aislado": 259,
+          "emergente": 132,
+          "fanatico": 109
+        },
+        "porcentaje_fans": 21.8,
+        "porcentaje_discoverers": 26.400000000000002
+      },
+      {
+        "iteracion": 2,
+        "fans": 125,
+        "discoverers": 139,
+        "total": 500,
+        "distribucion_estados": {
+          "fanatico": 166,
+          "aislado": 149,
+          "emergente": 185
+        },
+        "porcentaje_fans": 25.0,
+        "porcentaje_discoverers": 27.800000000000004
+      },
+      {
+        "iteracion": 3,
+        "fans": 121,
+        "discoverers": 122,
+        "total": 500,
+        "distribucion_estados": {
+          "fanatico": 198,
+          "aislado": 92,
+          "emergente": 210
+        },
+        "porcentaje_fans": 24.2,
+        "porcentaje_discoverers": 24.4
+      },
+      {
+        "iteracion": 4,
+        "fans": 106,
+        "discoverers": 128,
+        "total": 500,
+        "distribucion_estados": {
+          "emergente": 225,
+          "aislado": 70,
+          "fanatico": 205
+        },
+        "porcentaje_fans": 21.2,
+        "porcentaje_discoverers": 25.6
+      },
+      {
+        "iteracion": 5,
+        "fans": 106,
+        "discoverers": 137,
+        "total": 500,
+        "distribucion_estados": {
+          "emergente": 257,
+          "aislado": 50,
+          "fanatico": 193
+        },
+        "porcentaje_fans": 21.2,
+        "porcentaje_discoverers": 27.400000000000002
+      },
+      {
+        "iteracion": 6,
+        "fans": 102,
+        "discoverers": 126,
+        "total": 500,
+        "distribucion_estados": {
+          "emergente": 264,
+          "fanatico": 199,
+          "aislado": 37
+        },
+        "porcentaje_fans": 20.4,
+        "porcentaje_discoverers": 25.2
+      }
+    ],
+    "poblacion_final": [
+      {
+        "id": "AGT_000",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_001",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_002",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_003",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.6000000000000001,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_004",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_005",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_006",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_007",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_008",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_009",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_010",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_011",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.6000000000000001,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_012",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_013",
+        "estado": "fanatico",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_014",
+        "estado": "fanatico",
+        "factor_fan": 0.45000000000000007,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_015",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_016",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_017",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_018",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.8,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_019",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_021",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_022",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_023",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_024",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_025",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.3,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_026",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_027",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_028",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_029",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_030",
+        "estado": "fanatico",
+        "factor_fan": 0.30000000000000004,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_031",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.65,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_032",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_033",
+        "estado": "fanatico",
+        "factor_fan": 0.30000000000000004,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_034",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_035",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_036",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_037",
+        "estado": "emergente",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_038",
+        "estado": "fanatico",
+        "factor_fan": 0.6,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_039",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_040",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_041",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_042",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_043",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_044",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_045",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_046",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_047",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_048",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_049",
+        "estado": "fanatico",
+        "factor_fan": 0.45000000000000007,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_051",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_052",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_053",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_054",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_055",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_056",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_057",
+        "estado": "emergente",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_058",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_059",
+        "estado": "fanatico",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_060",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_061",
+        "estado": "fanatico",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_062",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_063",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_064",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_065",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.7,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_066",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.65,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_067",
+        "estado": "fanatico",
+        "factor_fan": 0.6,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_068",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.30000000000000004,
+        "insights": []
+      },
+      {
+        "id": "AGT_069",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_070",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_071",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_072",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_073",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.30000000000000004,
+        "insights": []
+      },
+      {
+        "id": "AGT_074",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_075",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_077",
+        "estado": "emergente",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_078",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_079",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_080",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.9500000000000001,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_081",
+        "estado": "emergente",
+        "factor_fan": 0.5499999999999999,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_082",
+        "estado": "emergente",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_083",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_084",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_085",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_086",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_087",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_088",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_089",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_090",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_091",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_092",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_093",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_094",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_096",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_097",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.7000000000000001,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_098",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.7,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_099",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_100",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_101",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_103",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_104",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_105",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_106",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_108",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_109",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_110",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_111",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_112",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_113",
+        "estado": "emergente",
+        "factor_fan": 0.6,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_114",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_116",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_117",
+        "estado": "fanatico",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_118",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_119",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_120",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.85,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_121",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_122",
+        "estado": "emergente",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.45000000000000007,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_123",
+        "estado": "fanatico",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_124",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_125",
+        "estado": "fanatico",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_126",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_127",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_128",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_129",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_130",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_131",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_132",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_133",
+        "estado": "fanatico",
+        "factor_fan": 0.6,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_134",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_135",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_136",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_137",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_138",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_139",
+        "estado": "emergente",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_140",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_141",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_142",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_143",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_144",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_145",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_146",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_147",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_148",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.45000000000000007,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_149",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_150",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_151",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_152",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_153",
+        "estado": "fanatico",
+        "factor_fan": 0.45000000000000007,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_154",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_155",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_156",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.45000000000000007,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_157",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_158",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_159",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_160",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_161",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_162",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_163",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_164",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_165",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_166",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.3,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_167",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_168",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_169",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_170",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_171",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_172",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_173",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_175",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_176",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_177",
+        "estado": "emergente",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.7,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_179",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_180",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_181",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_182",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_183",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_184",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_185",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_187",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_188",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.65,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_189",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_190",
+        "estado": "emergente",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_191",
+        "estado": "fanatico",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_192",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_193",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.7,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_194",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_195",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_196",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_197",
+        "estado": "emergente",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_198",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_199",
+        "estado": "emergente",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_200",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_201",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_202",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_203",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_204",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_205",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_206",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_207",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_208",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_211",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.65,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_212",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_213",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_214",
+        "estado": "fanatico",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_215",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_216",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_218",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.8,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_219",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.7,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_220",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_221",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_222",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.35,
+        "insights": []
+      },
+      {
+        "id": "AGT_223",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_224",
+        "estado": "emergente",
+        "factor_fan": 0.6,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_225",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.30000000000000004,
+        "insights": []
+      },
+      {
+        "id": "AGT_226",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.45000000000000007,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_227",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_228",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_229",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_230",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_231",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_232",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_233",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6000000000000001,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_234",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.35,
+        "insights": []
+      },
+      {
+        "id": "AGT_235",
+        "estado": "emergente",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_236",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_237",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_238",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_239",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.7,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_240",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_241",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.30000000000000004,
+        "insights": []
+      },
+      {
+        "id": "AGT_242",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_243",
+        "estado": "emergente",
+        "factor_fan": 0.5499999999999999,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_244",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_245",
+        "estado": "fanatico",
+        "factor_fan": 0.5499999999999999,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_246",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_247",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_248",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_249",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_250",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_251",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_252",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_253",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_254",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_255",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_256",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.8,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_257",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_258",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_259",
+        "estado": "fanatico",
+        "factor_fan": 0.30000000000000004,
+        "factor_discovery": 0.7,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_260",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_261",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_262",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_263",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_264",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_265",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_266",
+        "estado": "emergente",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_267",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_268",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_269",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_270",
+        "estado": "emergente",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_271",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_272",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_273",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_274",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_275",
+        "estado": "emergente",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_276",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_277",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_278",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_279",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.45000000000000007,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_280",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_281",
+        "estado": "fanatico",
+        "factor_fan": 0.7,
+        "factor_discovery": 0.4,
+        "insights": []
+      },
+      {
+        "id": "AGT_282",
+        "estado": "fanatico",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.7000000000000001,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_284",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_285",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_286",
+        "estado": "fanatico",
+        "factor_fan": 0.6,
+        "factor_discovery": 0.35,
+        "insights": []
+      },
+      {
+        "id": "AGT_287",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_288",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_289",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_290",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_291",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_292",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_293",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_294",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_295",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.8,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_296",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.35,
+        "insights": []
+      },
+      {
+        "id": "AGT_298",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_299",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_301",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_302",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.45000000000000007,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_303",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_307",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_308",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_309",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_310",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.7000000000000001,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_311",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.65,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_312",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_314",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_315",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_316",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_317",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.30000000000000004,
+        "insights": []
+      },
+      {
+        "id": "AGT_318",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_319",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_320",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_321",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_322",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_323",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_324",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_325",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.75,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_327",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_328",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_329",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_330",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_331",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.65,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_332",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_333",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_334",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_335",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_336",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_337",
+        "estado": "fanatico",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_338",
+        "estado": "fanatico",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_339",
+        "estado": "emergente",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_340",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_342",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_343",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_344",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_345",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_346",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_347",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_348",
+        "estado": "emergente",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_349",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_350",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_352",
+        "estado": "fanatico",
+        "factor_fan": 0.6,
+        "factor_discovery": 0.55,
+        "insights": []
+      },
+      {
+        "id": "AGT_353",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_354",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.65,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_355",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_356",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_357",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_359",
+        "estado": "fanatico",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_360",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_361",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_362",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_363",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_364",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_365",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_366",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_367",
+        "estado": "emergente",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_368",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_369",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_370",
+        "estado": "emergente",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_371",
+        "estado": "fanatico",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_372",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_373",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_374",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.55,
+        "insights": []
+      },
+      {
+        "id": "AGT_375",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_376",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_377",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_378",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_379",
+        "estado": "emergente",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.7,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_380",
+        "estado": "emergente",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_381",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_383",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_384",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_385",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_386",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_387",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_388",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.6,
+        "insights": []
+      },
+      {
+        "id": "AGT_389",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_390",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_391",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_392",
+        "estado": "fanatico",
+        "factor_fan": 0.5499999999999999,
+        "factor_discovery": 0.35,
+        "insights": []
+      },
+      {
+        "id": "AGT_393",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.45000000000000007,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_394",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.6000000000000001,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_395",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_396",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_397",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.7,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_398",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_399",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_400",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_401",
+        "estado": "emergente",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_402",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_404",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_405",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.4,
+        "insights": []
+      },
+      {
+        "id": "AGT_407",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_408",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_409",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_410",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_411",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_412",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_413",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_414",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": []
+      },
+      {
+        "id": "AGT_415",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_416",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_417",
+        "estado": "emergente",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_420",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_421",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.15,
+        "insights": []
+      },
+      {
+        "id": "AGT_422",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.45,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_423",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_424",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_425",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_426",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_427",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_428",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_429",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_430",
+        "estado": "fanatico",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.7000000000000001,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_431",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_432",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_433",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_434",
+        "estado": "emergente",
+        "factor_fan": 0.30000000000000004,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_435",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_436",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_437",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_438",
+        "estado": "emergente",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_439",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.0,
+        "insights": []
+      },
+      {
+        "id": "AGT_440",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_441",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.65,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_443",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_444",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.3,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_445",
+        "estado": "emergente",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_447",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_449",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_450",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_451",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_452",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_453",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_454",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_455",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_457",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_458",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_459",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.6,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_460",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.2,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_461",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.2,
+        "insights": []
+      },
+      {
+        "id": "AGT_462",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.65,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_463",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_464",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_465",
+        "estado": "emergente",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_466",
+        "estado": "emergente",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.45000000000000007,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_467",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.35,
+        "insights": []
+      },
+      {
+        "id": "AGT_470",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_471",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.55,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_472",
+        "estado": "fanatico",
+        "factor_fan": 0.25,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_473",
+        "estado": "fanatico",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_474",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_476",
+        "estado": "emergente",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.8,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_477",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_478",
+        "estado": "fanatico",
+        "factor_fan": 0.4,
+        "factor_discovery": 0.1,
+        "insights": []
+      },
+      {
+        "id": "AGT_479",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_480",
+        "estado": "emergente",
+        "factor_fan": 0.3,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_481",
+        "estado": "fanatico",
+        "factor_fan": 0.2,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_482",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.15,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_483",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_484",
+        "estado": "fanatico",
+        "factor_fan": 0.44999999999999996,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_486",
+        "estado": "emergente",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_487",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.25,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_488",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_489",
+        "estado": "emergente",
+        "factor_fan": 0.45000000000000007,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_490",
+        "estado": "fanatico",
+        "factor_fan": 0.5,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_491",
+        "estado": "fanatico",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.30000000000000004,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1",
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_492",
+        "estado": "fanatico",
+        "factor_fan": 0.35,
+        "factor_discovery": 0.25,
+        "insights": []
+      },
+      {
+        "id": "AGT_493",
+        "estado": "emergente",
+        "factor_fan": 0.1,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 2: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1",
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_494",
+        "estado": "emergente",
+        "factor_fan": 0.30000000000000004,
+        "factor_discovery": 0.5,
+        "insights": [
+          "Iteracion 5: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_495",
+        "estado": "fanatico",
+        "factor_fan": 0.6,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_496",
+        "estado": "emergente",
+        "factor_fan": 0.15,
+        "factor_discovery": 0.44999999999999996,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_497",
+        "estado": "fanatico",
+        "factor_fan": 0.30000000000000004,
+        "factor_discovery": 0.1,
+        "insights": [
+          "Iteracion 0: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_498",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.4,
+        "insights": [
+          "Iteracion 3: Patron detectado en estructura 6+1",
+          "Iteracion 4: Patron detectado en estructura 6+1"
+        ]
+      },
+      {
+        "id": "AGT_499",
+        "estado": "emergente",
+        "factor_fan": 0.0,
+        "factor_discovery": 0.35,
+        "insights": [
+          "Iteracion 1: Patron detectado en estructura 6+1"
+        ]
+      }
+    ]
+  },
+  "insights_emergentes": [
+    "Los discoverers tienden a emerger en iteraciones 3-4",
+    "Fans se correlacionan con busqueda espiritual + red social mediana",
+    "Patrones tipo Rayuela/Crono Trigger detectados por alta necesidad cognitiva",
+    "Estructura 6+1 resuena con arquetipos junguianos"
+  ],
+  "recomendaciones": [
+    "Disenar easter eggs para discoverers (capas ocultas)",
+    "Crear comunidad Discord para fans antes del lanzamiento",
+    "Preparar rabbit hole content para los que descubran patrones",
+    "Timing: liberar pistas escalonadas (semanas 2, 4, 6)"
+  ]
+}

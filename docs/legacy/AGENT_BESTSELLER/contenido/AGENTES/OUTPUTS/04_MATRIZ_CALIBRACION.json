@@ -1,0 +1,115 @@
+{
+  "fecha": "2026-04-18T21:09:50.833559",
+  "version": "1.0",
+  "premisas": [
+    "El CORE (personajes, historia, mundo) NO se cambia",
+    "Solo se ajusta el ANGULO de observacion presentado al lector",
+    "Los datos de lectores > intuicion del autor"
+  ],
+  "matriz_calibracion": {
+    "PERFIL_01": {
+      "nombre": "El Buscador de Verdades Ocultas",
+      "angulo_optimo": "MEDIOEVO como espejo filosofico",
+      "puntos_observacion": [
+        "Enfasis en las preguntas sobre la realidad",
+        "Marketing: '¿Y si tu realidad fuera un archivo?'",
+        "Portada: tonos oscuros, misterio intelectual",
+        "Blurb: menciona 'filosofia', 'realidad', 'verdad'"
+      ],
+      "no_cambiar": [
+        "No simplificar la filosofia para hacerlo mas accesible",
+        "No anadir mas accion en detrimento de la reflexion"
+      ],
+      "ajustar": [
+        "Presentacion: resaltar el misterio intelectual",
+        "Timing: liberar capitulos que construyan misterio primero"
+      ]
+    },
+    "PERFIL_02": {
+      "nombre": "La Fan de Ficciones Complejas",
+      "angulo_optimo": "MEDIOEVO como saga para pertenecer",
+      "puntos_observacion": [
+        "Enfasis en la comunidad de lectores",
+        "Marketing: 'Unete antes del final'",
+        "Portada: estetica de saga epica",
+        "Blurb: menciona 'saga', '6 libros', 'comunidad'"
+      ],
+      "no_cambiar": [
+        "No acortar la saga para hacerla mas comercial",
+        "No simplificar personajes para hacerlos mas 'queribles'"
+      ],
+      "ajustar": [
+        "Crear espacios de comunidad (Discord, foros)",
+        "Lanzar contenido extra entre libros"
+      ]
+    },
+    "PERFIL_03": {
+      "nombre": "El Esceptico de la Ciencia Ficcion",
+      "angulo_optimo": "MEDIOEVO como ciencia ficcion dura",
+      "puntos_observacion": [
+        "Enfasis en la precision tecnica",
+        "Marketing: 'Ciencia ficcion que respeta tu inteligencia'",
+        "Portada: minimalista, tecnica",
+        "Blurb: menciona 'ciencia', 'tecnologia', 'precision'"
+      ],
+      "no_cambiar": [
+        "No dumb down la ciencia para hacerla accesible",
+        "No sacrificar precision por narrativa"
+      ],
+      "ajustar": [
+        "Incluir glosario tecnico",
+        "Notas al pie con referencias reales"
+      ]
+    },
+    "PERFIL_04": {
+      "nombre": "La Madre que Lee de Noche",
+      "angulo_optimo": "MEDIOEVO como inmersion inmediata",
+      "puntos_observacion": [
+        "Enfasis en el hook temprano",
+        "Marketing: 'Te atrapa desde la pagina 1'",
+        "Portada: emocional, calida",
+        "Blurb: menciona 'no podras dejar de leer'"
+      ],
+      "no_cambiar": [
+        "No cortar escenas de desarrollo de personajes",
+        "No acelerar el inicio artificialmente"
+      ],
+      "ajustar": [
+        "Asegurar que el capitulo 1 tenga gancho emocional",
+        "Capitulos mas cortos al inicio"
+      ]
+    },
+    "PERFIL_05": {
+      "nombre": "El Gamer de Narrativas",
+      "angulo_optimo": "MEDIOEVO como narrativa con agencia",
+      "puntos_observacion": [
+        "Enfasis en la eleccion del lector",
+        "Marketing: 'Tu decides como observar'",
+        "Portada: interactiva, moderna",
+        "Blurb: menciona 'explora', 'descubre', 'elige'"
+      ],
+      "no_cambiar": [
+        "No anadir 'elecciones' falsas que no afectan la trama",
+        "No gamificar en exceso"
+      ],
+      "ajustar": [
+        "Estructura que permita multiples rutas de lectura",
+        "Contenido extra 'desbloqueable'"
+      ]
+    }
+  },
+  "recomendaciones_generales": {
+    "core_no_negociable": [
+      "Personajes principales y sus arcos",
+      "Mundo y sus reglas",
+      "Temas centrales (pertenencia, identidad, verdad)",
+      "Estructura 6+1"
+    ],
+    "ajustable_por_perfil": [
+      "Angulo de marketing",
+      "Diseno de portada",
+      "Timing de lanzamientos",
+      "Contenido complementario"
+    ]
+  }
+}

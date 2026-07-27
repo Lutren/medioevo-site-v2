@@ -1,11 +1,14 @@
 ---
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
+import { getBooks } from '../lib/medioevo';
 import MedioevoBracelet from '../components/MedioevoBracelet.astro';
 const posts = (await getCollection('blog'))
   .filter((p) => p.data.lang === 'es')
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
 const latest = posts.slice(0, 4);
+const books = await getBooks();
+const totalBooks = books.length;
 const covers = [
   { src: '/images/covers/00-observador.jpg', t: 'El Observador' },
   { src: '/images/covers/01-despertar.jpg', t: 'Despertar' },
@@ -94,7 +97,7 @@ const stateClass = (state: string) => {
         <div><div class="text-4xl sm:text-5xl font-bold text-white leading-none">3</div><div class="text-xs text-[var(--mut)] uppercase tracking-[0.15em] mt-1.5">planos de existencia</div></div>
         <div><div class="text-4xl sm:text-5xl font-bold text-white leading-none">847</div><div class="text-xs text-[var(--mut)] uppercase tracking-[0.15em] mt-1.5">torres TAAT</div></div>
         <div><div class="text-4xl sm:text-5xl font-bold text-white leading-none">155</div><div class="text-xs text-[var(--mut)] uppercase tracking-[0.15em] mt-1.5">macrozonas</div></div>
-        <div><div class="text-4xl sm:text-5xl font-bold text-white leading-none">6</div><div class="text-xs text-[var(--mut)] uppercase tracking-[0.15em] mt-1.5">libros publicados</div></div>
+        <div><div class="text-4xl sm:text-5xl font-bold text-white leading-none">{totalBooks}</div><div class="text-xs text-[var(--mut)] uppercase tracking-[0.15em] mt-1.5">libros del universo</div></div>
       </div>
       <a href="/mundo" class="inline-block mt-8 bg-[var(--gold)] text-[var(--bg)] font-semibold px-7 py-3 rounded-lg no-underline hover:brightness-120 transition-all">
         Explorar el mundo →
@@ -126,8 +129,8 @@ const stateClass = (state: string) => {
           <div class="world-stat-label">Torres TAAT en el Plano Medio</div>
         </div>
         <div class="world-stat">
-          <div class="world-stat-num">6</div>
-          <div class="world-stat-label">Libros publicados</div>
+          <div class="world-stat-num">{totalBooks}</div>
+          <div class="world-stat-label">Libros del universo</div>
         </div>
         <a href="/mundo" class="world-explore-link">Explorar el universo →</a>
       </div>
